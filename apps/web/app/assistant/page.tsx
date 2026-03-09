@@ -1,5 +1,7 @@
 import { gapAnalysis, initVault, loadBaseResume } from "@claimit/core";
+import { Bot } from "lucide-react";
 
+import { PageIntro } from "../../components/layout/page-intro";
 import { GapAnalysisPanel } from "../../components/assistant/GapAnalysisPanel";
 
 function hasResumeContent(resume: Awaited<ReturnType<typeof loadBaseResume>>) {
@@ -22,10 +24,13 @@ export default async function AssistantPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Assistant</p>
-        <h2 className="mt-2 text-3xl font-semibold text-slate-900">Fill the highest-impact gaps</h2>
-      </div>
+      <PageIntro
+        eyebrow="Assistant"
+        title="Let the AI editor expose the weak spots"
+        description="The assistant reviews the current resume, spots gaps in impact, scope, and clarity, then helps you tighten the story without changing the underlying facts."
+        icon={Bot}
+        badge={`${result.questions.length} prompts`}
+      />
       <GapAnalysisPanel result={result} hasResumeContent={resumeHasContent} />
     </div>
   );

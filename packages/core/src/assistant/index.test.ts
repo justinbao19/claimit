@@ -31,6 +31,11 @@ describe("assistant", () => {
     expect(analysis.questions.length).toBeGreaterThan(0);
 
     const firstQuestion = analysis.questions[0];
+    expect(firstQuestion).toBeDefined();
+    if (!firstQuestion) {
+      throw new Error("Expected the heuristic analysis to return at least one question.");
+    }
+
     const result = await applyAnswers(
       resume,
       {

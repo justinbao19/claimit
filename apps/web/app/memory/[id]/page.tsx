@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { initVault, loadBaseResume } from "@claimit/core";
+import { PencilLine } from "lucide-react";
 
+import { PageIntro } from "../../../components/layout/page-intro";
 import { AchievementForm } from "../../../components/resume/AchievementForm";
 
 export default async function MemoryDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -15,10 +17,13 @@ export default async function MemoryDetailPage({ params }: { params: Promise<{ i
 
   return (
     <div className="space-y-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Achievement detail</p>
-        <h2 className="mt-2 text-3xl font-semibold text-slate-900">{achievement.title}</h2>
-      </div>
+      <PageIntro
+        eyebrow="Achievement detail"
+        title={achievement.title}
+        description="Tighten wording, tag the achievement more precisely, and keep the underlying fact strong enough to power variants and final claims."
+        icon={PencilLine}
+        badge="Edit memory item"
+      />
       <AchievementForm achievement={achievement} />
     </div>
   );

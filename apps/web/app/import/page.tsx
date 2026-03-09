@@ -1,15 +1,18 @@
+import { FileUp } from "lucide-react";
+
+import { PageIntro } from "../../components/layout/page-intro";
 import { ImportDropzone } from "../../components/resume/ImportDropzone";
 
 export default function ImportPage() {
   return (
     <div className="space-y-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Import</p>
-        <h2 className="mt-2 text-3xl font-semibold text-slate-900">Bring in an existing resume</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Upload a resume file and Claimit will parse it into the base vault format.
-        </p>
-      </div>
+      <PageIntro
+        eyebrow="Import"
+        title="Bring an existing resume into the workspace"
+        description="Drop in a PDF, DOCX, JSON, or plain text source and Claimit will parse it into the base vault so the rest of the workflow can build on structured data."
+        icon={FileUp}
+        badge="Ingestion pipeline"
+      />
       <ImportDropzone />
     </div>
   );
