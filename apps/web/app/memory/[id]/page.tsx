@@ -4,11 +4,13 @@ import { PencilLine } from "lucide-react";
 
 import { PageIntro } from "../../../components/layout/page-intro";
 import { AchievementForm } from "../../../components/resume/AchievementForm";
+import { getServerI18n } from "../../../lib/i18n";
 
 export default async function MemoryDetailPage({ params }: { params: Promise<{ id: string }> }) {
   await initVault();
   const { id } = await params;
   const resume = await loadBaseResume();
+  const { t } = await getServerI18n();
   const achievement = resume.achievements.find((item) => item.id === id);
 
   if (!achievement) {
@@ -18,11 +20,11 @@ export default async function MemoryDetailPage({ params }: { params: Promise<{ i
   return (
     <div className="space-y-6">
       <PageIntro
-        eyebrow="Achievement detail"
+        eyebrow={t("memoryPage.detail.eyebrow")}
         title={achievement.title}
-        description="Tighten wording, tag the achievement more precisely, and keep the underlying fact strong enough to power variants and final claims."
+        description={t("memoryPage.detail.description")}
         icon={PencilLine}
-        badge="Edit memory item"
+        badge={t("memoryPage.detail.badge")}
       />
       <AchievementForm achievement={achievement} />
     </div>

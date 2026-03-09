@@ -6,19 +6,21 @@ import { AchievementCard } from "../../components/resume/AchievementCard";
 import { AchievementForm } from "../../components/resume/AchievementForm";
 import { ResumePreview } from "../../components/resume/ResumePreview";
 import { EmptyState } from "../../components/ui/empty-state";
+import { getServerI18n } from "../../lib/i18n";
 
 export default async function MemoryPage() {
   await initVault();
   const resume = await loadBaseResume();
+  const { t } = await getServerI18n();
 
   return (
     <div className="space-y-8">
       <PageIntro
-        eyebrow="Memory"
-        title="Turn raw work into a reusable fact library"
-        description="The memory layer is where achievements become structured building blocks. Capture them cleanly and reuse them across assistant suggestions, variants, and final resume bullets."
+        eyebrow={t("memoryPage.intro.eyebrow")}
+        title={t("memoryPage.intro.title")}
+        description={t("memoryPage.intro.description")}
         icon={FolderKanban}
-        badge={`${resume.achievements.length} facts`}
+        badge={t("memoryPage.intro.badge", { count: resume.achievements.length })}
       />
 
       <div className="grid gap-6 xl:grid-cols-[460px_1fr]">
@@ -27,8 +29,8 @@ export default async function MemoryPage() {
           {resume.achievements.length === 0 ? (
             <EmptyState
               icon={LibraryBig}
-              title="Your achievement library is empty"
-              description="Add one or import a resume first. Once the library has signal, Claimit can produce better suggestions and stronger variants."
+              title={t("memoryPage.empty.title")}
+              description={t("memoryPage.empty.description")}
             />
           ) : (
             <div className="space-y-4">

@@ -2,25 +2,56 @@
 
 :root {
   color-scheme: light;
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --muted: #64748b;
-  --panel: rgba(255, 255, 255, 0.92);
+  --background: #f5f1ea;
+  --foreground: #1d232a;
+  --muted: #5f6770;
+  --surface: #fcfaf6;
+  --surface-elevated: #ffffff;
+  --surface-overlay: rgba(252, 250, 246, 0.82);
+  --panel: rgba(252, 250, 246, 0.92);
   --panel-strong: rgba(255, 255, 255, 0.98);
-  --panel-light: rgba(255, 255, 255, 0.72);
-  --border: rgba(148, 163, 184, 0.22);
-  --ring: rgba(139, 92, 246, 0.4);
+  --panel-light: rgba(255, 252, 248, 0.72);
+  --text-primary: #1d232a;
+  --text-secondary: #5f6770;
+  --text-tertiary: #8b918d;
+  --border: rgba(216, 208, 197, 0.95);
+  --field-bg: #fffcf8;
+  --field-border: #c9c0b4;
+  --field-focus: #74859a;
+  --accent: #8a6846;
+  --accent-strong: #705238;
+  --accent-contrast: #f8f4ef;
+  --success: #456a5a;
+  --warning: #a4763d;
+  --ring: rgba(116, 133, 154, 0.24);
+  --shadow-color: rgba(43, 37, 31, 0.16);
 }
 
 html.dark {
   color-scheme: dark;
-  --background: #020617;
-  --foreground: #f8fafc;
-  --muted: #94a3b8;
-  --panel: rgba(15, 23, 42, 0.78);
-  --panel-strong: rgba(15, 23, 42, 0.92);
-  --panel-light: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.1);
+  --background: #111417;
+  --foreground: #f3eee6;
+  --muted: #b8b0a6;
+  --surface: #171b1f;
+  --surface-elevated: #1e2429;
+  --surface-overlay: rgba(23, 27, 31, 0.86);
+  --panel: rgba(23, 27, 31, 0.92);
+  --panel-strong: rgba(30, 36, 41, 0.96);
+  --panel-light: rgba(255, 255, 255, 0.05);
+  --text-primary: #f3eee6;
+  --text-secondary: #b8b0a6;
+  --text-tertiary: #8d877f;
+  --border: rgba(51, 58, 64, 0.98);
+  --field-bg: #1b2024;
+  --field-border: #495159;
+  --field-focus: #8fa2b5;
+  --accent: #c4a27b;
+  --accent-strong: #d4b28b;
+  --accent-contrast: #171b1f;
+  --success: #7ea08e;
+  --warning: #c69457;
+  --ring: rgba(143, 162, 181, 0.22);
+  --shadow-color: rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -34,7 +65,7 @@ html {
 body {
   min-height: 100vh;
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
   font-family:
     Inter,
     ui-sans-serif,
@@ -56,8 +87,8 @@ a {
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.35);
-  color: white;
+  background: rgba(138, 104, 70, 0.24);
+  color: var(--text-primary);
 }
 
 ::-webkit-scrollbar {
@@ -68,12 +99,12 @@ a {
 ::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 999px;
-  background: rgba(100, 116, 139, 0.25);
+  background: rgba(116, 102, 88, 0.22);
   background-clip: padding-box;
 }
 
 html.dark ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.25);
+  background: rgba(143, 162, 181, 0.22);
   background-clip: padding-box;
 }
 

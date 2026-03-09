@@ -8,24 +8,26 @@ import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
-
-const workflow = [
-  { label: "Import", icon: FileStack, description: "Parse resume files into structured memory." },
-  { label: "Memory", icon: FolderKanban, description: "Capture facts, tags, tools, and supporting evidence." },
-  { label: "Assistant", icon: Bot, description: "Identify weak spots and fill the highest-impact gaps." },
-  { label: "Variants", icon: Wand2, description: "Tailor the resume toward role-specific narratives." },
-  { label: "Render", icon: LayoutTemplate, description: "Preview polished templates and export instantly." },
-];
+import { getServerI18n } from "../lib/i18n";
 
 export default async function HomePage() {
   await initVault();
   const [resume, variants] = await Promise.all([loadBaseResume(), listVariants()]);
+  const { t } = await getServerI18n();
+
+  const workflow = [
+    { label: t("home.workflow.import.label"), icon: FileStack, description: t("home.workflow.import.description") },
+    { label: t("home.workflow.memory.label"), icon: FolderKanban, description: t("home.workflow.memory.description") },
+    { label: t("home.workflow.assistant.label"), icon: Bot, description: t("home.workflow.assistant.description") },
+    { label: t("home.workflow.variants.label"), icon: Wand2, description: t("home.workflow.variants.description") },
+    { label: t("home.workflow.render.label"), icon: LayoutTemplate, description: t("home.workflow.render.description") },
+  ];
 
   const stats = [
-    { label: "Experience", value: resume.experience.length },
-    { label: "Achievements", value: resume.achievements.length },
-    { label: "Claims", value: resume.claims.length },
-    { label: "Variants", value: variants.length },
+    { label: t("home.stats.experience"), value: resume.experience.length },
+    { label: t("home.stats.achievements"), value: resume.achievements.length },
+    { label: t("home.stats.claims"), value: resume.claims.length },
+    { label: t("home.stats.variants"), value: variants.length },
   ];
 
   const workspaceHealth = Math.min(
@@ -40,43 +42,39 @@ export default async function HomePage() {
   return (
     <div className="space-y-8">
       <PageIntro
-        eyebrow="Workspace"
-        title="Build a living resume system, not a static file"
+        eyebrow={t("home.intro.eyebrow")}
+        title={t("home.intro.title")}
         description={
-          resume.basics.summary ??
-          "Capture achievements, let the assistant expose weak spots, and turn your base resume into polished, role-specific variants with a smoother editing workflow."
+          resume.basics.summary ?? t("home.intro.description")
         }
         icon={Sparkles}
-        badge="Editor workspace"
+        badge={t("home.intro.badge")}
       />
 
       <section className="grid gap-6 xl:grid-cols-[1.35fr_0.95fr]">
         <Card variant="elevated" padding="lg" className="overflow-hidden">
-          <div className="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_50%),radial-gradient(circle_at_bottom,rgba(139,92,246,0.12),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),transparent_50%),radial-gradient(circle_at_bottom,rgba(139,92,246,0.18),transparent_55%)]" />
+          <div className="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.16),transparent_52%),radial-gradient(circle_at_bottom,rgba(116,133,154,0.14),transparent_55%)]" />
           <div className="relative z-10 flex h-full flex-col justify-between gap-10">
             <div className="space-y-6">
               <div className="flex flex-wrap items-center gap-3">
-                <Badge variant="accent">AI-assisted editing</Badge>
-                <Badge>Vault-backed data</Badge>
+                <Badge variant="accent">{t("home.hero.badgePrimary")}</Badge>
+                <Badge>{t("home.hero.badgeSecondary")}</Badge>
               </div>
               <div className="max-w-3xl space-y-4">
-                <h3 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-                  Claimit keeps your achievements structured, adaptable, and always export-ready.
+                <h3 className="text-3xl font-semibold tracking-tight text-[color:var(--text-primary)] sm:text-4xl">
+                  {t("home.hero.title")}
                 </h3>
-                <p className="max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
-                  Move fluidly from import, to memory capture, to assistant gap-fill, to tailored variants and final
-                  render, without losing the factual backbone behind every bullet.
-                </p>
+                <p className="max-w-2xl text-sm leading-7 text-[color:var(--text-secondary)] sm:text-base">{t("home.hero.description")}</p>
               </div>
               <div className="flex flex-wrap gap-3">
                 <Button asChild>
                   <Link href="/import">
-                    Import resume
+                    {t("home.hero.importAction")}
                     <ArrowRight className="size-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="secondary">
-                  <Link href="/assistant">Run assistant</Link>
+                  <Link href="/assistant">{t("home.hero.assistantAction")}</Link>
                 </Button>
               </div>
             </div>
@@ -87,16 +85,16 @@ export default async function HomePage() {
                 return (
                   <div
                     key={item.label}
-                    className="rounded-[24px] border border-slate-200 bg-white/75 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+                    className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex size-10 items-center justify-center rounded-2xl bg-slate-100 text-slate-700 dark:bg-white/[0.08] dark:text-white">
+                      <div className="flex size-10 items-center justify-center rounded-2xl bg-[color:var(--surface)] text-[color:var(--text-primary)]">
                         <Icon className="size-4" />
                       </div>
-                      <span className="text-[11px] font-medium text-slate-500">0{index + 1}</span>
+                      <span className="text-[11px] font-medium text-[color:var(--text-tertiary)]">0{index + 1}</span>
                     </div>
-                    <p className="mt-4 text-sm font-semibold text-slate-900 dark:text-white">{item.label}</p>
-                    <p className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">{item.description}</p>
+                    <p className="mt-4 text-sm font-semibold text-[color:var(--text-primary)]">{item.label}</p>
+                    <p className="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{item.description}</p>
                   </div>
                 );
               })}
@@ -108,70 +106,72 @@ export default async function HomePage() {
           <Card variant="glass" padding="lg">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Workspace health</p>
+                <p className="text-sm font-medium text-[color:var(--text-secondary)]">{t("home.health.title")}</p>
                 <div className="mt-3 flex items-end gap-3">
-                  <span className="text-5xl font-semibold text-slate-950 dark:text-white">
+                  <span className="text-5xl font-semibold text-[color:var(--text-primary)]">
                     <AnimatedNumber value={workspaceHealth} />
                   </span>
-                  <span className="pb-2 text-sm text-slate-500 dark:text-slate-400">/ 100</span>
+                  <span className="pb-2 text-sm text-[color:var(--text-secondary)]">{t("home.health.suffix")}</span>
                 </div>
               </div>
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-500/10 dark:text-emerald-200">
-                Healthy editing flow
+              <div className="rounded-2xl border border-[rgba(69,106,90,0.2)] bg-[rgba(69,106,90,0.08)] px-3 py-2 text-xs font-medium text-[color:var(--success)]">
+                {t("home.health.status")}
               </div>
             </div>
-            <div className="mt-6 h-3 overflow-hidden rounded-full bg-slate-100 dark:bg-white/[0.06]">
+            <div className="mt-6 h-3 overflow-hidden rounded-full bg-[rgba(116,133,154,0.12)]">
               <div
-                className="h-full rounded-full bg-[linear-gradient(90deg,rgba(56,189,248,0.95),rgba(139,92,246,0.95))]"
+                className="h-full rounded-full bg-[linear-gradient(90deg,var(--accent),var(--field-focus))]"
                 style={{ width: `${workspaceHealth}%` }}
               />
             </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[22px] border border-slate-200 bg-white/75 p-4 dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Current base resume</p>
-                <p className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">{resume.basics.name}</p>
-                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+              <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">{t("home.currentBaseResume.title")}</p>
+                <p className="mt-3 text-lg font-semibold text-[color:var(--text-primary)]">{resume.basics.name}</p>
+                <p className="mt-2 text-sm text-[color:var(--text-secondary)]">
                   {resume.experience.length > 0
-                    ? `${resume.experience.length} experience entries are connected to the vault.`
-                    : "No experience entries imported yet."}
+                    ? t("home.currentBaseResume.filled", { count: resume.experience.length })
+                    : t("home.currentBaseResume.empty")}
                 </p>
               </div>
-              <div className="rounded-[22px] border border-slate-200 bg-white/75 p-4 dark:border-white/10 dark:bg-white/[0.04]">
-                <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Recommended next step</p>
-                <p className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">
-                  {resume.achievements.length === 0 ? "Start capturing achievements" : "Tailor a new variant"}
-                </p>
-                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+              <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">{t("home.recommendedNextStep.title")}</p>
+                <p className="mt-3 text-lg font-semibold text-[color:var(--text-primary)]">
                   {resume.achievements.length === 0
-                    ? "Turn raw experience bullets into structured, reusable facts."
-                    : "Use the existing memory layer to create a job-specific narrative."}
+                    ? t("home.recommendedNextStep.emptyHeadline")
+                    : t("home.recommendedNextStep.filledHeadline")}
+                </p>
+                <p className="mt-2 text-sm text-[color:var(--text-secondary)]">
+                  {resume.achievements.length === 0
+                    ? t("home.recommendedNextStep.emptyDescription")
+                    : t("home.recommendedNextStep.filledDescription")}
                 </p>
               </div>
             </div>
           </Card>
 
           <Card variant="panel" padding="lg">
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">Quick access</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--text-tertiary)]">{t("home.quickAccess.title")}</p>
             <div className="mt-5 space-y-3">
               <Link
                 href="/memory"
-                className="flex items-center justify-between rounded-[22px] border border-slate-200/80 bg-white px-4 py-4 text-sm text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg"
+                className="flex items-center justify-between rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-4 py-4 text-sm text-[color:var(--text-primary)] transition hover:-translate-y-0.5 hover:border-[color:var(--field-border)] hover:shadow-[0_18px_46px_-30px_var(--shadow-color)]"
               >
-                <span>Open achievements library</span>
+                <span>{t("home.quickAccess.library")}</span>
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="/variants"
-                className="flex items-center justify-between rounded-[22px] border border-slate-200/80 bg-white px-4 py-4 text-sm text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg"
+                className="flex items-center justify-between rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-4 py-4 text-sm text-[color:var(--text-primary)] transition hover:-translate-y-0.5 hover:border-[color:var(--field-border)] hover:shadow-[0_18px_46px_-30px_var(--shadow-color)]"
               >
-                <span>Create targeted variants</span>
+                <span>{t("home.quickAccess.variants")}</span>
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="/render"
-                className="flex items-center justify-between rounded-[22px] border border-slate-200/80 bg-white px-4 py-4 text-sm text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg"
+                className="flex items-center justify-between rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-4 py-4 text-sm text-[color:var(--text-primary)] transition hover:-translate-y-0.5 hover:border-[color:var(--field-border)] hover:shadow-[0_18px_46px_-30px_var(--shadow-color)]"
               >
-                <span>Preview final output</span>
+                <span>{t("home.quickAccess.render")}</span>
                 <ArrowRight className="size-4" />
               </Link>
             </div>
@@ -182,11 +182,11 @@ export default async function HomePage() {
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat) => (
           <Card key={stat.label} variant="interactive" padding="default">
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">{stat.label}</p>
-            <p className="mt-4 text-4xl font-semibold text-slate-950 dark:text-white">
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--text-tertiary)]">{stat.label}</p>
+            <p className="mt-4 text-4xl font-semibold text-[color:var(--text-primary)]">
               <AnimatedNumber value={stat.value} />
             </p>
-            <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">Structured and ready for downstream editing and rendering.</p>
+            <p className="mt-3 text-sm text-[color:var(--text-secondary)]">{t("home.hero.badgeSecondary")}</p>
           </Card>
         ))}
       </section>
@@ -195,56 +195,48 @@ export default async function HomePage() {
         <Card variant="glass" padding="lg">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">Operational loop</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white">Your editing workflow, organized as a system</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--text-tertiary)]">{t("home.operationalLoop.title")}</p>
+              <h3 className="mt-3 text-2xl font-semibold text-[color:var(--text-primary)]">{t("home.operationalLoop.headline")}</h3>
             </div>
-            <Badge>Always-ready output</Badge>
+            <Badge>{t("home.operationalLoop.badge")}</Badge>
           </div>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
-            <div className="rounded-[24px] border border-slate-200 bg-white/75 p-5 dark:border-white/10 dark:bg-white/[0.04]">
-              <p className="text-sm font-semibold text-slate-900 dark:text-white">Memory layer</p>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                Capture achievements once, then reuse them across different role narratives, claims, and export formats.
-              </p>
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-5">
+              <p className="text-sm font-semibold text-[color:var(--text-primary)]">{t("home.operationalLoop.memoryTitle")}</p>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{t("home.operationalLoop.memoryDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white/75 p-5 dark:border-white/10 dark:bg-white/[0.04]">
-              <p className="text-sm font-semibold text-slate-900 dark:text-white">Assistant guidance</p>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                Surface gaps in metrics, scope, and clarity before a resume variant goes out the door.
-              </p>
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-5">
+              <p className="text-sm font-semibold text-[color:var(--text-primary)]">{t("home.operationalLoop.assistantTitle")}</p>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{t("home.operationalLoop.assistantDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white/75 p-5 dark:border-white/10 dark:bg-white/[0.04]">
-              <p className="text-sm font-semibold text-slate-900 dark:text-white">Role variants</p>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                Reframe the same factual record for different jobs without rewriting from scratch.
-              </p>
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-5">
+              <p className="text-sm font-semibold text-[color:var(--text-primary)]">{t("home.operationalLoop.variantsTitle")}</p>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{t("home.operationalLoop.variantsDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white/75 p-5 dark:border-white/10 dark:bg-white/[0.04]">
-              <p className="text-sm font-semibold text-slate-900 dark:text-white">Render pipeline</p>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                Move from structured JSON to polished ATS-friendly output with minimal formatting friction.
-              </p>
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-5">
+              <p className="text-sm font-semibold text-[color:var(--text-primary)]">{t("home.operationalLoop.renderTitle")}</p>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{t("home.operationalLoop.renderDescription")}</p>
             </div>
           </div>
         </Card>
 
         <Card variant="panel" padding="lg">
-          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">Workspace snapshot</p>
-          <h3 className="mt-3 text-2xl font-semibold text-slate-900">What is already in motion</h3>
-          <Separator className="my-5 bg-slate-200/80" />
-          <div className="space-y-4 text-sm text-slate-600">
-            <div className="rounded-[22px] border border-slate-200/80 bg-slate-50/80 p-4">
-              <p className="font-medium text-slate-900">Base summary</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--text-tertiary)]">{t("home.snapshot.title")}</p>
+          <h3 className="mt-3 text-2xl font-semibold text-[color:var(--text-primary)]">{t("home.snapshot.headline")}</h3>
+          <Separator className="my-5 bg-[color:var(--border)]" />
+          <div className="space-y-4 text-sm text-[color:var(--text-secondary)]">
+            <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+              <p className="font-medium text-[color:var(--text-primary)]">{t("home.snapshot.baseSummaryTitle")}</p>
               <p className="mt-2 leading-6">
-                {resume.basics.summary ?? "No summary yet. Use the assistant to transform your experience into a sharper narrative."}
+                {resume.basics.summary ?? t("home.snapshot.baseSummaryEmpty")}
               </p>
             </div>
-            <div className="rounded-[22px] border border-slate-200/80 bg-slate-50/80 p-4">
-              <p className="font-medium text-slate-900">Variant coverage</p>
+            <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+              <p className="font-medium text-[color:var(--text-primary)]">{t("home.snapshot.variantCoverageTitle")}</p>
               <p className="mt-2 leading-6">
                 {variants.length > 0
-                  ? `${variants.length} tailored variants are saved and ready for refinement.`
-                  : "No variants yet. Create one once the base resume is stable."}
+                  ? t("home.snapshot.variantCoverageFilled", { count: variants.length })
+                  : t("home.snapshot.variantCoverageEmpty")}
               </p>
             </div>
           </div>

@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import type { Achievement } from "@claimit/core";
 
 import { apiFetch } from "../../lib/utils";
+import { useTranslations } from "../layout/locale-provider";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
@@ -21,6 +22,7 @@ interface AchievementFormProps {
 
 export function AchievementForm({ achievement }: AchievementFormProps) {
   const router = useRouter();
+  const t = useTranslations();
   const [title, setTitle] = useState(achievement?.title ?? "");
   const [summary, setSummary] = useState(achievement?.summary ?? "");
   const [tags, setTags] = useState(achievement?.tags.join(", ") ?? "");
@@ -70,9 +72,9 @@ export function AchievementForm({ achievement }: AchievementFormProps) {
       });
     },
     onSuccess: () => {
-      setMessage("Saved successfully.");
-      toast.success(achievement ? "Achievement updated" : "Achievement added", {
-        description: "The memory layer has been refreshed.",
+      setMessage(t("memoryPage.form.saved"));
+      toast.success(achievement ? t("memoryPage.form.updatedToastTitle") : t("memoryPage.form.addedToastTitle"), {
+        description: t("memoryPage.form.updatedToastDescription"),
       });
       router.refresh();
       if (!achievement) {
@@ -83,9 +85,9 @@ export function AchievementForm({ achievement }: AchievementFormProps) {
       }
     },
     onError: (error) => {
-      setMessage(error instanceof Error ? error.message : "Unable to save achievement.");
-      toast.error("Unable to save achievement", {
-        description: error instanceof Error ? error.message : "Please try again.",
+      setMessage(error instanceof Error ? error.message : t("memoryPage.form.unableToSave"));
+      toast.error(t("memoryPage.form.unableToSaveToastTitle"), {
+        description: error instanceof Error ? error.message : t("memoryPage.form.tryAgain"),
       });
     },
   });
@@ -95,17 +97,15 @@ export function AchievementForm({ achievement }: AchievementFormProps) {
       <div className="space-y-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="space-y-3">
-            <Badge variant="accent">{achievement ? "Edit fact" : "Add fact"}</Badge>
+            <Badge variant="accent">{achievement ? t("memoryPage.form.badgeEdit") : t("memoryPage.form.badgeAdd")}</Badge>
             <div>
-              <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">
-                {achievement ? "Refine this achievement" : "Capture a reusable achievement"}
+              <h3 className="text-2xl font-semibold text-[color:var(--text-primary)]">
+                {achievement ? t("memoryPage.form.titleEdit") : t("memoryPage.form.titleAdd")}
               </h3>
-              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Structure high-signal facts once so the assistant, variants, and render pipeline can reuse them later.
-              </p>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-[color:var(--text-secondary)]">{t("memoryPage.form.description")}</p>
             </div>
           </div>
-          <div className="flex size-14 items-center justify-center rounded-[22px] bg-slate-100 text-slate-700 dark:bg-white/[0.06] dark:text-white">
+          <div className="flex size-14 items-center justify-center rounded-[22px] bg-[color:var(--surface)] text-[color:var(--text-primary)]">
             {achievement ? <LibraryBig className="size-6" /> : <BadgePlus className="size-6" />}
           </div>
         </div>
@@ -116,51 +116,49 @@ export function AchievementForm({ achievement }: AchievementFormProps) {
           className="grid gap-5"
         >
           <div>
-            <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Title</p>
-          <Input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Launch growth experiment" />
+            <p className="mb-2 text-sm font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.titleLabel")}</p>
+            <Input value={title} onChange={(event) => setTitle(event.target.value)} placeholder={t("memoryPage.form.titlePlaceholder")} />
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Summary</p>
-          <Textarea
-            rows={4}
-            value={summary}
-            onChange={(event) => setSummary(event.target.value)}
-            placeholder="Describe the achievement and why it mattered."
-          />
+            <p className="mb-2 text-sm font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.summaryLabel")}</p>
+            <Textarea
+              rows={4}
+              value={summary}
+              onChange={(event) => setSummary(event.target.value)}
+              placeholder={t("memoryPage.form.summaryPlaceholder")}
+            />
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             <div>
-              <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Tags</p>
-          <Input value={tags} onChange={(event) => setTags(event.target.value)} placeholder="growth, product, analytics" />
+              <p className="mb-2 text-sm font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.tagsLabel")}</p>
+              <Input value={tags} onChange={(event) => setTags(event.target.value)} placeholder={t("memoryPage.form.tagsPlaceholder")} />
             </div>
             <div>
-              <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">Tools</p>
-          <Input value={tools} onChange={(event) => setTools(event.target.value)} placeholder="SQL, Amplitude, Figma" />
+              <p className="mb-2 text-sm font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.toolsLabel")}</p>
+              <Input value={tools} onChange={(event) => setTools(event.target.value)} placeholder={t("memoryPage.form.toolsPlaceholder")} />
             </div>
           </div>
-          <div className="grid gap-3 rounded-[24px] border border-slate-200 bg-white/80 p-4 md:grid-cols-[1.2fr_0.8fr] dark:border-white/10 dark:bg-white/[0.04]">
+          <div className="grid gap-3 rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4 md:grid-cols-[1.2fr_0.8fr]">
             <div className="flex items-start gap-3">
-              <div className="mt-0.5 flex size-10 items-center justify-center rounded-2xl bg-violet-100 text-violet-600 dark:bg-violet-500/12 dark:text-violet-200">
+              <div className="mt-0.5 flex size-10 items-center justify-center rounded-2xl bg-[rgba(138,104,70,0.12)] text-[color:var(--accent)]">
                 <Sparkles className="size-4" />
               </div>
               <div>
-                <p className="text-sm font-medium text-slate-900 dark:text-white">Write facts with reuse in mind</p>
-                <p className="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  Mention the action, impact, and tools so variants and claim generation have stronger raw material.
-                </p>
+                <p className="text-sm font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.tipTitle")}</p>
+                <p className="mt-1 text-sm leading-6 text-[color:var(--text-secondary)]">{t("memoryPage.form.tipDescription")}</p>
               </div>
             </div>
-            <div className="flex flex-col justify-between gap-3 rounded-[20px] border border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/8 dark:bg-slate-950/30 dark:text-slate-400">
-              <p className="font-medium text-slate-700 dark:text-slate-200">Suggested tags</p>
-              <p>impact, growth, product, platform, ops, ai</p>
+            <div className="flex flex-col justify-between gap-3 rounded-[20px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4 text-sm text-[color:var(--text-secondary)]">
+              <p className="font-medium text-[color:var(--text-primary)]">{t("memoryPage.form.suggestedTags")}</p>
+              <p>{t("memoryPage.form.suggestedTagsValue")}</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Button onClick={() => mutation.mutate()} disabled={mutation.isPending || !title || !summary}>
-              {achievement ? "Update achievement" : "Add achievement"}
+              {achievement ? t("memoryPage.form.buttonUpdate") : t("memoryPage.form.buttonAdd")}
               <ArrowRight className="size-4" />
             </Button>
-            {message ? <p className="text-sm text-slate-500 dark:text-slate-400">{message}</p> : null}
+            {message ? <p className="text-sm text-[color:var(--text-secondary)]">{message}</p> : null}
           </div>
         </motion.div>
       </div>

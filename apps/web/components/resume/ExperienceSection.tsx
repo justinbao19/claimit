@@ -1,16 +1,21 @@
+"use client";
+
 import type { Experience } from "@claimit/core";
 import { BriefcaseBusiness } from "lucide-react";
 
+import { useTranslations } from "../layout/locale-provider";
 import { EmptyState } from "../ui/empty-state";
 import { formatDateRangeLabel } from "../../lib/utils";
 
 export function ExperienceSection({ experience }: { experience: Experience[] }) {
+  const t = useTranslations();
+
   if (experience.length === 0) {
     return (
       <EmptyState
         icon={BriefcaseBusiness}
-        title="No experience entries yet"
-        description="Import an existing resume or add achievements so your structured experience timeline has something to render."
+        title={t("memoryPage.experienceSection.emptyTitle")}
+        description={t("memoryPage.experienceSection.emptyDescription")}
       />
     );
   }
@@ -18,23 +23,26 @@ export function ExperienceSection({ experience }: { experience: Experience[] }) 
   return (
     <div className="space-y-4">
       {experience.map((entry) => (
-        <div key={entry.id} className="rounded-[24px] border border-slate-200 bg-white/80 p-5 dark:border-white/10 dark:bg-white/[0.04]">
+        <div key={entry.id} className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-5">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h3 className="font-semibold text-slate-950 dark:text-white">
+              <h3 className="font-semibold text-[color:var(--text-primary)]">
                 {entry.title} · {entry.company}
               </h3>
-              {entry.location ? <p className="text-sm text-slate-500 dark:text-slate-400">{entry.location}</p> : null}
+              {entry.location ? <p className="text-sm text-[color:var(--text-secondary)]">{entry.location}</p> : null}
             </div>
-            <p className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300">
-              {formatDateRangeLabel(entry.date_range)}
+            <p className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-3 py-1 text-xs text-[color:var(--text-secondary)]">
+              {formatDateRangeLabel(entry.date_range, {
+                present: t("common.present"),
+                unavailable: t("common.dateUnavailable"),
+              })}
             </p>
           </div>
           {entry.highlights.length > 0 ? (
-            <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <ul className="mt-4 space-y-2 text-sm text-[color:var(--text-secondary)]">
               {entry.highlights.map((highlight, index) => (
-                <li key={`${entry.id}-${index}`} className="flex gap-3 rounded-2xl bg-slate-50 px-4 py-3 dark:bg-white/[0.03]">
-                  <span className="mt-1 size-2 rounded-full bg-cyan-300" />
+                <li key={`${entry.id}-${index}`} className="flex gap-3 rounded-2xl bg-[rgba(116,133,154,0.08)] px-4 py-3">
+                  <span className="mt-1 size-2 rounded-full bg-[color:var(--accent)]" />
                   <span className="leading-6">{highlight}</span>
                 </li>
               ))}

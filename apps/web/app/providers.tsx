@@ -5,6 +5,9 @@ import { ThemeProvider, useTheme } from "next-themes";
 import { useState } from "react";
 import { Toaster } from "sonner";
 
+import type { Locale } from "../lib/messages";
+import { LocaleProvider } from "../components/layout/locale-provider";
+
 function AppToaster() {
   const { resolvedTheme } = useTheme();
 
@@ -16,15 +19,21 @@ function AppToaster() {
       toastOptions={{
         classNames: {
           toast:
-            "border border-slate-200 bg-white text-slate-900 shadow-2xl dark:border-white/10 dark:bg-slate-950/90 dark:text-slate-100",
-          description: "text-slate-500 dark:text-slate-400",
+            "border border-[color:var(--border)] bg-[color:var(--surface-elevated)] text-[color:var(--text-primary)] shadow-[0_24px_60px_-36px_var(--shadow-color)] dark:bg-[color:var(--surface-elevated)]",
+          description: "text-[color:var(--text-secondary)]",
         },
       }}
     />
   );
 }
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({
+  children,
+  initialLocale,
+}: {
+  children: React.ReactNode;
+  initialLocale: Locale;
+}) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -39,10 +48,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-      <QueryClientProvider client={queryClient}>
-        {children}
-        <AppToaster />
-      </QueryClientProvider>
+      <LocaleProvider initialLocale={initialLocale}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <AppToaster />
+        </QueryClientProvider>
+      </LocaleProvider>
     </ThemeProvider>
   );
 }

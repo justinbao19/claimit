@@ -1,0 +1,355 @@
+{
+  "common": {
+    "appName": "Claimit",
+    "baseResume": "基础简历",
+    "backToDashboard": "返回总览",
+    "edit": "编辑",
+    "present": "至今",
+    "dateUnavailable": "日期暂缺",
+    "noTargetRole": "尚未填写目标岗位。",
+    "noToolsAttached": "暂未关联工具",
+    "experience": "经历",
+    "skills": "技能",
+    "timeline": "时间线",
+    "tools": "工具"
+  },
+  "language": {
+    "label": "语言"
+  },
+  "theme": {
+    "switchToLight": "切换到浅色模式",
+    "switchToDark": "切换到深色模式"
+  },
+  "nav": {
+    "dashboard": "总览",
+    "import": "导入",
+    "memory": "档案库",
+    "assistant": "优化助手",
+    "variants": "定制版本",
+    "render": "导出",
+    "workspaceTitle": "简历工作台",
+    "workspaceBadge": "结构化写作系统"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "工作台",
+      "title": "把简历做成可持续维护的系统，而不是一次性文件",
+      "description": "沉淀成就、补齐薄弱信息，让每一个版本都建立在可靠、清晰的事实底稿之上。",
+      "badge": "编辑工作台"
+    },
+    "hero": {
+      "badgePrimary": "辅助梳理",
+      "badgeSecondary": "结构化事实底稿",
+      "title": "Claimit 帮你把履历证据整理得更清楚，也更便于定制。",
+      "description": "从导入到档案整理、优化建议、岗位定制，再到最终导出，始终保留每一条表述背后的事实依据。",
+      "importAction": "导入简历",
+      "assistantAction": "运行助手"
+    },
+    "workflow": {
+      "import": {
+        "label": "导入",
+        "description": "把现有简历文件整理成可继续编辑的结构化底稿。"
+      },
+      "memory": {
+        "label": "档案库",
+        "description": "集中保存成就、关键信号和支撑信息。"
+      },
+      "assistant": {
+        "label": "优化助手",
+        "description": "在投递前先找出影响力、范围和表达清晰度上的缺口。"
+      },
+      "variants": {
+        "label": "定制版本",
+        "description": "用同一套事实，组织出更贴合岗位的叙事。"
+      },
+      "render": {
+        "label": "导出",
+        "description": "预览版式并快速产出最终文件。"
+      }
+    },
+    "stats": {
+      "experience": "经历",
+      "achievements": "成就",
+      "claims": "论据",
+      "variants": "版本"
+    },
+    "health": {
+      "title": "工作台完善度",
+      "suffix": "/ 100",
+      "status": "状态良好"
+    },
+    "currentBaseResume": {
+      "title": "当前基础简历",
+      "empty": "还没有导入任何经历。",
+      "filled": "已接入 {count} 条经历。"
+    },
+    "recommendedNextStep": {
+      "title": "建议下一步",
+      "emptyHeadline": "先补充关键成就",
+      "filledHeadline": "创建一个定制版本",
+      "emptyDescription": "先把零散经历整理成可复用的事实素材。",
+      "filledDescription": "基于现有档案，组织出更贴合目标岗位的版本。"
+    },
+    "quickAccess": {
+      "title": "快捷入口",
+      "library": "打开档案库",
+      "variants": "创建定制版本",
+      "render": "预览最终输出"
+    },
+    "operationalLoop": {
+      "title": "工作闭环",
+      "headline": "把简历编辑流程整理成一套稳定系统",
+      "badge": "随时可导出",
+      "memoryTitle": "成就档案",
+      "memoryDescription": "成就只整理一次，后续可在不同版本、论据和导出场景中反复复用。",
+      "assistantTitle": "优化建议",
+      "assistantDescription": "在版本产出前，先补齐指标、范围和叙事清晰度上的缺口。",
+      "variantsTitle": "岗位定制版本",
+      "variantsDescription": "面对不同岗位时，重组同一套事实，而不是从头重写。",
+      "renderTitle": "导出流程",
+      "renderDescription": "从结构化数据顺滑过渡到干净、适合投递的最终文档。"
+    },
+    "snapshot": {
+      "title": "当前概览",
+      "headline": "现在已经推进到哪一步",
+      "baseSummaryTitle": "基础概述",
+      "baseSummaryEmpty": "还没有概述，可以先用助手把主线梳理清楚。",
+      "variantCoverageTitle": "版本覆盖",
+      "variantCoverageEmpty": "还没有定制版本，等基础简历稳定后可以先做一个。",
+      "variantCoverageFilled": "已保存 {count} 个定制版本，可继续微调。"
+    }
+  },
+  "importPage": {
+    "intro": {
+      "eyebrow": "导入",
+      "title": "把已有简历纳入工作台",
+      "description": "支持 PDF、DOCX、JSON 或纯文本，Claimit 会先整理成干净的基础底稿，方便后续继续打磨。",
+      "badge": "导入流程"
+    },
+    "dropzone": {
+      "title": "把简历拖进工作台",
+      "description": "Claimit 会解析文件、初始化基础结构，并把内容接入档案库、优化助手、定制版本和导出流程。",
+      "chooseFile": "选择文件",
+      "dragSupported": "支持拖拽上传",
+      "importing": "导入中...",
+      "structuredParsingTitle": "结构化解析",
+      "structuredParsingDescription": "把旧简历整理成可继续维护的结构化 JSON。",
+      "reusableFactsTitle": "可复用素材",
+      "reusableFactsDescription": "后续可直接供成就、论据和版本生成使用。",
+      "readyToRefineTitle": "导入后即可继续",
+      "readyToRefineDescription": "可以直接进入优化建议和导出流程。",
+      "imported": "简历已导入",
+      "importFailed": "导入失败",
+      "completed": "导入完成。",
+      "completedWithWarnings": "导入完成，但有提示：{warnings}",
+      "failed": "文件导入失败。"
+    }
+  },
+  "memoryPage": {
+    "intro": {
+      "eyebrow": "档案库",
+      "title": "把零散经历沉淀成可复用的成就档案",
+      "description": "这里是把经历整理成稳定素材的地方。收口得越清楚，后面的优化建议、岗位版本和最终简历就越顺手。",
+      "badge": "{count} 条素材"
+    },
+    "empty": {
+      "title": "档案库还是空的",
+      "description": "先新增一条素材，或先导入已有简历。等信息量起来之后，Claimit 才能给出更有判断力的建议和版本。"
+    },
+    "detail": {
+      "eyebrow": "素材详情",
+      "description": "把这条成就改得更准确、标签更清楚，好让后续版本和最终论据都能直接复用。",
+      "badge": "编辑档案项"
+    },
+    "form": {
+      "badgeAdd": "新增素材",
+      "badgeEdit": "编辑素材",
+      "titleAdd": "记录一条可复用的成就",
+      "titleEdit": "继续打磨这条成就",
+      "description": "先把高价值事实收口清楚，后续助手、版本和导出流程都会直接用到。",
+      "titleLabel": "标题",
+      "summaryLabel": "概述",
+      "tagsLabel": "标签",
+      "toolsLabel": "工具",
+      "titlePlaceholder": "负责增长实验体系搭建",
+      "summaryPlaceholder": "说明这项成就做了什么、为什么重要。",
+      "tagsPlaceholder": "增长, 产品, 数据分析",
+      "toolsPlaceholder": "SQL, Amplitude, Figma",
+      "tipTitle": "按“可复用”来写",
+      "tipDescription": "尽量写清动作、结果和所用工具，后续定制版本时会更容易组织出高质量表述。",
+      "suggestedTags": "建议标签",
+      "suggestedTagsValue": "影响力, 增长, 产品, 平台, 运营, AI",
+      "buttonAdd": "新增素材",
+      "buttonUpdate": "更新素材",
+      "saved": "保存成功。",
+      "addedToastTitle": "素材已新增",
+      "updatedToastTitle": "素材已更新",
+      "updatedToastDescription": "档案库内容已刷新。",
+      "unableToSave": "暂时无法保存这条素材。",
+      "unableToSaveToastTitle": "保存失败",
+      "tryAgain": "请稍后再试。"
+    },
+    "card": {
+      "edit": "编辑",
+      "timeline": "时间线",
+      "tools": "工具"
+    },
+    "preview": {
+      "eyebrow": "简历预览",
+      "badge": "基础简历",
+      "experience": "经历",
+      "skills": "技能"
+    },
+    "experienceSection": {
+      "emptyTitle": "还没有经历条目",
+      "emptyDescription": "先导入简历，或先补充成就素材，这样时间线区域才有内容可渲染。"
+    },
+    "skillsSection": {
+      "emptyTitle": "还没有技能信息",
+      "emptyDescription": "技能在被导入或按类别整理之后，才更适合进入岗位版本和最终导出。"
+    }
+  },
+  "assistant": {
+    "intro": {
+      "eyebrow": "优化助手",
+      "title": "先把叙事里的薄弱环节找出来",
+      "description": "助手会检查当前简历在结果、范围和表达清晰度上的缺口，帮助你补强叙事，但不会脱离事实本身。",
+      "badge": "{count} 个问题"
+    },
+    "panel": {
+      "badgePrimary": "问题诊断",
+      "badgeSecondary": "{count} 个问题",
+      "completeness": "简历完善度",
+      "analysisTitle": "当前分析",
+      "analysisDescription": "评估现有简历，并指出结果、范围或表达上还偏弱的地方。",
+      "questionSetTitle": "重点提问",
+      "questionSetDescription": "优先回答最关键的问题，不必一开始就把整份简历全部重写。",
+      "applyChangesTitle": "回写更新",
+      "applyChangesDescription": "等答案准备好之后，把改进后的表述和指标写回工作台。",
+      "readyMessage": "先回答下面的问题，再把结果回写到结构化简历里。",
+      "emptyMessage": "请先导入或补充简历内容，助手才能有材料可分析。",
+      "applyButton": "应用答案",
+      "applyingButton": "应用中...",
+      "warningsTitle": "注意事项"
+    },
+    "questionCard": {
+      "skip": "跳过",
+      "examples": "示例",
+      "placeholder": "在这里填写你的补充..."
+    },
+    "changeLog": {
+      "title": "已应用的更新",
+      "emptyTitle": "还没有应用任何更新",
+      "emptyDescription": "先回答几个关键问题并应用结果，这里就会显示本次改动记录。"
+    },
+    "goals": {
+      "quantifyImpact": "补足结果数据",
+      "clarifyAction": "写清你的动作",
+      "addScope": "补充影响范围",
+      "addSummary": "补一段概述"
+    },
+    "toasts": {
+      "appliedTitle": "答案已应用",
+      "appliedDescription": "已记录 {count} 处简历更新。",
+      "appliedNoChanges": "没有需要写回的改动。",
+      "failedTitle": "答案暂时无法应用",
+      "tryAgain": "请稍后再试。"
+    }
+  },
+  "variants": {
+    "intro": {
+      "eyebrow": "定制版本",
+      "title": "用同一套事实，讲出更贴合岗位的版本",
+      "description": "定制版本会根据具体岗位重排重点。先基于当前工作台生成，再对照基础简历检查变化是否合理。",
+      "badge": "已保存 {count} 个版本"
+    },
+    "list": {
+      "title": "已保存的版本",
+      "description": "打开任意一个已保存版本，都可以和基础简历做对照。",
+      "emptyTitle": "还没有创建任何版本",
+      "emptyDescription": "等基础简历的信息量足够后，可以用左侧面板先生成一个更有针对性的版本。"
+    },
+    "builder": {
+      "badge": "版本生成器",
+      "title": "创建岗位定制叙事",
+      "description": "把职位描述贴进来，系统会据此调整重点、筛出更相关的论据，并生成更贴岗的版本。",
+      "nameLabel": "版本名称",
+      "roleLabel": "目标岗位",
+      "jdLabel": "职位描述",
+      "namePlaceholder": "pm-growth",
+      "rolePlaceholder": "产品经理",
+      "jdPlaceholder": "把职位描述粘贴到这里...",
+      "roleFitTitle": "岗位匹配",
+      "roleFitDescription": "先明确哪些经历应该放到最前面。",
+      "keywordSignalTitle": "岗位关键词",
+      "keywordSignalDescription": "把基础简历与岗位语言做一轮对应整理。",
+      "factsTitle": "稳定事实",
+      "factsDescription": "调整表达侧重点，但不改动底层事实。",
+      "button": "创建版本",
+      "createdMessage": "已创建版本 {name}",
+      "createdToastTitle": "版本已创建",
+      "createdToastDescription": "{name} 已可进入查看。",
+      "failed": "暂时无法创建版本。",
+      "failedToastTitle": "创建版本失败"
+    },
+    "detail": {
+      "eyebrow": "版本详情",
+      "description": "先看这个版本相对基础简历调整了什么，再决定是否继续打磨或导出。",
+      "badge": "对照视图"
+    },
+    "compare": {
+      "summaryBadge": "版本概览",
+      "customizationsBadge": "{count} 处调整",
+      "baseResume": "基础简历",
+      "adjustments": "版本调整"
+    }
+  },
+  "render": {
+    "intro": {
+      "eyebrow": "导出",
+      "title": "预览、微调并导出最终文档",
+      "description": "切换模板、检查文档表面，再直接导出 PDF，不需要离开工作台。",
+      "badge": "输出工作室"
+    },
+    "workspace": {
+      "outputMindsetTitle": "导出思路",
+      "outputMindsetDescription": "模板层负责打磨呈现，而不是补救事实缺失。",
+      "outputMindsetBody": "只有当基础简历和岗位版本本身已经足够干净时，导出区才会像最后一道精修，而不是返工现场。",
+      "previewCanvasTitle": "预览画布",
+      "previewCanvasDescription": "导出前先检查当前文档表面效果。"
+    },
+    "templateSelector": {
+      "badge": "模板控制",
+      "title": "切换文档呈现方式",
+      "description": "先在预览里比较模板，再在布局满意后导出 PDF。",
+      "atsTitle": "ATS 极简版",
+      "atsDescription": "适合层级直接、对 ATS 更友好的简洁排版。",
+      "modernTitle": "现代清爽版",
+      "modernDescription": "适合更平和、更有质感一点的文档表面。",
+      "updateButton": "更新预览",
+      "updatingButton": "更新中",
+      "exportButton": "导出 PDF",
+      "exportingButton": "导出中",
+      "renderNotesTitle": "导出提示",
+      "renderNotesBody": "先把版本内容整理准确，再用导出区微调呈现，而不是在最后一步重写内容。",
+      "previewUpdatedMessage": "预览已更新。",
+      "previewUpdatedToastTitle": "预览已更新",
+      "previewUpdatedToastDescription": "当前已切换到模板 {template}。",
+      "previewFailed": "暂时无法生成预览。",
+      "previewFailedToastTitle": "预览失败",
+      "exportedMessage": "PDF 已导出到 {path}",
+      "exportedToastTitle": "PDF 已导出",
+      "exportFailed": "暂时无法导出 PDF。",
+      "exportFailedToastTitle": "导出失败"
+    },
+    "pdfPreview": {
+      "title": "文档预览",
+      "description": "这里显示的实时 HTML 预览，会和当前导出流程保持一致。",
+      "iframeTitle": "简历预览"
+    }
+  },
+  "notFound": {
+    "title": "没有找到这个工作台页面",
+    "description": "可能是路径已变更，或对应的简历条目已经不存在。"
+  }
+}

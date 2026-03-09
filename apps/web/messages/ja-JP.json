@@ -1,0 +1,355 @@
+{
+  "common": {
+    "appName": "Claimit",
+    "baseResume": "ベース履歴書",
+    "backToDashboard": "ダッシュボードへ戻る",
+    "edit": "編集",
+    "present": "現在",
+    "dateUnavailable": "日付未設定",
+    "noTargetRole": "対象職種はまだ設定されていません。",
+    "noToolsAttached": "ツールはまだ紐づいていません",
+    "experience": "職務経歴",
+    "skills": "スキル",
+    "timeline": "期間",
+    "tools": "使用ツール"
+  },
+  "language": {
+    "label": "言語"
+  },
+  "theme": {
+    "switchToLight": "ライトモードに切り替える",
+    "switchToDark": "ダークモードに切り替える"
+  },
+  "nav": {
+    "dashboard": "ダッシュボード",
+    "import": "取り込み",
+    "memory": "実績ライブラリ",
+    "assistant": "改善アシスタント",
+    "variants": "職種別バージョン",
+    "render": "書き出し",
+    "workspaceTitle": "履歴書ワークスペース",
+    "workspaceBadge": "構造化ライティング環境"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "ワークスペース",
+      "title": "履歴書を一度きりのファイルではなく、育て続ける仕組みにする",
+      "description": "実績を蓄積し、弱い箇所を整えながら、どのバージョンも確かな事実に根ざした状態で保てます。",
+      "badge": "編集ワークスペース"
+    },
+    "hero": {
+      "badgePrimary": "編集ガイド",
+      "badgeSecondary": "構造化された事実の土台",
+      "title": "Claimit は、履歴書の根拠を整理し、職種ごとに調整しやすい状態へ整えます。",
+      "description": "取り込みから実績整理、改善提案、職種別バージョン、最終書き出しまで、各表現の裏付けとなる事実を失いません。",
+      "importAction": "履歴書を取り込む",
+      "assistantAction": "アシスタントを実行"
+    },
+    "workflow": {
+      "import": {
+        "label": "取り込み",
+        "description": "既存の履歴書ファイルを、編集しやすい構造化データに変換します。"
+      },
+      "memory": {
+        "label": "実績ライブラリ",
+        "description": "実績、重要なシグナル、裏付け情報をひとつにまとめます。"
+      },
+      "assistant": {
+        "label": "改善アシスタント",
+        "description": "提出前に、成果・影響範囲・伝わりやすさの弱点を見つけます。"
+      },
+      "variants": {
+        "label": "職種別バージョン",
+        "description": "同じ事実をもとに、職種ごとの語り方へ整えます。"
+      },
+      "render": {
+        "label": "書き出し",
+        "description": "レイアウトを確認し、最終ファイルを素早く出力します。"
+      }
+    },
+    "stats": {
+      "experience": "職務経歴",
+      "achievements": "実績",
+      "claims": "主張",
+      "variants": "バージョン"
+    },
+    "health": {
+      "title": "整備状況",
+      "suffix": "/ 100",
+      "status": "良好"
+    },
+    "currentBaseResume": {
+      "title": "現在のベース履歴書",
+      "empty": "職務経歴はまだ取り込まれていません。",
+      "filled": "{count} 件の職務経歴がワークスペースに紐づいています。"
+    },
+    "recommendedNextStep": {
+      "title": "次に進めること",
+      "emptyHeadline": "まずは実績を整理する",
+      "filledHeadline": "職種別バージョンを作る",
+      "emptyDescription": "ばらついた経歴を、あとで再利用できる実績素材へ整えましょう。",
+      "filledDescription": "現在のライブラリをもとに、狙う職種に合わせた語りへまとめましょう。"
+    },
+    "quickAccess": {
+      "title": "クイックアクセス",
+      "library": "実績ライブラリを開く",
+      "variants": "職種別バージョンを作る",
+      "render": "最終出力を確認する"
+    },
+    "operationalLoop": {
+      "title": "運用フロー",
+      "headline": "履歴書の編集工程を、無理なく回せる仕組みに整える",
+      "badge": "いつでも書き出し可能",
+      "memoryTitle": "実績ライブラリ",
+      "memoryDescription": "実績は一度整理すれば、別バージョンや主張、書き出しでも繰り返し使えます。",
+      "assistantTitle": "改善提案",
+      "assistantDescription": "バージョンを出す前に、数値・影響範囲・伝わりやすさの不足を洗い出します。",
+      "variantsTitle": "職種別バージョン",
+      "variantsDescription": "職種が変わっても、事実の核はそのままに語り方だけを整えられます。",
+      "renderTitle": "書き出し工程",
+      "renderDescription": "構造化データから、ATS にも配慮した整った最終文書へ滑らかにつなげます。"
+    },
+    "snapshot": {
+      "title": "ワークスペースの状況",
+      "headline": "今どこまで整っているか",
+      "baseSummaryTitle": "ベース要約",
+      "baseSummaryEmpty": "要約はまだありません。まずはアシスタントで軸を整えるのがおすすめです。",
+      "variantCoverageTitle": "バージョンの整備状況",
+      "variantCoverageEmpty": "職種別バージョンはまだありません。ベース履歴書が整ったら、まず 1 つ作ってみましょう。",
+      "variantCoverageFilled": "{count} 件の職種別バージョンが保存されており、さらに磨き込めます。"
+    }
+  },
+  "importPage": {
+    "intro": {
+      "eyebrow": "取り込み",
+      "title": "既存の履歴書をワークスペースに取り込む",
+      "description": "PDF、DOCX、JSON、プレーンテキストに対応しています。Claimit がまずベースとなる整ったデータへまとめます。",
+      "badge": "取り込みフロー"
+    },
+    "dropzone": {
+      "title": "履歴書をワークスペースにドロップ",
+      "description": "Claimit がファイルを解析し、ベース構造を初期化したうえで、ライブラリ、改善提案、職種別バージョン、書き出しに接続します。",
+      "chooseFile": "ファイルを選ぶ",
+      "dragSupported": "ドラッグ＆ドロップ対応",
+      "importing": "取り込み中...",
+      "structuredParsingTitle": "構造化解析",
+      "structuredParsingDescription": "古い履歴書を、継続的に整えられる JSON に変換します。",
+      "reusableFactsTitle": "再利用できる根拠",
+      "reusableFactsDescription": "あとから実績、主張、バージョン作成にそのまま使えます。",
+      "readyToRefineTitle": "次の工程へすぐ進める",
+      "readyToRefineDescription": "取り込み後、そのまま改善提案や書き出しに移れます。",
+      "imported": "履歴書を取り込みました",
+      "importFailed": "取り込みに失敗しました",
+      "completed": "取り込みが完了しました。",
+      "completedWithWarnings": "取り込みは完了しましたが、注意事項があります: {warnings}",
+      "failed": "ファイルを取り込めませんでした。"
+    }
+  },
+  "memoryPage": {
+    "intro": {
+      "eyebrow": "実績ライブラリ",
+      "title": "断片的な経験を、再利用できる実績素材へ整える",
+      "description": "ここでは、経験を後工程でも使い回せる素材へ整えていきます。ここがきれいだと、改善提案も職種別バージョンも最終履歴書も安定します。",
+      "badge": "{count} 件の素材"
+    },
+    "empty": {
+      "title": "実績ライブラリはまだ空です",
+      "description": "まずは 1 件追加するか、既存の履歴書を取り込んでください。素材が増えるほど、Claimit の提案もバージョン作成も精度が上がります。"
+    },
+    "detail": {
+      "eyebrow": "素材の詳細",
+      "description": "表現を整え、タグ付けを見直し、あとでバージョンや最終主張にそのまま使える状態へ磨きます。",
+      "badge": "ライブラリ項目を編集"
+    },
+    "form": {
+      "badgeAdd": "素材を追加",
+      "badgeEdit": "素材を編集",
+      "titleAdd": "再利用できる実績を記録する",
+      "titleEdit": "この実績を磨き込む",
+      "description": "価値の高い事実を先に整えておくと、あとでアシスタントやバージョン、書き出しでそのまま活かせます。",
+      "titleLabel": "タイトル",
+      "summaryLabel": "要約",
+      "tagsLabel": "タグ",
+      "toolsLabel": "ツール",
+      "titlePlaceholder": "グロース施策の実験基盤を立ち上げた",
+      "summaryPlaceholder": "何を達成し、なぜ意味があったのかを説明してください。",
+      "tagsPlaceholder": "グロース, プロダクト, 分析",
+      "toolsPlaceholder": "SQL, Amplitude, Figma",
+      "tipTitle": "再利用を前提に書く",
+      "tipDescription": "アクション、成果、使ったツールまで入れておくと、後で職種別バージョンを作るときに活きてきます。",
+      "suggestedTags": "おすすめタグ",
+      "suggestedTagsValue": "成果, グロース, プロダクト, プラットフォーム, オペレーション, AI",
+      "buttonAdd": "素材を追加",
+      "buttonUpdate": "素材を更新",
+      "saved": "保存しました。",
+      "addedToastTitle": "素材を追加しました",
+      "updatedToastTitle": "素材を更新しました",
+      "updatedToastDescription": "実績ライブラリを更新しました。",
+      "unableToSave": "この素材はまだ保存できませんでした。",
+      "unableToSaveToastTitle": "保存できませんでした",
+      "tryAgain": "時間をおいてもう一度お試しください。"
+    },
+    "card": {
+      "edit": "編集",
+      "timeline": "期間",
+      "tools": "使用ツール"
+    },
+    "preview": {
+      "eyebrow": "履歴書プレビュー",
+      "badge": "ベース履歴書",
+      "experience": "職務経歴",
+      "skills": "スキル"
+    },
+    "experienceSection": {
+      "emptyTitle": "職務経歴はまだありません",
+      "emptyDescription": "履歴書を取り込むか、実績を追加すると、構造化された経歴タイムラインに内容が反映されます。"
+    },
+    "skillsSection": {
+      "emptyTitle": "スキル情報はまだありません",
+      "emptyDescription": "スキルは取り込み後、またはカテゴリ別に整理されたあとで、職種別バージョンや書き出しにより活きてきます。"
+    }
+  },
+  "assistant": {
+    "intro": {
+      "eyebrow": "改善アシスタント",
+      "title": "弱いところを先に見つけて整える",
+      "description": "現在の履歴書を見直し、成果、影響範囲、伝わりやすさが不足している箇所を洗い出しながら、事実を崩さずに語りを強くしていきます。",
+      "badge": "{count} 件の質問"
+    },
+    "panel": {
+      "badgePrimary": "ギャップ診断",
+      "badgeSecondary": "{count} 件の質問",
+      "completeness": "履歴書の整備度",
+      "analysisTitle": "診断内容",
+      "analysisDescription": "現在の履歴書を見て、成果、影響範囲、説明の明瞭さが不足している箇所を示します。",
+      "questionSetTitle": "重点質問",
+      "questionSetDescription": "最初から全部を書き直すのではなく、効果の高い問いから順に埋めていきましょう。",
+      "applyChangesTitle": "内容を反映",
+      "applyChangesDescription": "回答がそろったら、改善後の表現や数値をワークスペースへ反映できます。",
+      "readyMessage": "下の質問に答えてから、構造化された履歴書へ反映してください。",
+      "emptyMessage": "まずは履歴書の内容を取り込むか追加してください。アシスタントが分析できる材料が必要です。",
+      "applyButton": "回答を反映",
+      "applyingButton": "反映中...",
+      "warningsTitle": "注意事項"
+    },
+    "questionCard": {
+      "skip": "スキップ",
+      "examples": "例",
+      "placeholder": "ここに回答を入力..."
+    },
+    "changeLog": {
+      "title": "反映済みの変更",
+      "emptyTitle": "まだ変更は反映されていません",
+      "emptyDescription": "いくつか質問に答えて反映すると、ここに改善ログが表示されます。"
+    },
+    "goals": {
+      "quantifyImpact": "成果を数値で補う",
+      "clarifyAction": "自分の動きを明確にする",
+      "addScope": "影響範囲を補う",
+      "addSummary": "要約を追加する"
+    },
+    "toasts": {
+      "appliedTitle": "回答を反映しました",
+      "appliedDescription": "{count} 件の更新を記録しました。",
+      "appliedNoChanges": "反映すべき変更はありませんでした。",
+      "failedTitle": "回答を反映できませんでした",
+      "tryAgain": "時間をおいてもう一度お試しください。"
+    }
+  },
+  "variants": {
+    "intro": {
+      "eyebrow": "職種別バージョン",
+      "title": "同じ事実を、狙う職種に合わせた語りへ整える",
+      "description": "職種別バージョンでは、応募先に合わせて見せ方を調整できます。現在のワークスペースから作成し、ベース履歴書との差分を確認してから書き出します。",
+      "badge": "{count} 件の保存済みバージョン"
+    },
+    "list": {
+      "title": "保存済みバージョン",
+      "description": "保存してあるバージョンは、いつでもベース履歴書と見比べられます。",
+      "emptyTitle": "まだバージョンは作成されていません",
+      "emptyDescription": "ベース履歴書の情報が十分そろったら、左側のパネルから狙いに合うバージョンを作成できます。"
+    },
+    "builder": {
+      "badge": "バージョン作成",
+      "title": "職種別の語りをつくる",
+      "description": "求人票をもとに、強調すべき経験を並べ替え、関連する主張を拾い出し、より刺さるバージョンへ整えます。",
+      "nameLabel": "バージョン名",
+      "roleLabel": "対象職種",
+      "jdLabel": "求人内容",
+      "namePlaceholder": "pm-growth",
+      "rolePlaceholder": "プロダクトマネージャー",
+      "jdPlaceholder": "求人票をここに貼り付けてください...",
+      "roleFitTitle": "職種との相性",
+      "roleFitDescription": "どの経験を前面に出すべきかをはっきりさせます。",
+      "keywordSignalTitle": "求人キーワード",
+      "keywordSignalDescription": "ベース履歴書と求人票の言葉を照らし合わせます。",
+      "factsTitle": "変わらない事実",
+      "factsDescription": "土台の事実は変えず、見せ方だけを調整します。",
+      "button": "バージョンを作成",
+      "createdMessage": "バージョン {name} を作成しました",
+      "createdToastTitle": "バージョンを作成しました",
+      "createdToastDescription": "{name} を確認できる状態になりました。",
+      "failed": "バージョンを作成できませんでした。",
+      "failedToastTitle": "バージョン作成に失敗しました"
+    },
+    "detail": {
+      "eyebrow": "バージョン詳細",
+      "description": "このバージョンがベース履歴書に対して何を強調し直しているかを確認してから、さらに磨くか書き出すかを判断できます。",
+      "badge": "比較ビュー"
+    },
+    "compare": {
+      "summaryBadge": "バージョン概要",
+      "customizationsBadge": "{count} 件の調整",
+      "baseResume": "ベース履歴書",
+      "adjustments": "調整内容"
+    }
+  },
+  "render": {
+    "intro": {
+      "eyebrow": "書き出し",
+      "title": "プレビューして整え、最終文書を書き出す",
+      "description": "テンプレートを切り替えながら表面を確認し、そのまま PDF を出力できます。",
+      "badge": "出力スタジオ"
+    },
+    "workspace": {
+      "outputMindsetTitle": "書き出しの考え方",
+      "outputMindsetDescription": "テンプレート層は見せ方を整える場所であり、事実不足を補修する場所ではありません。",
+      "outputMindsetBody": "ベース履歴書と職種別バージョンがきれいに整っていれば、書き出しは最後の仕上げとして機能します。",
+      "previewCanvasTitle": "プレビュー面",
+      "previewCanvasDescription": "書き出す前に、現在の文書表面を確認します。"
+    },
+    "templateSelector": {
+      "badge": "テンプレート設定",
+      "title": "文書の見せ方を切り替える",
+      "description": "まずはプレビューで比較し、レイアウトに納得してから PDF を書き出しましょう。",
+      "atsTitle": "ATS Minimal",
+      "atsDescription": "階層が素直で、ATS を意識したすっきりした体裁に向いています。",
+      "modernTitle": "Modern Clean",
+      "modernDescription": "少しやわらかさのある、落ち着いた文書面に向いています。",
+      "updateButton": "プレビューを更新",
+      "updatingButton": "更新中",
+      "exportButton": "PDF を書き出す",
+      "exportingButton": "書き出し中",
+      "renderNotesTitle": "書き出しメモ",
+      "renderNotesBody": "内容は先に整え、そのうえで最後に見せ方を調整するのが理想です。",
+      "previewUpdatedMessage": "プレビューを更新しました。",
+      "previewUpdatedToastTitle": "プレビューを更新しました",
+      "previewUpdatedToastDescription": "テンプレート {template} を反映しました。",
+      "previewFailed": "プレビューを生成できませんでした。",
+      "previewFailedToastTitle": "プレビュー生成に失敗しました",
+      "exportedMessage": "PDF を {path} に書き出しました",
+      "exportedToastTitle": "PDF を書き出しました",
+      "exportFailed": "PDF を書き出せませんでした。",
+      "exportFailedToastTitle": "書き出しに失敗しました"
+    },
+    "pdfPreview": {
+      "title": "文書プレビュー",
+      "description": "ここに表示される HTML は、現在の書き出し結果をそのまま反映しています。",
+      "iframeTitle": "履歴書プレビュー"
+    }
+  },
+  "notFound": {
+    "title": "このワークスペース画面は見つかりませんでした",
+    "description": "ルートが変わったか、対象の履歴書項目がすでに存在しない可能性があります。"
+  }
+}

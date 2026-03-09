@@ -7,6 +7,7 @@ import { AlertTriangle, ArrowRight, BrainCircuit, CircleCheckBig, ListChecks, Sp
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { useTranslations } from "../layout/locale-provider";
 import { useAssistantStore } from "../../lib/assistant-store";
 import { apiFetch } from "../../lib/utils";
 import { Badge } from "../ui/badge";
@@ -26,6 +27,7 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
   const reset = useAssistantStore((state) => state.reset);
   const [changeLog, setChangeLog] = useState<ApplyChangeLog[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
+  const t = useTranslations();
   const canApplyAnswers = hasResumeContent && result.questions.length > 0;
 
   const mutation = useMutation({
@@ -39,13 +41,16 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
       setChangeLog(data.change_log);
       setWarnings(data.warnings);
       reset();
-      toast.success("Answers applied", {
-        description: data.change_log.length > 0 ? `${data.change_log.length} resume updates were recorded.` : "No changes were necessary.",
+      toast.success(t("assistant.toasts.appliedTitle"), {
+        description:
+          data.change_log.length > 0
+            ? t("assistant.toasts.appliedDescription", { count: data.change_log.length })
+            : t("assistant.toasts.appliedNoChanges"),
       });
     },
     onError: (error) => {
-      toast.error("Could not apply answers", {
-        description: error instanceof Error ? error.message : "Please try again.",
+      toast.error(t("assistant.toasts.failedTitle"), {
+        description: error instanceof Error ? error.message : t("assistant.toasts.tryAgain"),
       });
     },
   });
@@ -56,64 +61,62 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
         <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <Badge variant="accent">Gap analysis</Badge>
-              <Badge>{result.questions.length} prompts</Badge>
+              <Badge variant="accent">{t("assistant.panel.badgePrimary")}</Badge>
+              <Badge>{t("assistant.panel.badgeSecondary", { count: result.questions.length })}</Badge>
             </div>
             <div className="mt-4 flex flex-wrap items-end gap-3">
-              <h2 className="text-5xl font-semibold text-slate-950 dark:text-white">
-              {hasResumeContent ? `${result.completeness_score}%` : "--"}
-              </h2>
-              <p className="pb-2 text-sm text-slate-500 dark:text-slate-400">resume completeness</p>
+              <h2 className="text-5xl font-semibold text-[color:var(--text-primary)]">{hasResumeContent ? `${result.completeness_score}%` : "--"}</h2>
+              <p className="pb-2 text-sm text-[color:var(--text-secondary)]">{t("assistant.panel.completeness")}</p>
             </div>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">{result.summary}</p>
-            <div className="mt-6 h-3 overflow-hidden rounded-full bg-slate-100 dark:bg-white/[0.06]">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--text-secondary)]">{result.summary}</p>
+            <div className="mt-6 h-3 overflow-hidden rounded-full bg-[rgba(116,133,154,0.12)]">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: hasResumeContent ? `${result.completeness_score}%` : "12%" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="h-full rounded-full bg-[linear-gradient(90deg,rgba(45,212,191,0.95),rgba(139,92,246,0.95))]"
+                className="h-full rounded-full bg-[linear-gradient(90deg,var(--success),var(--accent))]"
               />
             </div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-            <div className="rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.05]">
-              <div className="flex items-center gap-3 text-slate-800 dark:text-slate-100">
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+              <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <BrainCircuit className="size-4" />
-                <span className="text-sm font-medium">Analysis</span>
+                <span className="text-sm font-medium">{t("assistant.panel.analysisTitle")}</span>
               </div>
-              <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">Scores the current resume and highlights areas missing impact, scope, or clarity.</p>
+              <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">{t("assistant.panel.analysisDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.05]">
-              <div className="flex items-center gap-3 text-slate-800 dark:text-slate-100">
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+              <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <ListChecks className="size-4" />
-                <span className="text-sm font-medium">Question set</span>
+                <span className="text-sm font-medium">{t("assistant.panel.questionSetTitle")}</span>
               </div>
-              <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">Focus on the highest-value prompts first rather than rewriting everything at once.</p>
+              <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">{t("assistant.panel.questionSetDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.05]">
-              <div className="flex items-center gap-3 text-slate-800 dark:text-slate-100">
+            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+              <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <CircleCheckBig className="size-4" />
-                <span className="text-sm font-medium">Apply changes</span>
+                <span className="text-sm font-medium">{t("assistant.panel.applyChangesTitle")}</span>
               </div>
-              <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">Persist improved wording and metrics back into the workspace once the answers are ready.</p>
+              <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">{t("assistant.panel.applyChangesDescription")}</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
           <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-2xl bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-200">
+            <div className="flex size-10 items-center justify-center rounded-2xl bg-[rgba(138,104,70,0.12)] text-[color:var(--accent)]">
               <Sparkles className="size-4" />
             </div>
-            <p className="text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-sm text-[color:var(--text-secondary)]">
               {canApplyAnswers
-                ? "Answer the questions below, then apply them to update the structured resume."
-                : "Import or add resume content first so the assistant has material to analyze."}
+                ? t("assistant.panel.readyMessage")
+                : t("assistant.panel.emptyMessage")}
             </p>
           </div>
           <Button onClick={() => mutation.mutate()} disabled={mutation.isPending || !canApplyAnswers}>
-            {mutation.isPending ? "Applying..." : "Apply answers"}
+            {mutation.isPending ? t("assistant.panel.applyingButton") : t("assistant.panel.applyButton")}
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -136,14 +139,14 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
       {warnings.length > 0 ? (
         <Card variant="glass" padding="default">
           <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-2xl bg-amber-500/12 text-amber-200">
+            <div className="flex size-10 items-center justify-center rounded-2xl bg-[rgba(164,118,61,0.14)] text-[color:var(--warning)]">
               <AlertTriangle className="size-4" />
             </div>
-            <h3 className="text-lg font-semibold text-slate-950 dark:text-white">Warnings</h3>
+            <h3 className="text-lg font-semibold text-[color:var(--text-primary)]">{t("assistant.panel.warningsTitle")}</h3>
           </div>
-          <ul className="mt-4 space-y-2 text-sm text-amber-700 dark:text-amber-100">
+          <ul className="mt-4 space-y-2 text-sm text-[color:var(--warning)]">
             {warnings.map((warning) => (
-              <li key={warning} className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 dark:border-amber-400/15 dark:bg-amber-500/10">
+              <li key={warning} className="rounded-2xl border border-[rgba(164,118,61,0.22)] bg-[rgba(164,118,61,0.08)] px-4 py-3">
                 {warning}
               </li>
             ))}

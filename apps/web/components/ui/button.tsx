@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 disabled:pointer-events-none disabled:opacity-50",
+  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)] disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-[linear-gradient(135deg,rgba(139,92,246,0.95),rgba(59,130,246,0.95))] text-white shadow-[0_18px_50px_-18px_rgba(79,70,229,0.7)] hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-18px_rgba(79,70,229,0.8)]",
+          "bg-[linear-gradient(145deg,var(--accent-strong),var(--accent))] text-[color:var(--accent-contrast)] shadow-[0_18px_42px_-20px_rgba(112,82,56,0.55)] hover:-translate-y-0.5 hover:shadow-[0_22px_52px_-20px_rgba(112,82,56,0.58)]",
         secondary:
-          "border border-slate-200 bg-white text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:hover:border-white/20 dark:hover:bg-white/[0.1]",
+          "border border-[color:var(--border)] bg-[color:var(--surface-elevated)] text-[color:var(--text-primary)] shadow-[0_10px_26px_-22px_var(--shadow-color)] hover:border-[color:var(--field-border)] hover:bg-[color:var(--surface)]",
         ghost:
-          "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/[0.06] dark:hover:text-white",
+          "bg-transparent text-[color:var(--text-secondary)] hover:bg-[color:var(--surface)] hover:text-[color:var(--text-primary)]",
         subtle:
-          "border border-slate-200/80 bg-white/90 text-slate-700 shadow-sm backdrop-blur hover:border-slate-300 hover:bg-white hover:text-slate-900 dark:border-white/10 dark:bg-white/[0.08] dark:text-slate-200 dark:hover:border-white/20 dark:hover:bg-white/[0.12] dark:hover:text-white",
+          "border border-[color:var(--border)] bg-[color:var(--surface-overlay)] text-[color:var(--text-primary)] shadow-[0_10px_26px_-22px_var(--shadow-color)] backdrop-blur hover:border-[color:var(--field-border)] hover:bg-[color:var(--surface-elevated)]",
       },
       size: {
         default: "h-11 px-5",

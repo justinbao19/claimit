@@ -1,16 +1,21 @@
+"use client";
+
 import type { SkillCategory } from "@claimit/core";
 import { BrainCircuit } from "lucide-react";
 
+import { useTranslations } from "../layout/locale-provider";
 import { EmptyState } from "../ui/empty-state";
 import { Badge } from "../ui/badge";
 
 export function SkillsSection({ skills }: { skills: SkillCategory[] }) {
+  const t = useTranslations();
+
   if (skills.length === 0) {
     return (
       <EmptyState
         icon={BrainCircuit}
-        title="No skills listed yet"
-        description="Skills become more useful once imported or grouped by category for variants and final rendering."
+        title={t("memoryPage.skillsSection.emptyTitle")}
+        description={t("memoryPage.skillsSection.emptyDescription")}
       />
     );
   }
@@ -18,8 +23,8 @@ export function SkillsSection({ skills }: { skills: SkillCategory[] }) {
   return (
     <div className="space-y-3">
       {skills.map((skill) => (
-        <div key={skill.category} className="rounded-[24px] border border-slate-200 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.04]">
-          <p className="text-sm font-medium text-slate-950 dark:text-white">{skill.category}</p>
+        <div key={skill.category} className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+          <p className="text-sm font-medium text-[color:var(--text-primary)]">{skill.category}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {skill.items.map((item) => (
               <Badge key={`${skill.category}-${item}`} variant="default">

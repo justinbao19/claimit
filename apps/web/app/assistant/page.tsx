@@ -3,6 +3,7 @@ import { Bot } from "lucide-react";
 
 import { PageIntro } from "../../components/layout/page-intro";
 import { GapAnalysisPanel } from "../../components/assistant/GapAnalysisPanel";
+import { getServerI18n } from "../../lib/i18n";
 
 function hasResumeContent(resume: Awaited<ReturnType<typeof loadBaseResume>>) {
   return Boolean(
@@ -20,16 +21,17 @@ export default async function AssistantPage() {
   await initVault();
   const resume = await loadBaseResume();
   const result = await gapAnalysis(resume, { maxQuestions: 7 });
+  const { t } = await getServerI18n();
   const resumeHasContent = hasResumeContent(resume);
 
   return (
     <div className="space-y-6">
       <PageIntro
-        eyebrow="Assistant"
-        title="Let the AI editor expose the weak spots"
-        description="The assistant reviews the current resume, spots gaps in impact, scope, and clarity, then helps you tighten the story without changing the underlying facts."
+        eyebrow={t("assistant.intro.eyebrow")}
+        title={t("assistant.intro.title")}
+        description={t("assistant.intro.description")}
         icon={Bot}
-        badge={`${result.questions.length} prompts`}
+        badge={t("assistant.intro.badge", { count: result.questions.length })}
       />
       <GapAnalysisPanel result={result} hasResumeContent={resumeHasContent} />
     </div>

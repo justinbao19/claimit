@@ -1,17 +1,20 @@
-import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
 
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
 
-export function formatDateRangeLabel(range?: { start?: string; end?: string; ongoing?: boolean }): string {
+export function formatDateRangeLabel(
+  range?: { start?: string; end?: string; ongoing?: boolean },
+  labels: { present: string; unavailable: string } = { present: "Present", unavailable: "Date unavailable" },
+): string {
   if (!range?.start) {
-    return "Date unavailable";
+    return labels.unavailable;
   }
 
   if (range.ongoing) {
-    return `${range.start} - Present`;
+    return `${range.start} - ${labels.present}`;
   }
 
   return range.end ? `${range.start} - ${range.end}` : range.start;
@@ -29,8 +32,8 @@ export function getInitials(value?: string): string {
     .join("");
 }
 
-export function formatCount(value: number): string {
-  return new Intl.NumberFormat("en-US").format(value);
+export function formatCount(value: number, locale = "en-US"): string {
+  return new Intl.NumberFormat(locale).format(value);
 }
 
 export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {

@@ -1,0 +1,355 @@
+{
+  "common": {
+    "appName": "Claimit",
+    "baseResume": "Base resume",
+    "backToDashboard": "Back to dashboard",
+    "edit": "Edit",
+    "present": "Present",
+    "dateUnavailable": "Date unavailable",
+    "noTargetRole": "No target role supplied yet.",
+    "noToolsAttached": "No tools attached yet",
+    "experience": "Experience",
+    "skills": "Skills",
+    "timeline": "Timeline",
+    "tools": "Tools"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "import": "Import",
+    "memory": "Library",
+    "assistant": "Assistant",
+    "variants": "Variants",
+    "render": "Export",
+    "workspaceTitle": "Resume workspace",
+    "workspaceBadge": "Structured writing system"
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Workspace",
+      "title": "Build a living resume system, not a one-off file",
+      "description": "Capture achievements, tighten weak spots, and keep every version anchored to a clean factual core.",
+      "badge": "Editorial workspace"
+    },
+    "hero": {
+      "badgePrimary": "Guided editing",
+      "badgeSecondary": "Structured source of truth",
+      "title": "Claimit keeps your evidence organized, adaptable, and ready to ship.",
+      "description": "Move from import to library, assistant, tailored versions, and final export without losing the reasoning behind each line.",
+      "importAction": "Import resume",
+      "assistantAction": "Run assistant"
+    },
+    "workflow": {
+      "import": {
+        "label": "Import",
+        "description": "Turn existing resume files into structured source material."
+      },
+      "memory": {
+        "label": "Library",
+        "description": "Store achievements, signals, and supporting details in one place."
+      },
+      "assistant": {
+        "label": "Assistant",
+        "description": "Spot gaps in impact, scope, and clarity before they ship."
+      },
+      "variants": {
+        "label": "Variants",
+        "description": "Shape the same facts into role-specific narratives."
+      },
+      "render": {
+        "label": "Export",
+        "description": "Preview polished layouts and produce final output quickly."
+      }
+    },
+    "stats": {
+      "experience": "Experience",
+      "achievements": "Achievements",
+      "claims": "Claims",
+      "variants": "Variants"
+    },
+    "health": {
+      "title": "Workspace readiness",
+      "suffix": "/ 100",
+      "status": "Healthy editing flow"
+    },
+    "currentBaseResume": {
+      "title": "Current base resume",
+      "empty": "No experience entries imported yet.",
+      "filled": "{count} experience entries are connected to the workspace."
+    },
+    "recommendedNextStep": {
+      "title": "Recommended next step",
+      "emptyHeadline": "Start capturing achievements",
+      "filledHeadline": "Create a tailored version",
+      "emptyDescription": "Turn raw experience into structured evidence you can reuse later.",
+      "filledDescription": "Use the current library to shape a role-specific narrative."
+    },
+    "quickAccess": {
+      "title": "Quick access",
+      "library": "Open evidence library",
+      "variants": "Create tailored versions",
+      "render": "Preview final output"
+    },
+    "operationalLoop": {
+      "title": "Operational loop",
+      "headline": "Your resume workflow, kept deliberately organized",
+      "badge": "Always-ready output",
+      "memoryTitle": "Evidence library",
+      "memoryDescription": "Capture achievements once, then reuse them across versions, claims, and exports.",
+      "assistantTitle": "Assistant guidance",
+      "assistantDescription": "Surface missing metrics, scope, and narrative clarity before a version goes out.",
+      "variantsTitle": "Tailored versions",
+      "variantsDescription": "Reframe the same factual record for different roles without rewriting from scratch.",
+      "renderTitle": "Export pipeline",
+      "renderDescription": "Move from structured data to polished ATS-friendly output with less formatting friction."
+    },
+    "snapshot": {
+      "title": "Workspace snapshot",
+      "headline": "What is already in motion",
+      "baseSummaryTitle": "Base summary",
+      "baseSummaryEmpty": "No summary yet. Use the assistant to sharpen the narrative.",
+      "variantCoverageTitle": "Variant coverage",
+      "variantCoverageEmpty": "No tailored versions yet. Create one once the base resume is stable.",
+      "variantCoverageFilled": "{count} tailored versions are saved and ready for refinement."
+    }
+  },
+  "importPage": {
+    "intro": {
+      "eyebrow": "Import",
+      "title": "Bring an existing resume into the workspace",
+      "description": "Drop in a PDF, DOCX, JSON, or plain-text source and Claimit will turn it into a clean base file for the rest of the workflow.",
+      "badge": "Ingestion pipeline"
+    },
+    "dropzone": {
+      "title": "Drop your resume into the workspace",
+      "description": "Claimit parses the file, initializes the base structure, and makes it available for the library, assistant, versions, and export.",
+      "chooseFile": "Choose file",
+      "dragSupported": "Drag and drop supported",
+      "importing": "Importing...",
+      "structuredParsingTitle": "Structured parsing",
+      "structuredParsingDescription": "Turns a legacy resume into workspace-backed JSON.",
+      "reusableFactsTitle": "Reusable evidence",
+      "reusableFactsDescription": "Feeds achievements, claims, and variants downstream.",
+      "readyToRefineTitle": "Ready to refine",
+      "readyToRefineDescription": "Move straight into assistant and export workflows.",
+      "imported": "Resume imported",
+      "importFailed": "Import failed",
+      "completed": "Import completed successfully.",
+      "completedWithWarnings": "Imported with warnings: {warnings}",
+      "failed": "Failed to import file."
+    }
+  },
+  "memoryPage": {
+    "intro": {
+      "eyebrow": "Library",
+      "title": "Turn raw work into a reusable evidence library",
+      "description": "This is where accomplishments become durable building blocks. Capture them cleanly and reuse them across assistant suggestions, versions, and final resume lines.",
+      "badge": "{count} entries"
+    },
+    "empty": {
+      "title": "Your evidence library is empty",
+      "description": "Add one entry or import a resume first. Once the library has enough signal, Claimit can produce sharper suggestions and stronger versions."
+    },
+    "detail": {
+      "eyebrow": "Entry detail",
+      "description": "Tighten the wording, tag the entry more precisely, and keep the underlying fact strong enough to power versions and final claims.",
+      "badge": "Edit library item"
+    },
+    "form": {
+      "badgeAdd": "Add entry",
+      "badgeEdit": "Edit entry",
+      "titleAdd": "Capture a reusable achievement",
+      "titleEdit": "Refine this achievement",
+      "description": "Structure high-signal facts once so the assistant, versions, and export pipeline can reuse them later.",
+      "titleLabel": "Title",
+      "summaryLabel": "Summary",
+      "tagsLabel": "Tags",
+      "toolsLabel": "Tools",
+      "titlePlaceholder": "Launch growth experiment",
+      "summaryPlaceholder": "Describe the achievement and why it mattered.",
+      "tagsPlaceholder": "growth, product, analytics",
+      "toolsPlaceholder": "SQL, Amplitude, Figma",
+      "tipTitle": "Write for reuse",
+      "tipDescription": "Include the action, outcome, and tools so later versions have stronger raw material to work with.",
+      "suggestedTags": "Suggested tags",
+      "suggestedTagsValue": "impact, growth, product, platform, ops, ai",
+      "buttonAdd": "Add entry",
+      "buttonUpdate": "Update entry",
+      "saved": "Saved successfully.",
+      "addedToastTitle": "Entry added",
+      "updatedToastTitle": "Entry updated",
+      "updatedToastDescription": "The evidence library has been refreshed.",
+      "unableToSave": "Unable to save entry.",
+      "unableToSaveToastTitle": "Unable to save entry",
+      "tryAgain": "Please try again."
+    },
+    "card": {
+      "edit": "Edit",
+      "timeline": "Timeline",
+      "tools": "Tools"
+    },
+    "preview": {
+      "eyebrow": "Resume preview",
+      "badge": "Base resume",
+      "experience": "Experience",
+      "skills": "Skills"
+    },
+    "experienceSection": {
+      "emptyTitle": "No experience entries yet",
+      "emptyDescription": "Import a resume or add achievements so the structured timeline has something to render."
+    },
+    "skillsSection": {
+      "emptyTitle": "No skills listed yet",
+      "emptyDescription": "Skills become more useful once they are imported or grouped into categories for versions and export."
+    }
+  },
+  "assistant": {
+    "intro": {
+      "eyebrow": "Assistant",
+      "title": "Let the assistant expose the weak spots",
+      "description": "The assistant reviews the current resume, spots missing impact, scope, and clarity, then helps you strengthen the story without bending the facts.",
+      "badge": "{count} prompts"
+    },
+    "panel": {
+      "badgePrimary": "Gap analysis",
+      "badgeSecondary": "{count} prompts",
+      "completeness": "resume readiness",
+      "analysisTitle": "Analysis",
+      "analysisDescription": "Scores the current resume and highlights where impact, scope, or clarity are still thin.",
+      "questionSetTitle": "Question set",
+      "questionSetDescription": "Focus on the highest-value prompts first instead of rewriting everything at once.",
+      "applyChangesTitle": "Apply changes",
+      "applyChangesDescription": "Write improved wording and metrics back into the workspace once your answers are ready.",
+      "readyMessage": "Answer the questions below, then apply them to update the structured resume.",
+      "emptyMessage": "Import or add resume content first so the assistant has material to analyze.",
+      "applyButton": "Apply answers",
+      "applyingButton": "Applying...",
+      "warningsTitle": "Warnings"
+    },
+    "questionCard": {
+      "skip": "Skip",
+      "examples": "Examples",
+      "placeholder": "Your answer..."
+    },
+    "changeLog": {
+      "title": "Applied changes",
+      "emptyTitle": "No changes applied yet",
+      "emptyDescription": "Answer a few assistant prompts and apply them to see your improvement log here."
+    },
+    "goals": {
+      "quantifyImpact": "Quantify impact",
+      "clarifyAction": "Clarify action",
+      "addScope": "Add scope",
+      "addSummary": "Add summary"
+    },
+    "toasts": {
+      "appliedTitle": "Answers applied",
+      "appliedDescription": "{count} resume updates were recorded.",
+      "appliedNoChanges": "No changes were necessary.",
+      "failedTitle": "Could not apply answers",
+      "tryAgain": "Please try again."
+    }
+  },
+  "variants": {
+    "intro": {
+      "eyebrow": "Variants",
+      "title": "Shape the same facts into role-specific narratives",
+      "description": "Versions help you reposition your experience for a specific opportunity. Build one from the current workspace, then review the changes before export.",
+      "badge": "{count} saved versions"
+    },
+    "list": {
+      "title": "Saved versions",
+      "description": "Reopen any saved version to compare it against the base resume.",
+      "emptyTitle": "No versions created yet",
+      "emptyDescription": "Once the base resume has enough signal, use the panel on the left to generate a more targeted version."
+    },
+    "builder": {
+      "badge": "Version builder",
+      "title": "Create a role-specific narrative",
+      "description": "Use a job description to reorder emphasis, surface the right claims, and prepare a more targeted version.",
+      "nameLabel": "Version name",
+      "roleLabel": "Target role",
+      "jdLabel": "Job description",
+      "namePlaceholder": "pm-growth",
+      "rolePlaceholder": "Product Manager",
+      "jdPlaceholder": "Paste the job description here...",
+      "roleFitTitle": "Role fit",
+      "roleFitDescription": "Clarify which experience should lead the story.",
+      "keywordSignalTitle": "Keyword signal",
+      "keywordSignalDescription": "Map the base resume against role-specific language.",
+      "factsTitle": "Stable evidence",
+      "factsDescription": "Adjust emphasis without changing the underlying truth.",
+      "button": "Create version",
+      "createdMessage": "Created version {name}",
+      "createdToastTitle": "Version created",
+      "createdToastDescription": "{name} is ready for review.",
+      "failed": "Could not create version.",
+      "failedToastTitle": "Could not create version"
+    },
+    "detail": {
+      "eyebrow": "Version detail",
+      "description": "Review how this version shifts emphasis compared with the base resume before you export or continue refining.",
+      "badge": "Comparison view"
+    },
+    "compare": {
+      "summaryBadge": "Version summary",
+      "customizationsBadge": "{count} refinements",
+      "baseResume": "Base resume",
+      "adjustments": "Version adjustments"
+    }
+  },
+  "render": {
+    "intro": {
+      "eyebrow": "Export",
+      "title": "Preview, polish, and export the final document",
+      "description": "Switch templates, inspect the document surface, and produce an export-ready PDF without leaving the workspace.",
+      "badge": "Output studio"
+    },
+    "workspace": {
+      "outputMindsetTitle": "Output mindset",
+      "outputMindsetDescription": "Use the template layer to polish, not to rescue missing facts.",
+      "outputMindsetBody": "Claimit works best when the base resume and any tailored version are already clean. The export studio should feel like a final pass, not a repair step.",
+      "previewCanvasTitle": "Preview canvas",
+      "previewCanvasDescription": "Inspect the current document surface before exporting."
+    },
+    "templateSelector": {
+      "badge": "Template controls",
+      "title": "Switch the document presentation",
+      "description": "Use the preview loop to compare templates, then export a PDF once the layout feels right.",
+      "atsTitle": "ATS Minimal",
+      "atsDescription": "Best for crisp, ATS-oriented formatting with a straightforward hierarchy.",
+      "modernTitle": "Modern Clean",
+      "modernDescription": "Best for a calmer document surface with slightly more warmth.",
+      "updateButton": "Update preview",
+      "updatingButton": "Updating preview",
+      "exportButton": "Export PDF",
+      "exportingButton": "Exporting PDF",
+      "renderNotesTitle": "Render notes",
+      "renderNotesBody": "Keep versions factual, then use export to tune presentation instead of rewriting content at the last step.",
+      "previewUpdatedMessage": "Preview updated.",
+      "previewUpdatedToastTitle": "Preview updated",
+      "previewUpdatedToastDescription": "Template {template} is now active.",
+      "previewFailed": "Could not render preview.",
+      "previewFailedToastTitle": "Preview failed",
+      "exportedMessage": "Exported PDF to {path}",
+      "exportedToastTitle": "PDF exported",
+      "exportFailed": "Could not export PDF.",
+      "exportFailedToastTitle": "Export failed"
+    },
+    "pdfPreview": {
+      "title": "Document preview",
+      "description": "The live HTML surface mirrors the current export pipeline output.",
+      "iframeTitle": "Resume preview"
+    }
+  },
+  "notFound": {
+    "title": "This workspace view could not be found",
+    "description": "The route may have moved, or the requested resume item no longer exists."
+  }
+}
