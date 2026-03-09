@@ -3,6 +3,16 @@ import { describe, expect, it } from "vitest";
 import { applyAnswers, createEmptyResume, gapAnalysis } from "../index.js";
 
 describe("assistant", () => {
+  it("returns an empty-state score for a blank resume", async () => {
+    const resume = createEmptyResume();
+
+    const analysis = await gapAnalysis(resume, { maxQuestions: 3, llm: null });
+
+    expect(analysis.completeness_score).toBe(0);
+    expect(analysis.questions).toEqual([]);
+    expect(analysis.summary).toContain("No resume content found yet");
+  });
+
   it("generates questions for weak highlights and applies answers", async () => {
     const resume = createEmptyResume();
     resume.experience.push({

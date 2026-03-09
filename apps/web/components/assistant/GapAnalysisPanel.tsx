@@ -13,14 +13,16 @@ import { QuestionCard } from "./QuestionCard";
 
 interface GapAnalysisPanelProps {
   result: GapAnalysis;
+  hasResumeContent: boolean;
 }
 
-export function GapAnalysisPanel({ result }: GapAnalysisPanelProps) {
+export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelProps) {
   const answers = useAssistantStore((state) => state.answers);
   const setAnswer = useAssistantStore((state) => state.setAnswer);
   const reset = useAssistantStore((state) => state.reset);
   const [changeLog, setChangeLog] = useState<ApplyChangeLog[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
+  const canApplyAnswers = hasResumeContent && result.questions.length > 0;
 
   const mutation = useMutation({
     mutationFn: async () =>
@@ -42,9 +44,11 @@ export function GapAnalysisPanel({ result }: GapAnalysisPanelProps) {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Completeness score</p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-900">{result.completeness_score}%</h2>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+              {hasResumeContent ? `${result.completeness_score}%` : "--"}
+            </h2>
           </div>
-          <Button onClick={() => mutation.mutate()} disabled={mutation.isPending}>
+          <Button onClick={() => mutation.mutate()} disabled={mutation.isPending || !canApplyAnswers}>
             Apply answers
           </Button>
         </div>

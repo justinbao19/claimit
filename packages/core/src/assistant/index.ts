@@ -80,7 +80,36 @@ function makeQuestion(id: string, targetPath: string, goal: string, question: st
   });
 }
 
+function hasSubstantiveResumeContent(resume: Resume): boolean {
+  return Boolean(
+    resume.basics.summary?.trim() ||
+      resume.experience.length > 0 ||
+      resume.projects.length > 0 ||
+      resume.education.length > 0 ||
+      resume.skills.some((category) => category.items.length > 0) ||
+      resume.achievements.length > 0 ||
+      resume.claims.length > 0,
+  );
+}
+
 function heuristicGapAnalysis(resume: Resume, maxQuestions = 7): GapAnalysis {
+  if (!hasSubstantiveResumeContent(resume)) {
+    return GapAnalysisSchema.parse({
+      gaps: [
+        {
+          path: "/",
+          field: "resume",
+          severity: "missing",
+          reason: "No resume content was found to analyze yet.",
+          suggestion: "Import a resume or add experience and summary details first.",
+        },
+      ],
+      questions: [],
+      summary: "No resume content found yet. Import a resume or add experience before running gap analysis.",
+      completeness_score: 0,
+    });
+  }
+
   const gaps: GapAnalysis["gaps"] = [];
   const questions: Question[] = [];
 
