@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0 auto;
+      max-width: 8.5in;
+      padding: 0.65in;
+      background: #f8fafc;
+      color: #0f172a;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .sheet {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+    }
+    h1 { font-size: 24pt; margin-bottom: 6pt; }
+    h2 {
+      margin: 18pt 0 8pt;
+      color: #334155;
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .contact { color: #475569; font-size: 10pt; }
+    .entry { margin-bottom: 12pt; }
+    .entryHeader { display: flex; justify-content: space-between; gap: 12pt; }
+    .entryTitle { font-size: 12pt; font-weight: 700; }
+    .meta { color: #475569; font-size: 10pt; }
+    ul { margin: 6pt 0 0 18pt; }
+    li { margin-bottom: 3pt; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <h1>{{basics.name}}</h1>
+      <p class="contact">
+        {{#if basics.location}}{{basics.location}}{{/if}}
+        {{#if basics.email}} · {{basics.email}}{{/if}}
+        {{#if basics.phone}} · {{basics.phone}}{{/if}}
+        {{#if basics.website}} · {{basics.website}}{{/if}}
+      </p>
+      {{#if basics.summary}}<p style="margin-top: 12pt;">{{basics.summary}}</p>{{/if}}
+    </header>
+
+    {{#if experience.length}}
+    <section>
+      <h2>Experience</h2>
+      {{#each experience}}
+      <div class="entry">
+        <div class="entryHeader">
+          <div>
+            <div class="entryTitle">{{title}}</div>
+            <div class="meta">{{company}}{{#if location}} · {{location}}{{/if}}</div>
+          </div>
+          <div class="meta">{{formatDateRange date_range}}</div>
+        </div>
+        {{#if highlights.length}}
+        <ul>
+          {{#each highlights}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if projects.length}}
+    <section>
+      <h2>Projects</h2>
+      {{#each projects}}
+      <div class="entry">
+        <div class="entryHeader">
+          <div class="entryTitle">{{name}}</div>
+          {{#if date_range}}<div class="meta">{{formatDateRange date_range}}</div>{{/if}}
+        </div>
+        <p>{{description}}</p>
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if education.length}}
+    <section>
+      <h2>Education</h2>
+      {{#each education}}
+      <div class="entry">
+        <div class="entryHeader">
+          <div class="entryTitle">{{degree}}</div>
+          <div class="meta">{{formatDateRange date_range}}</div>
+        </div>
+        <div class="meta">{{institution}}{{#if field}} · {{field}}{{/if}}</div>
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+
+    {{#if skills.length}}
+    <section>
+      <h2>Skills</h2>
+      {{#each skills}}
+      <p><strong>{{category}}</strong>: {{join items ", "}}</p>
+      {{/each}}
+    </section>
+    {{/if}}
+  </div>
+</body>
+</html>

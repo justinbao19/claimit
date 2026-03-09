@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@claimit/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@claimit/core/*": [
+        "packages/core/src/*"
+      ],
+      "@claimit/mcp": [
+        "packages/mcp/src/index.ts"
+      ],
+      "@claimit/mcp/*": [
+        "packages/mcp/src/*"
+      ]
+    }
+  }
+}

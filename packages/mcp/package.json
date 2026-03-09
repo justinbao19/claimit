@@ -1,0 +1,26 @@
+{
+  "name": "@claimit/mcp",
+  "version": "0.2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/server.ts --format esm --dts",
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@claimit/core": "workspace:*",
+    "@modelcontextprotocol/sdk": "latest",
+    "zod": "latest"
+  }
+}

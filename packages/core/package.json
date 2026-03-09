@@ -1,0 +1,33 @@
+{
+  "name": "@claimit/core",
+  "version": "0.2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "date-fns": "latest",
+    "fast-json-patch": "latest",
+    "handlebars": "latest",
+    "mammoth": "latest",
+    "pdf-parse": "latest",
+    "playwright": "latest",
+    "uuid": "latest",
+    "zod": "latest"
+  }
+}

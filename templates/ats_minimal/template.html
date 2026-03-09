@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0 auto;
+      max-width: 8.5in;
+      padding: 0.5in;
+      color: #111827;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+    h1 { font-size: 20pt; margin-bottom: 4pt; }
+    h2 { font-size: 12pt; border-bottom: 1px solid #111827; margin: 14pt 0 6pt; padding-bottom: 2pt; text-transform: uppercase; }
+    .contact { font-size: 10pt; margin-bottom: 10pt; }
+    .entry { margin-bottom: 10pt; }
+    .entryHeader { display: flex; justify-content: space-between; gap: 12pt; }
+    .entryTitle { font-weight: bold; }
+    .entrySubtitle { font-style: italic; }
+    ul { margin: 4pt 0 0 18pt; }
+    li { margin-bottom: 2pt; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{basics.name}}</h1>
+    <div class="contact">
+      {{#if basics.email}}<span>{{basics.email}}</span>{{/if}}
+      {{#if basics.phone}} | <span>{{basics.phone}}</span>{{/if}}
+      {{#if basics.location}} | <span>{{basics.location}}</span>{{/if}}
+      {{#if basics.linkedin}} | <span>{{basics.linkedin}}</span>{{/if}}
+      {{#if basics.github}} | <span>{{basics.github}}</span>{{/if}}
+    </div>
+    {{#if basics.summary}}<p>{{basics.summary}}</p>{{/if}}
+  </header>
+
+  {{#if experience.length}}
+  <section>
+    <h2>Experience</h2>
+    {{#each experience}}
+    <div class="entry">
+      <div class="entryHeader">
+        <div>
+          <span class="entryTitle">{{title}}</span>
+          <span> | </span>
+          <span class="entrySubtitle">{{company}}</span>
+        </div>
+        <div>{{formatDateRange date_range}}</div>
+      </div>
+      {{#if highlights.length}}
+      <ul>
+        {{#each highlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if projects.length}}
+  <section>
+    <h2>Projects</h2>
+    {{#each projects}}
+    <div class="entry">
+      <div class="entryHeader">
+        <div class="entryTitle">{{name}}</div>
+        {{#if date_range}}<div>{{formatDateRange date_range}}</div>{{/if}}
+      </div>
+      <p>{{description}}</p>
+      {{#if highlights.length}}
+      <ul>
+        {{#each highlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if education.length}}
+  <section>
+    <h2>Education</h2>
+    {{#each education}}
+    <div class="entry">
+      <div class="entryHeader">
+        <div><span class="entryTitle">{{degree}}</span> | <span class="entrySubtitle">{{institution}}</span></div>
+        <div>{{formatDateRange date_range}}</div>
+      </div>
+      {{#if field}}<p>{{field}}</p>{{/if}}
+      {{#if gpa}}<p>GPA: {{gpa}}</p>{{/if}}
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if skills.length}}
+  <section>
+    <h2>Skills</h2>
+    {{#each skills}}
+    <p><strong>{{category}}:</strong> {{join items ", "}}</p>
+    {{/each}}
+  </section>
+  {{/if}}
+</body>
+</html>

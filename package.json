@@ -1,0 +1,24 @@
+{
+  "name": "claimit",
+  "version": "0.2.0",
+  "private": true,
+  "packageManager": "pnpm@10.6.5",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "corepack pnpm --parallel --filter ./packages/* --filter ./apps/* dev",
+    "build": "corepack pnpm -r build",
+    "test": "corepack pnpm -r test",
+    "typecheck": "corepack pnpm -r typecheck",
+    "cli": "corepack pnpm --filter @claimit/cli start"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsup": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}
