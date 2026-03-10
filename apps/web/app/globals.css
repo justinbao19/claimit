@@ -295,12 +295,12 @@ html.dark .hero-skeleton-line::after {
 }
 
 .testimonial-marquee-track-forward {
-  animation: testimonial-marquee-left 38s linear infinite;
+  animation: testimonial-marquee-left 52s linear infinite;
   will-change: transform;
 }
 
 .testimonial-marquee-track-reverse {
-  animation: testimonial-marquee-left 42s linear infinite reverse;
+  animation: testimonial-marquee-left 58s linear infinite reverse;
   will-change: transform;
 }
 
