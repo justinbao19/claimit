@@ -13,16 +13,15 @@ import { FeaturesGrid } from "../../components/marketing/features-grid";
 import { FinalCta } from "../../components/marketing/final-cta";
 import { MarketingHero } from "../../components/marketing/marketing-hero";
 import { OpenToolingStrip } from "../../components/marketing/open-tooling-strip";
+import { ProductShowcaseSection } from "../../components/marketing/product-showcase-section";
 import { QuickStartSection } from "../../components/marketing/quick-start-section";
 import { TestimonialsSection } from "../../components/marketing/testimonials-section";
-import { WorksWithSection } from "../../components/marketing/works-with-section";
 import { WorkflowSection } from "../../components/marketing/workflow-section";
 import { getServerI18n } from "../../lib/i18n";
 import {
   marketingHeroPreviewLines,
   marketingQuickStartCommands,
   marketingTestimonialProfiles,
-  marketingWorksWithTags,
 } from "../../lib/marketing-content";
 
 export const metadata = {
@@ -169,6 +168,79 @@ export default async function LandingPage() {
         ]}
       />
 
+      <ProductShowcaseSection
+        eyebrow={t("marketing.showcase.eyebrow")}
+        title={t("marketing.showcase.title")}
+        description={t("marketing.showcase.description")}
+        badge={t("marketing.showcase.badge")}
+        cli={{
+          badge: t("marketing.showcase.cli.badge"),
+          title: t("marketing.showcase.cli.title"),
+          description: t("marketing.showcase.cli.description"),
+        }}
+        cliWindowLabel={t("marketing.showcase.cli.windowLabel")}
+        cliLines={[
+          t("marketing.showcase.cli.lines.import"),
+          t("marketing.showcase.cli.lines.show"),
+          t("marketing.showcase.cli.lines.variant"),
+          t("marketing.showcase.cli.lines.render"),
+        ]}
+        cliChecks={[
+          t("marketing.showcase.cli.checks.vault"),
+          t("marketing.showcase.cli.checks.prompts"),
+          t("marketing.showcase.cli.checks.export"),
+        ]}
+        workspace={{
+          badge: t("marketing.showcase.workspace.badge"),
+          title: t("marketing.showcase.workspace.title"),
+          description: t("marketing.showcase.workspace.description"),
+        }}
+        workspaceWindowLabel={t("marketing.showcase.workspace.windowLabel")}
+        workspaceSidebar={[
+          t("marketing.showcase.workspace.sidebar.base"),
+          t("marketing.showcase.workspace.sidebar.assistant"),
+          t("marketing.showcase.workspace.sidebar.variants"),
+          t("marketing.showcase.workspace.sidebar.export"),
+        ]}
+        workspaceMetrics={[
+          {
+            value: t("marketing.showcase.workspace.metrics.library.value"),
+            label: t("marketing.showcase.workspace.metrics.library.label"),
+          },
+          {
+            value: t("marketing.showcase.workspace.metrics.prompts.value"),
+            label: t("marketing.showcase.workspace.metrics.prompts.label"),
+          },
+          {
+            value: t("marketing.showcase.workspace.metrics.templates.value"),
+            label: t("marketing.showcase.workspace.metrics.templates.label"),
+          },
+        ]}
+        workspacePanels={[
+          {
+            title: t("marketing.showcase.workspace.panels.library.title"),
+            items: [
+              t("marketing.showcase.workspace.panels.library.items.0"),
+              t("marketing.showcase.workspace.panels.library.items.1"),
+            ],
+          },
+          {
+            title: t("marketing.showcase.workspace.panels.assistant.title"),
+            items: [
+              t("marketing.showcase.workspace.panels.assistant.items.0"),
+              t("marketing.showcase.workspace.panels.assistant.items.1"),
+            ],
+          },
+          {
+            title: t("marketing.showcase.workspace.panels.export.title"),
+            items: [
+              t("marketing.showcase.workspace.panels.export.items.0"),
+              t("marketing.showcase.workspace.panels.export.items.1"),
+            ],
+          },
+        ]}
+      />
+
       <OpenToolingStrip
         eyebrow={t("marketing.openSource.eyebrow")}
         title={t("marketing.openSource.title")}
@@ -217,28 +289,6 @@ export default async function LandingPage() {
         description={t("marketing.features.description")}
         badge={t("marketing.features.badge")}
         items={featureItems}
-      />
-
-      <WorksWithSection
-        eyebrow={t("marketing.worksWith.eyebrow")}
-        title={t("marketing.worksWith.title")}
-        description={t("marketing.worksWith.description")}
-        badge={t("marketing.worksWith.badge")}
-        tags={[...marketingWorksWithTags]}
-        highlights={[
-          {
-            title: t("marketing.worksWith.highlights.formats.title"),
-            description: t("marketing.worksWith.highlights.formats.description"),
-          },
-          {
-            title: t("marketing.worksWith.highlights.workflow.title"),
-            description: t("marketing.worksWith.highlights.workflow.description"),
-          },
-          {
-            title: t("marketing.worksWith.highlights.output.title"),
-            description: t("marketing.worksWith.highlights.output.description"),
-          },
-        ]}
       />
 
       <WorkflowSection

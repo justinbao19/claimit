@@ -111,3 +111,24 @@ html.dark ::-webkit-scrollbar-thumb {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.375rem));
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+  }
+}

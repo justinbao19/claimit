@@ -424,7 +424,93 @@
       "eyebrow": "オープンツール",
       "title": "開発者がすでに信頼しているオープンな道具の上に作られています。",
       "description": "実際の技術的な土台が見えると、ページ全体の説得力が上がります。Claimit は閉じた独自世界ではなく、今のローカル workflow に自然に入るように設計されています。",
-      "badge": "Developer-native stack"
+      "badge": "Developer-native stack",
+      "highlights": {
+        "stack": {
+          "title": "飾りのロゴではない",
+          "description": "ここに並ぶロゴは、実際にアプリと workflow で使われているオープン技術を元にしています。"
+        },
+        "local": {
+          "title": "local-first workflow に合う",
+          "description": "コマンド、構造化ファイル、ブラウザ companion のすべてが同じローカルな事実ソースに戻ります。"
+        },
+        "outputs": {
+          "title": "入力から出力まで一本化",
+          "description": "履歴書ファイル、JD、バージョン、最終 export が 1 つの製品ループに収まります。"
+        }
+      }
+    },
+    "showcase": {
+      "eyebrow": "製品ビュー",
+      "title": "細かな説明に入る前に、まず製品の姿を見せる。",
+      "description": "workflow を文章だけで説明する代わりに、CLI の流れと workspace の見た目を先に見せて、製品の実在感を高めます。",
+      "badge": "Visual product tour",
+      "cli": {
+        "badge": "CLI output",
+        "title": "ターミナルの流れだけでも使えそうに見える",
+        "description": "取り込み、確認、職種別調整、レンダリングまでを shell の中で回せることがひと目で伝わるようにします。",
+        "windowLabel": "claimit cli",
+        "lines": {
+          "import": "claimit import ./resume.pdf --vault ./vault --json",
+          "show": "claimit show --vault ./vault --json",
+          "variant": "claimit variant create --name pm-growth --role \"Product Manager\" --jd \"...\"",
+          "render": "claimit render ats_minimal --vault ./vault --json"
+        },
+        "checks": {
+          "vault": "Vault 初期化済み",
+          "prompts": "3 件のアシスタント質問を準備",
+          "export": "プレビュー出力を生成"
+        }
+      },
+      "workspace": {
+        "badge": "Workspace preview",
+        "title": "実在するアプリのように見える編集面",
+        "description": "ライブラリ、ガイド付き編集、バージョン管理、書き出し操作が一目で分かることで、製品の完成度を強く見せられます。",
+        "windowLabel": "claimit workspace",
+        "sidebar": {
+          "base": "ベース履歴書",
+          "assistant": "アシスタント",
+          "variants": "バージョン",
+          "export": "書き出し"
+        },
+        "metrics": {
+          "library": {
+            "value": "24",
+            "label": "library items"
+          },
+          "prompts": {
+            "value": "03",
+            "label": "review prompts"
+          },
+          "templates": {
+            "value": "02",
+            "label": "export templates"
+          }
+        },
+        "panels": {
+          "library": {
+            "title": "evidence library",
+            "items": {
+              "0": "成長実験と改善成果",
+              "1": "プラットフォーム施策と結果の要約"
+            }
+          },
+          "assistant": {
+            "title": "assistant review",
+            "items": {
+              "0": "オンボーディング改善の影響を具体化",
+              "1": "ローンチ施策の範囲と責任を補足"
+            }
+          },
+          "export": {
+            "title": "export studio",
+            "items": {
+              "0": "ATS Minimal を選択済み",
+              "1": "PDF プレビュー準備完了"
+            }
+          }
+        }
+      }
     },
     "quickStart": {
       "eyebrow": "Quick start",

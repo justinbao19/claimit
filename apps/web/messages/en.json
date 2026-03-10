@@ -422,14 +422,100 @@
     },
     "openSource": {
       "eyebrow": "Open tooling",
-      "title": "Built around the open tools developers already trust.",
-      "description": "The product story lands better when the page shows real technology anchors. Claimit fits naturally into a modern local workflow instead of inventing a closed ecosystem.",
-      "badge": "Developer-native stack"
+      "title": "Built on open tools developers already use.",
+      "description": "It fits a local workflow instead of inventing a closed ecosystem.",
+      "badge": "Developer-native stack",
+      "highlights": {
+        "stack": {
+          "title": "Real stack, not decorative logos",
+          "description": "The wall is built from the actual open-source technologies already present in the app and workflow."
+        },
+        "local": {
+          "title": "Fits a local-first workflow",
+          "description": "Commands, structured files, and a browser companion all point back to the same local source of truth."
+        },
+        "outputs": {
+          "title": "From source files to polished output",
+          "description": "Resume files, job descriptions, variants, and exports all stay inside one coherent product loop."
+        }
+      }
+    },
+    "showcase": {
+      "eyebrow": "Product views",
+      "title": "Show the product before explaining it.",
+      "description": "Use CLI for setup and automation, then switch to the workspace for review, variants, and export.",
+      "badge": "Visual product tour",
+      "cli": {
+        "badge": "CLI output",
+        "title": "A terminal loop that already feels usable",
+        "description": "The command flow should look like something a developer can actually run: import, inspect, tailor, and render without leaving the shell.",
+        "windowLabel": "claimit cli",
+        "lines": {
+          "import": "claimit import ./resume.pdf --vault ./vault --json",
+          "show": "claimit show --vault ./vault --json",
+          "variant": "claimit variant create --name pm-growth --role \"Product Manager\" --jd \"...\"",
+          "render": "claimit render ats_minimal --vault ./vault --json"
+        },
+        "checks": {
+          "vault": "Vault initialized",
+          "prompts": "3 assistant prompts ready",
+          "export": "Preview output generated"
+        }
+      },
+      "workspace": {
+        "badge": "Workspace preview",
+        "title": "A browser surface for the final human pass",
+        "description": "The workspace card makes the product feel like a real app: library items, guided edits, versions, and export controls all visible at a glance.",
+        "windowLabel": "claimit workspace",
+        "sidebar": {
+          "base": "Base resume",
+          "assistant": "Assistant",
+          "variants": "Variants",
+          "export": "Export"
+        },
+        "metrics": {
+          "library": {
+            "value": "24",
+            "label": "library items"
+          },
+          "prompts": {
+            "value": "03",
+            "label": "review prompts"
+          },
+          "templates": {
+            "value": "02",
+            "label": "export templates"
+          }
+        },
+        "panels": {
+          "library": {
+            "title": "Evidence library",
+            "items": {
+              "0": "Activation experiments and growth wins",
+              "1": "Platform launches with measurable outcomes"
+            }
+          },
+          "assistant": {
+            "title": "Assistant review",
+            "items": {
+              "0": "Clarify impact on onboarding conversion",
+              "1": "Add scope and ownership to launch story"
+            }
+          },
+          "export": {
+            "title": "Export studio",
+            "items": {
+              "0": "ATS Minimal selected",
+              "1": "PDF preview is ready"
+            }
+          }
+        }
+      }
     },
     "quickStart": {
       "eyebrow": "Quick start",
       "title": "Go from install to a working Claimit vault in four commands.",
-      "description": "Use the CLI to install dependencies, initialize a local vault, inspect the structured resume state, and launch the web UI when you want a richer editing surface.",
+      "description": "Install, initialize, inspect, then launch the workspace.",
       "badge": "4-step setup",
       "terminalLabel": "terminal",
       "copy": "Copy block",
@@ -439,29 +525,29 @@
         "install": {
           "label": "Step 1",
           "title": "Install the monorepo dependencies",
-          "description": "Set up the workspace once so both the CLI and the Next.js app are ready to run."
+          "description": "Install once so both the CLI and the web app are ready to run."
         },
         "init": {
           "label": "Step 2",
           "title": "Create a local vault",
-          "description": "Initialize a clean Claimit vault where your base resume, evidence library, and variants can live together."
+          "description": "Initialize one local vault for the base resume and its variants."
         },
         "inspect": {
           "label": "Step 3",
           "title": "Inspect the structured resume state",
-          "description": "Use the CLI to confirm the vault is readable and that the current data is available as JSON."
+          "description": "Confirm the vault is readable and inspect the current JSON state."
         },
         "launch": {
           "label": "Step 4",
           "title": "Launch the web companion",
-          "description": "Switch to the browser whenever you want a more visual workflow for library editing, assistant prompts, and export."
+          "description": "Switch to the browser for visual editing, review, and export."
         }
       }
     },
     "features": {
       "eyebrow": "What it does",
       "title": "Everything you need to move from a raw resume file to a role-ready output.",
-      "description": "Claimit is not just a formatter. It keeps the factual core, exposes weak spots, and helps you reuse the same evidence across multiple versions and exports.",
+      "description": "Keep the factual core, expose weak spots, and reuse the same evidence across variants and exports.",
       "badge": "CLI + Web workflow",
       "items": {
         "cliFirst": {
@@ -513,7 +599,7 @@
     "workflow": {
       "eyebrow": "How it works",
       "title": "One factual core, multiple outputs.",
-      "description": "The flow stays simple: bring in source material, tighten your evidence, let the assistant expose gaps, tailor versions for roles, then export with confidence.",
+      "description": "Import source material, tighten the evidence, tailor versions, then export.",
       "badge": "Operational loop",
       "items": {
         "import": {

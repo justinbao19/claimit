@@ -68,13 +68,27 @@ export function QuickStartSection({
       </Card>
 
       <div className="grid gap-4">
-        {steps.map((step) => (
-          <Card key={step.label} variant="panel" padding="lg">
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--text-tertiary)]">{step.label}</p>
-            <h4 className="mt-3 text-xl font-semibold text-[color:var(--text-primary)]">{step.title}</h4>
-            <p className="mt-3 text-sm leading-6 text-[color:var(--text-secondary)]">{step.description}</p>
-          </Card>
-        ))}
+        <Card variant="panel" padding="lg">
+          <div className="grid gap-4 sm:grid-cols-2">
+            {steps.map((step, index) => (
+              <div
+                key={step.label}
+                className={`rounded-[22px] px-1 py-1 ${index >= 2 ? "sm:border-t sm:border-[color:var(--border)] sm:pt-5" : ""}`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[color:var(--field-border)] bg-[color:var(--panel)] text-xs font-semibold text-[color:var(--text-primary)]">
+                    {index + 1}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[color:var(--text-tertiary)]">{step.label}</p>
+                    <h4 className="mt-2 text-base font-semibold text-[color:var(--text-primary)]">{step.title}</h4>
+                    <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{step.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
         <Button asChild size="lg" variant="secondary" className="justify-between">
           <Link href={ctaHref}>
             {ctaLabel}
