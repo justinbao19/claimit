@@ -2,29 +2,29 @@
 
 :root {
   color-scheme: light;
-  --background: #f5f1ea;
+  --background: #faf7f1;
   --foreground: #1d232a;
   --muted: #5f6770;
-  --surface: #fcfaf6;
+  --surface: #fdfaf5;
   --surface-elevated: #ffffff;
-  --surface-overlay: rgba(252, 250, 246, 0.82);
-  --panel: rgba(252, 250, 246, 0.92);
-  --panel-strong: rgba(255, 255, 255, 0.98);
-  --panel-light: rgba(255, 252, 248, 0.72);
+  --surface-overlay: rgba(255, 251, 245, 0.92);
+  --panel: rgba(255, 251, 245, 0.94);
+  --panel-strong: rgba(255, 255, 255, 0.99);
+  --panel-light: rgba(248, 242, 234, 0.86);
   --text-primary: #1d232a;
-  --text-secondary: #5f6770;
-  --text-tertiary: #8b918d;
-  --border: rgba(216, 208, 197, 0.95);
+  --text-secondary: #49545f;
+  --text-tertiary: #69716d;
+  --border: rgba(210, 200, 186, 0.78);
   --field-bg: #fffcf8;
-  --field-border: #c9c0b4;
-  --field-focus: #74859a;
+  --field-border: #d2c6ba;
+  --field-focus: #60758a;
   --accent: #8a6846;
   --accent-strong: #705238;
   --accent-contrast: #f8f4ef;
   --success: #456a5a;
   --warning: #a4763d;
-  --ring: rgba(116, 133, 154, 0.24);
-  --shadow-color: rgba(43, 37, 31, 0.16);
+  --ring: rgba(96, 117, 138, 0.24);
+  --shadow-color: rgba(43, 37, 31, 0.1);
 }
 
 html.dark {

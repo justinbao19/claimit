@@ -39,7 +39,7 @@ export function VariantCompare({ base, variant }: { base: Resume; variant: Varia
           <h2 className="mt-3 text-xl font-semibold text-[color:var(--text-primary)]">{base.basics.name}</h2>
           <ul className="mt-5 space-y-3 text-sm text-[color:var(--text-secondary)]">
             {base.experience.map((entry) => (
-              <li key={entry.id} className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-4 py-3">
+              <li key={entry.id} className="rounded-[22px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] px-4 py-3 shadow-[0_14px_28px_-24px_var(--shadow-color)]">
                 <span className="font-medium">{entry.title}</span> · {entry.company}
               </li>
             ))}
@@ -57,7 +57,7 @@ export function VariantCompare({ base, variant }: { base: Resume; variant: Varia
             {variant.variant_meta.customizations.map((customization, index) => (
               <li
                 key={`${customization.path}-${index}`}
-                className="rounded-[22px] border border-[rgba(138,104,70,0.2)] bg-[rgba(138,104,70,0.08)] px-4 py-3"
+                className="rounded-[22px] border border-[rgba(138,104,70,0.28)] bg-[rgba(138,104,70,0.12)] px-4 py-3 shadow-[0_14px_28px_-24px_var(--shadow-color)]"
               >
                 <span className="font-medium capitalize text-[color:var(--text-primary)]">{customization.type}</span> · {customization.reason}
               </li>

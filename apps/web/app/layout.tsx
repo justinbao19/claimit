@@ -22,7 +22,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div className="relative min-h-screen overflow-hidden">
             <AmbientBackground />
             <div className="relative z-10 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
-              <header className="sticky top-4 z-30 rounded-[30px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-4 py-4 shadow-[0_28px_72px_-40px_var(--shadow-color)] backdrop-blur-2xl sm:px-6">
+              <header className="sticky top-4 z-30 rounded-[30px] border border-[color:var(--border)] bg-[rgba(255,252,247,0.82)] px-4 py-4 shadow-[0_18px_42px_-30px_var(--shadow-color)] backdrop-blur-2xl sm:px-6">
                 <AppNav />
               </header>
             </div>

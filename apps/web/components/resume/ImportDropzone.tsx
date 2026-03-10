@@ -66,9 +66,9 @@ export function ImportDropzone() {
       <motion.div whileHover={{ y: -4, scale: 1.005 }} transition={{ duration: 0.25, ease: "easeOut" }}>
         <div
           {...getRootProps()}
-          className="relative rounded-[30px] border border-dashed border-[color:var(--field-border)] bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.12),transparent_48%),rgba(255,255,255,0.55)] p-10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.42)]"
+          className="relative rounded-[30px] border border-dashed border-[color:var(--field-border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(246,238,228,0.96))] p-10 text-center shadow-[0_24px_64px_-34px_var(--shadow-color)]"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.14),transparent_48%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent)]" />
           <input {...getInputProps()} />
           <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center">
             <div className="flex size-20 items-center justify-center rounded-[28px] bg-[linear-gradient(145deg,var(--accent-strong),var(--accent))] text-[color:var(--accent-contrast)] shadow-[0_22px_48px_-24px_rgba(112,82,56,0.5)]">
@@ -80,7 +80,7 @@ export function ImportDropzone() {
               {["PDF", "DOCX", "JSON", "TXT"].map((type) => (
                 <div
                   key={type}
-                  className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-3 py-1.5 text-xs text-[color:var(--text-secondary)]"
+                  className="rounded-full border border-[color:var(--field-border)] bg-[color:var(--panel-strong)] px-3 py-1.5 text-xs text-[color:var(--text-secondary)] shadow-[0_10px_22px_-18px_var(--shadow-color)]"
                 >
                   {type}
                 </div>
@@ -95,17 +95,17 @@ export function ImportDropzone() {
               </Button>
             </div>
             <div className="mt-8 grid w-full gap-3 text-left md:grid-cols-3">
-              <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+              <div className="rounded-[22px] border border-[color:var(--field-border)] bg-[color:var(--panel-strong)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
                 <Sparkles className="size-4 text-[color:var(--accent)]" />
                 <p className="mt-3 text-sm font-semibold text-[color:var(--text-primary)]">{t("importPage.dropzone.structuredParsingTitle")}</p>
                 <p className="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{t("importPage.dropzone.structuredParsingDescription")}</p>
               </div>
-              <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+              <div className="rounded-[22px] border border-[color:var(--field-border)] bg-[color:var(--panel-strong)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
                 <FileJson2 className="size-4 text-[color:var(--field-focus)]" />
                 <p className="mt-3 text-sm font-semibold text-[color:var(--text-primary)]">{t("importPage.dropzone.reusableFactsTitle")}</p>
                 <p className="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{t("importPage.dropzone.reusableFactsDescription")}</p>
               </div>
-              <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+              <div className="rounded-[22px] border border-[color:var(--field-border)] bg-[color:var(--panel-strong)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
                 <FileText className="size-4 text-[color:var(--success)]" />
                 <p className="mt-3 text-sm font-semibold text-[color:var(--text-primary)]">{t("importPage.dropzone.readyToRefineTitle")}</p>
                 <p className="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{t("importPage.dropzone.readyToRefineDescription")}</p>
@@ -115,7 +115,7 @@ export function ImportDropzone() {
         </div>
       </motion.div>
       {message ? (
-        <div className="mt-4 flex items-start gap-3 rounded-[22px] border border-[rgba(69,106,90,0.22)] bg-[rgba(69,106,90,0.08)] px-4 py-3 text-sm text-[color:var(--success)]">
+        <div className="mt-4 flex items-start gap-3 rounded-[22px] border border-[rgba(69,106,90,0.28)] bg-[rgba(69,106,90,0.12)] px-4 py-3 text-sm text-[color:var(--success)]">
           <CheckCircle2 className="mt-0.5 size-4 shrink-0" />
           <span>{message}</span>
         </div>

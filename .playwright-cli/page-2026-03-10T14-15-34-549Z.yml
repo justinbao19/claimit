@@ -1,0 +1,84 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e15]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e21]
+              - generic [ref=e26]: Dashboard
+            - link "Import" [ref=e27] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [ref=e34] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [ref=e39] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [ref=e45] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e51] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - button "Switch to dark mode" [ref=e60]:
+            - img [ref=e61]
+          - button "Language" [ref=e64]:
+            - img [ref=e65]
+            - generic [ref=e69]: EN
+            - img [ref=e70]
+    - main [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - img [ref=e77]
+            - paragraph [ref=e81]: Import
+            - generic [ref=e82]: Ingestion pipeline
+          - generic [ref=e83]:
+            - heading "Bring an existing resume into the workspace" [level=2] [ref=e84]
+            - paragraph [ref=e85]: Drop in a PDF, DOCX, JSON, or plain-text source and Claimit will turn it into a clean base file for the rest of the workflow.
+        - generic [ref=e88]:
+          - button "Choose File" [ref=e90]
+          - generic [ref=e91]:
+            - img [ref=e93]
+            - paragraph [ref=e96]: Drop your resume into the workspace
+            - paragraph [ref=e97]: Claimit parses the file, initializes the base structure, and makes it available for the library, assistant, versions, and export.
+            - generic [ref=e98]:
+              - generic [ref=e99]: PDF
+              - generic [ref=e100]: DOCX
+              - generic [ref=e101]: JSON
+              - generic [ref=e102]: TXT
+            - generic [ref=e103]:
+              - button "Choose file" [ref=e104]
+              - button "Drag and drop supported" [ref=e105]
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - img [ref=e108]
+                - paragraph [ref=e111]: Structured parsing
+                - paragraph [ref=e112]: Turns a legacy resume into workspace-backed JSON.
+              - generic [ref=e113]:
+                - img [ref=e114]
+                - paragraph [ref=e119]: Reusable evidence
+                - paragraph [ref=e120]: Feeds achievements, claims, and variants downstream.
+              - generic [ref=e121]:
+                - img [ref=e122]
+                - paragraph [ref=e125]: Ready to refine
+                - paragraph [ref=e126]: Move straight into assistant and export workflows.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e132] [cursor=pointer]:
+    - img [ref=e133]
+  - alert [ref=e136]

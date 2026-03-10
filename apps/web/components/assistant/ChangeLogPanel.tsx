@@ -31,7 +31,7 @@ export function ChangeLogPanel({ entries }: { entries: ApplyChangeLog[] }) {
           {entries.map((entry, index) => (
             <li
               key={`${entry.description}-${index}`}
-              className="flex gap-3 rounded-[22px] border border-[rgba(69,106,90,0.22)] bg-[rgba(69,106,90,0.08)] px-4 py-3"
+              className="flex gap-3 rounded-[22px] border border-[rgba(69,106,90,0.28)] bg-[rgba(69,106,90,0.12)] px-4 py-3 shadow-[0_14px_28px_-24px_var(--shadow-color)]"
             >
               <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[color:var(--success)]" />
               <span className="leading-6">{entry.description}</span>

@@ -69,7 +69,7 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
               <p className="pb-2 text-sm text-[color:var(--text-secondary)]">{t("assistant.panel.completeness")}</p>
             </div>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--text-secondary)]">{result.summary}</p>
-            <div className="mt-6 h-3 overflow-hidden rounded-full bg-[rgba(116,133,154,0.12)]">
+            <div className="mt-6 h-3 overflow-hidden rounded-full bg-[rgba(96,117,138,0.16)]">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: hasResumeContent ? `${result.completeness_score}%` : "12%" }}
@@ -80,21 +80,21 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+            <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
               <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <BrainCircuit className="size-4" />
                 <span className="text-sm font-medium">{t("assistant.panel.analysisTitle")}</span>
               </div>
               <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">{t("assistant.panel.analysisDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+            <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
               <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <ListChecks className="size-4" />
                 <span className="text-sm font-medium">{t("assistant.panel.questionSetTitle")}</span>
               </div>
               <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">{t("assistant.panel.questionSetDescription")}</p>
             </div>
-            <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+            <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
               <div className="flex items-center gap-3 text-[color:var(--text-primary)]">
                 <CircleCheckBig className="size-4" />
                 <span className="text-sm font-medium">{t("assistant.panel.applyChangesTitle")}</span>
@@ -104,7 +104,7 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_18px_38px_-26px_var(--shadow-color)]">
           <div className="flex items-center gap-3">
             <div className="flex size-10 items-center justify-center rounded-2xl bg-[rgba(138,104,70,0.12)] text-[color:var(--accent)]">
               <Sparkles className="size-4" />
@@ -146,7 +146,7 @@ export function GapAnalysisPanel({ result, hasResumeContent }: GapAnalysisPanelP
           </div>
           <ul className="mt-4 space-y-2 text-sm text-[color:var(--warning)]">
             {warnings.map((warning) => (
-              <li key={warning} className="rounded-2xl border border-[rgba(164,118,61,0.22)] bg-[rgba(164,118,61,0.08)] px-4 py-3">
+              <li key={warning} className="rounded-2xl border border-[rgba(164,118,61,0.28)] bg-[rgba(164,118,61,0.12)] px-4 py-3">
                 {warning}
               </li>
             ))}

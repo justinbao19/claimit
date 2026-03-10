@@ -90,7 +90,7 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
           </TabsList>
           {templates.map((template) => (
             <TabsContent key={template} value={template}>
-              <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+              <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
                 <p className="text-sm font-medium text-[color:var(--text-primary)]">
                   {template === "ats_minimal" ? t("render.templateSelector.atsTitle") : t("render.templateSelector.modernTitle")}
                 </p>
@@ -115,7 +115,7 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
           </Button>
         </div>
 
-        <div className="rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] p-4">
+        <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
           <div className="flex items-center gap-2 text-[color:var(--text-primary)]">
             <WandSparkles className="size-4" />
             <p className="text-sm font-medium">{t("render.templateSelector.renderNotesTitle")}</p>
@@ -123,7 +123,7 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
           <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{t("render.templateSelector.renderNotesBody")}</p>
         </div>
 
-        {message ? <p className="text-sm text-[color:var(--text-secondary)]">{message}</p> : null}
+        {message ? <p className="rounded-2xl border border-[color:var(--field-border)] bg-[color:var(--panel)] px-4 py-3 text-sm text-[color:var(--text-secondary)]">{message}</p> : null}
       </div>
     </Card>
   );

@@ -9,15 +9,15 @@ const cardVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--surface-elevated),var(--surface))] shadow-[0_26px_72px_-40px_var(--shadow-color)] backdrop-blur-xl",
+          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--panel-strong),var(--panel))] shadow-[0_18px_44px_-30px_var(--shadow-color)] backdrop-blur-xl",
         elevated:
-          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--surface-elevated),rgba(248,244,238,0.96))] shadow-[0_34px_96px_-46px_rgba(112,82,56,0.28)] backdrop-blur-2xl dark:bg-[linear-gradient(180deg,rgba(30,36,41,0.98),rgba(23,27,31,0.94))]",
+          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--panel-strong),var(--panel-light))] shadow-[0_24px_56px_-34px_rgba(112,82,56,0.14)] backdrop-blur-2xl dark:border-[color:var(--border)] dark:bg-[linear-gradient(180deg,rgba(30,36,41,0.98),rgba(23,27,31,0.94))]",
         glass:
-          "border-[color:var(--border)] bg-[color:var(--surface-overlay)] shadow-[0_22px_64px_-36px_var(--shadow-color)] backdrop-blur-2xl",
+          "border-[color:var(--border)] bg-[color:var(--panel)] shadow-[0_16px_38px_-28px_var(--shadow-color)] backdrop-blur-2xl",
         panel:
-          "border-[color:var(--border)] bg-[color:var(--surface)] shadow-[0_26px_72px_-42px_var(--shadow-color)] backdrop-blur",
+          "border-[color:var(--border)] bg-[color:var(--surface-elevated)] shadow-[0_14px_34px_-24px_var(--shadow-color)] backdrop-blur",
         interactive:
-          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--surface-elevated),var(--surface))] shadow-[0_24px_72px_-36px_var(--shadow-color)] backdrop-blur-xl hover:-translate-y-1 hover:border-[color:var(--field-border)] hover:shadow-[0_30px_88px_-38px_rgba(112,82,56,0.24)]",
+          "border-[color:var(--border)] bg-[linear-gradient(180deg,var(--panel-strong),var(--panel))] shadow-[0_18px_44px_-28px_var(--shadow-color)] backdrop-blur-xl hover:-translate-y-1 hover:border-[color:var(--field-border)] hover:shadow-[0_24px_56px_-30px_rgba(112,82,56,0.14)]",
       },
       padding: {
         none: "",
@@ -40,7 +40,7 @@ export function Card({ className, variant, padding, ...props }: CardProps) {
     <div
       className={cn(
         cardVariants({ variant, padding }),
-        "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[rgba(255,255,255,0.42)]",
+        "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[rgba(255,255,255,0.78)] dark:before:bg-[rgba(255,255,255,0.08)]",
         className,
       )}
       {...props}

@@ -47,7 +47,7 @@ export function AppNav() {
       </div>
 
       <div className="relative z-20 flex flex-wrap items-center gap-3">
-        <nav className="flex flex-wrap gap-2 rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface)] p-2 backdrop-blur-xl">
+        <nav className="flex flex-wrap gap-2 rounded-[22px] border border-[color:var(--border)] bg-[rgba(255,255,255,0.76)] p-2 shadow-[0_10px_24px_-20px_var(--shadow-color)] backdrop-blur-xl">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
@@ -67,7 +67,7 @@ export function AppNav() {
                   {active ? (
                     <motion.span
                       layoutId="nav-highlight"
-                      className="absolute inset-0 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] shadow-[0_14px_28px_-22px_var(--shadow-color)]"
+                      className="absolute inset-0 rounded-2xl border border-[color:var(--border)] bg-[rgba(255,255,255,0.88)] shadow-[0_10px_20px_-18px_var(--shadow-color)]"
                       transition={{ type: "spring", stiffness: 320, damping: 28 }}
                     />
                   ) : null}

@@ -92,7 +92,7 @@ export function LanguageSwitcher() {
       <button
         ref={buttonRef}
         type="button"
-        className="inline-flex h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-3 text-sm text-[color:var(--text-primary)] shadow-[0_14px_32px_-24px_var(--shadow-color)] backdrop-blur transition hover:bg-[color:var(--surface-elevated)]"
+        className="inline-flex h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-[rgba(255,255,255,0.78)] px-3 text-sm text-[color:var(--text-primary)] shadow-[0_10px_22px_-18px_var(--shadow-color)] backdrop-blur transition hover:bg-[rgba(255,255,255,0.9)]"
         aria-label={t("language.label")}
         aria-haspopup="menu"
         aria-expanded={open}
@@ -116,7 +116,7 @@ export function LanguageSwitcher() {
                 top: menuPosition.top,
                 left: menuPosition.left,
               }}
-              className="z-[200] min-w-[11rem] rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-1.5 shadow-[0_24px_48px_-28px_var(--shadow-color)]"
+              className="z-[200] min-w-[11rem] rounded-2xl border border-[color:var(--border)] bg-[rgba(255,255,255,0.96)] p-1.5 shadow-[0_18px_36px_-24px_var(--shadow-color)]"
             >
               {localeOptions.map((option) => {
                 const active = option.value === locale;

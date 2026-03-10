@@ -38,7 +38,7 @@ export function QuestionCard({ question, value, onChange, onSkip }: QuestionCard
         </div>
         <p className="text-base font-medium leading-7 text-[color:var(--text-primary)]">{question.question}</p>
         {question.examples?.length ? (
-          <div className="mt-3 rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-4 py-3 text-sm text-[color:var(--text-secondary)]">
+          <div className="mt-3 rounded-[22px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] px-4 py-3 text-sm text-[color:var(--text-secondary)] shadow-[0_14px_28px_-24px_var(--shadow-color)]">
             <span className="inline-flex items-center gap-2 text-[color:var(--text-primary)]">
               <CornerDownRight className="size-4" />
               {t("assistant.questionCard.examples")}

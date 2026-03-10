@@ -16,11 +16,11 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "rounded-[28px] border border-dashed border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-6 py-10 text-center",
+        "rounded-[28px] border border-dashed border-[color:var(--border)] bg-[rgba(255,255,255,0.7)] px-6 py-10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.58)]",
         className,
       )}
     >
-      <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--text-secondary)]">
+      <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[rgba(255,255,255,0.92)] text-[color:var(--text-secondary)] shadow-[0_8px_18px_-18px_var(--shadow-color)]">
         <Icon className="size-6" />
       </div>
       <h3 className="mt-4 text-lg font-semibold text-[color:var(--text-primary)]">{title}</h3>
