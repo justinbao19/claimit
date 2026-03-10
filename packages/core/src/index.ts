@@ -6,5 +6,5 @@ export * from "./render/engine";
 export * from "./schema/assistant";
 export * from "./schema/resume";
 export * from "./variant/index";
-export * from "./vault/index";
-export * from "./vault/paths";
+export * from "./vault-api";
+export * from "./vault-paths";

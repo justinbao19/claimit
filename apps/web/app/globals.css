@@ -294,13 +294,23 @@ html.dark .hero-skeleton-line::after {
   }
 }
 
+@keyframes testimonial-marquee-right {
+  from {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .testimonial-marquee-track-forward {
   animation: testimonial-marquee-left 52s linear infinite;
   will-change: transform;
 }
 
 .testimonial-marquee-track-reverse {
-  animation: testimonial-marquee-left 58s linear infinite reverse;
+  animation: testimonial-marquee-right 58s linear infinite;
   will-change: transform;
 }
 
