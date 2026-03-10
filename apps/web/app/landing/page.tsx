@@ -216,29 +216,6 @@ export default async function LandingPage() {
             label: t("marketing.showcase.workspace.metrics.templates.label"),
           },
         ]}
-        workspacePanels={[
-          {
-            title: t("marketing.showcase.workspace.panels.library.title"),
-            items: [
-              t("marketing.showcase.workspace.panels.library.items.0"),
-              t("marketing.showcase.workspace.panels.library.items.1"),
-            ],
-          },
-          {
-            title: t("marketing.showcase.workspace.panels.assistant.title"),
-            items: [
-              t("marketing.showcase.workspace.panels.assistant.items.0"),
-              t("marketing.showcase.workspace.panels.assistant.items.1"),
-            ],
-          },
-          {
-            title: t("marketing.showcase.workspace.panels.export.title"),
-            items: [
-              t("marketing.showcase.workspace.panels.export.items.0"),
-              t("marketing.showcase.workspace.panels.export.items.1"),
-            ],
-          },
-        ]}
       />
 
       <OpenToolingStrip

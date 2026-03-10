@@ -14,11 +14,6 @@ type ShowcaseMetric = {
   label: string;
 };
 
-type ShowcasePanel = {
-  title: string;
-  items: string[];
-};
-
 export function ProductShowcaseSection({
   eyebrow,
   title,
@@ -31,7 +26,6 @@ export function ProductShowcaseSection({
   workspace,
   workspaceWindowLabel,
   workspaceSidebar,
-  workspacePanels,
   workspaceMetrics,
 }: {
   eyebrow: string;
@@ -45,7 +39,6 @@ export function ProductShowcaseSection({
   workspace: ShowcaseCard;
   workspaceWindowLabel: string;
   workspaceSidebar: string[];
-  workspacePanels: ShowcasePanel[];
   workspaceMetrics: ShowcaseMetric[];
 }) {
   return (
@@ -158,19 +151,16 @@ export function ProductShowcaseSection({
                     ))}
                   </div>
 
-                  <div className="grid gap-3">
-                    {workspacePanels.map((panel) => (
-                      <div key={panel.title} className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
-                        <p className="text-sm font-semibold text-[color:var(--text-primary)]">{panel.title}</p>
-                        <div className="mt-3 space-y-2">
-                          {panel.items.map((item) => (
-                            <div key={item} className="rounded-2xl bg-[color:var(--surface)] px-3 py-2 text-sm text-[color:var(--text-secondary)]">
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4">
+                    <div className="flex flex-wrap items-center gap-2 text-sm text-[color:var(--text-secondary)]">
+                      <span className="rounded-full bg-[color:var(--surface)] px-3 py-1.5">Evidence synced</span>
+                      <span className="rounded-full bg-[color:var(--surface)] px-3 py-1.5">Assistant ready</span>
+                      <span className="rounded-full bg-[color:var(--surface)] px-3 py-1.5">PDF preview live</span>
+                    </div>
+                    <div className="mt-4 h-2 overflow-hidden rounded-full bg-[rgba(96,117,138,0.14)]">
+                      <div className="h-full w-[78%] rounded-full bg-[linear-gradient(90deg,var(--accent),var(--field-focus))]" />
+                    </div>
+                    <p className="mt-3 text-sm text-[color:var(--text-secondary)]">Workspace flow is ready for the final pass.</p>
                   </div>
                 </div>
               </div>

@@ -448,7 +448,7 @@
       "cli": {
         "badge": "CLI output",
         "title": "A terminal loop that already feels usable",
-        "description": "The command flow should look like something a developer can actually run: import, inspect, tailor, and render without leaving the shell.",
+        "description": "Import, inspect, tailor, and render without leaving the shell.",
         "windowLabel": "claimit cli",
         "lines": {
           "import": "claimit import ./resume.pdf --vault ./vault --json",
@@ -464,8 +464,8 @@
       },
       "workspace": {
         "badge": "Workspace preview",
-        "title": "A browser surface for the final human pass",
-        "description": "The workspace card makes the product feel like a real app: library items, guided edits, versions, and export controls all visible at a glance.",
+        "title": "A browser surface for the final pass",
+        "description": "Library, variants, and export controls are all visible at a glance.",
         "windowLabel": "claimit workspace",
         "sidebar": {
           "base": "Base resume",
@@ -485,29 +485,6 @@
           "templates": {
             "value": "02",
             "label": "export templates"
-          }
-        },
-        "panels": {
-          "library": {
-            "title": "Evidence library",
-            "items": {
-              "0": "Activation experiments and growth wins",
-              "1": "Platform launches with measurable outcomes"
-            }
-          },
-          "assistant": {
-            "title": "Assistant review",
-            "items": {
-              "0": "Clarify impact on onboarding conversion",
-              "1": "Add scope and ownership to launch story"
-            }
-          },
-          "export": {
-            "title": "Export studio",
-            "items": {
-              "0": "ATS Minimal selected",
-              "1": "PDF preview is ready"
-            }
           }
         }
       }
@@ -626,8 +603,8 @@
     },
     "testimonials": {
       "eyebrow": "Social proof",
-      "title": "The kind of first-night reactions this page is designed to evoke.",
-      "description": "A mock set of believable user quotes for landing-page layout and tone, styled like early feedback cards.",
+      "title": "The kind of early reactions you want.",
+      "description": "Mock quotes for layout and tone.",
       "badge": "Early feedback",
       "items": {
         "maya": {
@@ -664,8 +641,8 @@
     },
     "cta": {
       "eyebrow": "Start now",
-      "title": "Start with the CLI, keep polishing in the workspace.",
-      "description": "If you already know how you want to work, Claimit stays out of the way: use commands for setup and automation, then switch to the UI for the final human pass.",
+      "title": "Start in the CLI, finish in the workspace.",
+      "description": "Use commands for setup and automation, then switch to the UI for the final pass.",
       "badge": "Local-first workflow",
       "primary": "Jump to quick start",
       "secondary": "Open workspace"

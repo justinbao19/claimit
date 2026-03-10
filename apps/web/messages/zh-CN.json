@@ -448,7 +448,7 @@
       "cli": {
         "badge": "CLI 输出",
         "title": "一眼就能看懂的终端工作流",
-        "description": "这块应该让开发者觉得“这像是真的可以跑”。从导入、查看、定制到渲染，整个链路都能先在 shell 里完成。",
+        "description": "从导入、查看、定制到渲染，整条链路都能先在 shell 里完成。",
         "windowLabel": "claimit cli",
         "lines": {
           "import": "claimit import ./resume.pdf --vault ./vault --json",
@@ -464,8 +464,8 @@
       },
       "workspace": {
         "badge": "工作台预览",
-        "title": "再给用户一个像真实产品的工作台界面",
-        "description": "工作台卡片要让人一眼看到这是个真 App：档案库、引导式改写、版本管理和导出控制都能被直观看到。",
+        "title": "像真实产品的工作台界面",
+        "description": "档案库、版本管理和导出控制一眼可见。",
         "windowLabel": "claimit workspace",
         "sidebar": {
           "base": "基础简历",
@@ -485,29 +485,6 @@
           "templates": {
             "value": "02",
             "label": "个导出模板"
-          }
-        },
-        "panels": {
-          "library": {
-            "title": "档案库",
-            "items": {
-              "0": "增长实验与转化优化成果",
-              "1": "平台项目上线与结果归因"
-            }
-          },
-          "assistant": {
-            "title": "助手审阅",
-            "items": {
-              "0": "补足 onboarding 转化提升的数据",
-              "1": "为上线经历补充范围与职责"
-            }
-          },
-          "export": {
-            "title": "导出工作室",
-            "items": {
-              "0": "已选择 ATS 极简模板",
-              "1": "PDF 预览已准备完成"
-            }
           }
         }
       }
@@ -626,8 +603,8 @@
     },
     "testimonials": {
       "eyebrow": "用户评价",
-      "title": "这类首页想传达的，就是这种“第一晚就上手”的感觉。",
-      "description": "这里先用一组用于落地页排版的 mock 用户评价，模拟早期用户反馈的语气和节奏。",
+      "title": "早期用户会说的话。",
+      "description": "用于落地页排版的 mock 反馈。",
       "badge": "早期反馈",
       "items": {
         "maya": {
@@ -664,8 +641,8 @@
     },
     "cta": {
       "eyebrow": "现在开始",
-      "title": "先从 CLI 起步，再回到工作台完成最后的人类判断。",
-      "description": "如果你已经知道自己的工作方式，Claimit 就尽量不打扰你：先用命令完成初始化和自动化，再在 UI 里做最后一轮人工精修。",
+      "title": "先用 CLI，最后在工作台收口。",
+      "description": "初始化和自动化交给命令，最后一轮精修交给 UI。",
       "badge": "本地优先工作流",
       "primary": "跳到快速开始",
       "secondary": "打开工作台"
