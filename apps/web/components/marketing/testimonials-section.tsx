@@ -83,7 +83,8 @@ export function TestimonialsSection({
 }) {
   const desktopColumns = items.reduce<[TestimonialItem[], TestimonialItem[]]>(
     (columns, item, index) => {
-      columns[index % 2].push(item);
+      const targetColumn = index % 2 === 0 ? columns[0] : columns[1];
+      targetColumn.push(item);
       return columns;
     },
     [[], []],

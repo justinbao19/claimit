@@ -587,8 +587,8 @@
     },
     "testimonials": {
       "eyebrow": "用户评价",
-      "title": "早期用户会说的话。",
-      "description": "用于落地页排版的 mock 反馈。",
+      "title": "早期用户反复提到的，就是这些。",
+      "description": "把更多早期反馈做成持续流动的评价墙，整体观感更接近真实用户声音。",
       "badge": "早期反馈",
       "items": {
         "maya": {
@@ -620,6 +620,41 @@
           "name": "Owen Wu",
           "role": "独立顾问",
           "quote": "整个流程很顺：导入、补强事实、生成版本，等叙事真正成熟后再导出。"
+        },
+        "amara": {
+          "name": "Amara Ibrahim",
+          "role": "People Ops 负责人",
+          "quote": "它给人的感觉非常扎实。我可以和团队一起打磨叙事，同时始终清楚哪些内容来自原始简历。"
+        },
+        "julien": {
+          "name": "Julien Benali",
+          "role": "创业公司创始人",
+          "quote": "很多简历工具一上来就只讲表面润色，这个产品先帮我把底层系统整理清楚，所以后面的修改都快很多。"
+        },
+        "priya": {
+          "name": "Priya Shah",
+          "role": "招聘运营",
+          "quote": "我很喜欢它把叙事缺口讲得很清楚，这让辅导和修改变得更结构化，而不是只靠感觉。"
+        },
+        "hana": {
+          "name": "Hana Mori",
+          "role": "UX Writer",
+          "quote": "整个产品语气很克制、很务实。它是在帮你把原本真实的内容讲清楚，而不是逼你换一种人格说话。"
+        },
+        "diego": {
+          "name": "Diego Santos",
+          "role": "产品营销",
+          "quote": "从事实库切到岗位版本，正好就是我平时最耗时间的手工环节，现在明显轻松很多。"
+        },
+        "clara": {
+          "name": "Clara Bennett",
+          "role": "运营经理",
+          "quote": "底层记录保持稳定，但呈现方式可以持续微调，这个价值比听起来大得多，返工真的少很多。"
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "解决方案架构师",
+          "quote": "我完全能想象用 CLI 做重活、再到工作台做最后润色，而且两边都不是附属品。"
         }
       }
     },

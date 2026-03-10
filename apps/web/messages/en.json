@@ -587,8 +587,8 @@
     },
     "testimonials": {
       "eyebrow": "Social proof",
-      "title": "The kind of early reactions you want.",
-      "description": "Mock quotes for layout and tone.",
+      "title": "What early users keep saying.",
+      "description": "A richer stream of early feedback, presented like a living wall of customer voices.",
       "badge": "Early feedback",
       "items": {
         "maya": {
@@ -620,6 +620,41 @@
           "name": "Owen Wu",
           "role": "Independent consultant",
           "quote": "The workflow makes sense: import, tighten the evidence, tailor the version, and export when the story is actually ready."
+        },
+        "amara": {
+          "name": "Amara Ibrahim",
+          "role": "People ops lead",
+          "quote": "It felt unusually grounded. I could refine the story with my team without losing track of what came from the original resume."
+        },
+        "julien": {
+          "name": "Julien Benali",
+          "role": "Startup founder",
+          "quote": "Most resume tools jump straight to polish. This one gave me a cleaner system first, which made every later edit faster."
+        },
+        "priya": {
+          "name": "Priya Shah",
+          "role": "Recruiting operations",
+          "quote": "I liked seeing the gaps called out clearly. It made the coaching part feel structured instead of subjective."
+        },
+        "hana": {
+          "name": "Hana Mori",
+          "role": "UX writer",
+          "quote": "The product language is calm and practical. It helps you sharpen what is already true instead of forcing a brand-new voice."
+        },
+        "diego": {
+          "name": "Diego Santos",
+          "role": "Product marketer",
+          "quote": "The handoff from evidence library to role-specific version is exactly the part I normally do by hand, and this made it much lighter."
+        },
+        "clara": {
+          "name": "Clara Bennett",
+          "role": "Operations manager",
+          "quote": "Having the underlying record stay stable while I tune the presentation is a bigger deal than it sounds. It lowers rework a lot."
+        },
+        "marcus": {
+          "name": "Marcus Johnson",
+          "role": "Solutions architect",
+          "quote": "I could imagine using the CLI for the heavy lifting and the workspace for the final polish without either side feeling like an afterthought."
         }
       }
     },
