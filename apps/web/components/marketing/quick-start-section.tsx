@@ -21,7 +21,10 @@ export function QuickStartSection({
   copyLabel,
   copiedLabel,
   steps,
+  ctaBadge,
+  ctaEyebrow,
   ctaLabel,
+  ctaDescription,
   ctaHref,
 }: {
   eyebrow: string;
@@ -33,11 +36,12 @@ export function QuickStartSection({
   copyLabel: string;
   copiedLabel: string;
   steps: QuickStartStep[];
+  ctaBadge: string;
+  ctaEyebrow: string;
   ctaLabel: string;
+  ctaDescription: string;
   ctaHref: string;
 }) {
-  const launchStep = steps.at(-1);
-
   return (
     <section id="quick-start" className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
       <Card variant="elevated" padding="lg" className="overflow-hidden">
@@ -97,7 +101,7 @@ export function QuickStartSection({
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,162,123,0.18),transparent_38%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_35%)] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
           <div className="relative z-10 flex h-full flex-col gap-5">
             <div className="flex items-center justify-between gap-3">
-              <Badge variant="accent">{launchStep?.label ?? badge}</Badge>
+              <Badge variant="accent">{ctaBadge}</Badge>
               <span className="rounded-full border border-[color:var(--field-border)] bg-[color:var(--panel)] px-3 py-1 font-mono text-[11px] text-[color:var(--text-tertiary)]">
                 {ctaHref}
               </span>
@@ -111,7 +115,7 @@ export function QuickStartSection({
                   </span>
                   <div className="min-w-0">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[color:var(--text-tertiary)]">
-                      {launchStep?.title ?? badge}
+                      {ctaEyebrow}
                     </p>
                     <h4 className="mt-1 text-lg font-semibold tracking-tight text-[color:var(--text-primary)] sm:text-xl">
                       {ctaLabel}
@@ -119,7 +123,7 @@ export function QuickStartSection({
                   </div>
                 </div>
                 <p className="max-w-xl text-sm leading-6 text-[color:var(--text-secondary)]">
-                  {launchStep?.description ?? description}
+                  {ctaDescription}
                 </p>
               </div>
 

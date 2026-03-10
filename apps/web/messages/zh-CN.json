@@ -475,13 +475,16 @@
     },
     "quickStart": {
       "eyebrow": "快速开始",
-      "title": "用四条命令把 Claimit 跑起来。",
-      "description": "安装、初始化、查看状态，再启动 Web 工作台。",
+      "title": "把简历交给 CV Agent 持续展开、补强和同步更新。",
+      "description": "CLI 负责导入与启动流程，工作台负责查看 CV Agent 写回的展开结果、补充缺口，并把同一套事实继续整理成可导出的版本。",
       "badge": "4 步完成启动",
       "terminalLabel": "terminal",
       "copy": "复制命令",
       "copied": "已复制",
-      "cta": "打开当前工作台界面",
+      "ctaBadge": "实时同步",
+      "ctaEyebrow": "CV Agent 更新已写回",
+      "cta": "进入工作台查看 CV Agent 的实时更新",
+      "ctaDescription": "打开工作台，直接查看 CV Agent 写回本地 vault 的最新变更，让事实素材、待补问题和编辑结果始终保持同步。",
       "steps": {
         "install": {
           "label": "第 1 步",

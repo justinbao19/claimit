@@ -244,7 +244,10 @@ export default async function LandingPage() {
             description: t("marketing.quickStart.steps.launch.description"),
           },
         ]}
+        ctaBadge={t("marketing.quickStart.ctaBadge")}
+        ctaEyebrow={t("marketing.quickStart.ctaEyebrow")}
         ctaLabel={t("marketing.quickStart.cta")}
+        ctaDescription={t("marketing.quickStart.ctaDescription")}
         ctaHref="/workspace"
       />
 

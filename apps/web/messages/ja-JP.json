@@ -514,13 +514,16 @@
     },
     "quickStart": {
       "eyebrow": "Quick start",
-      "title": "4 つのコマンドで Claimit を動かし始められます。",
-      "description": "CLI で依存関係を入れ、ローカル vault を初期化し、構造化状態を確認し、必要になったら Web UI を起動します。",
+      "title": "CV Agent が履歴書を継続的に展開し、補強し、同期し続けます。",
+      "description": "CLI で取り込みと開始を行い、ワークスペースで CV Agent が書き戻した内容を確認しながら、抜けを埋めて同じ事実をそのまま書き出し可能な版へ整えていきます。",
       "badge": "4-step setup",
       "terminalLabel": "terminal",
       "copy": "コピー",
       "copied": "コピー済み",
-      "cta": "現在のワークスペース UI を開く",
+      "ctaBadge": "ライブ同期",
+      "ctaEyebrow": "CV Agent の更新を反映",
+      "cta": "ワークスペースで CV Agent の更新をライブ確認",
+      "ctaDescription": "ワークスペースを開くと、CV Agent が同じローカル vault に書き戻した最新の変更をそのまま確認でき、証拠、質問、編集結果がずれません。",
       "steps": {
         "install": {
           "label": "Step 1",

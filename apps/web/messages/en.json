@@ -475,13 +475,16 @@
     },
     "quickStart": {
       "eyebrow": "Quick start",
-      "title": "Go from install to a working Claimit vault in four commands.",
-      "description": "Install, initialize, inspect, then launch the workspace.",
+      "title": "Let CV Agent expand, strengthen, and keep your resume in sync.",
+      "description": "Use the CLI to import and start the workflow, then use the workspace to review CV Agent updates, fill narrative gaps, and shape the same evidence into export-ready versions.",
       "badge": "4-step setup",
       "terminalLabel": "terminal",
       "copy": "Copy block",
       "copied": "Copied",
-      "cta": "Open the current workspace UI",
+      "ctaBadge": "Live sync",
+      "ctaEyebrow": "CV Agent updates",
+      "cta": "See CV Agent changes live in the workspace",
+      "ctaDescription": "Open the workspace to review the latest updates as CV Agent writes them back into the same local vault, so evidence, prompts, and edits stay in sync.",
       "steps": {
         "install": {
           "label": "Step 1",
