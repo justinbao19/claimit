@@ -5,6 +5,7 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { HeroRoleMatchMeter } from "./hero-role-match-meter";
 
 type HeroBadge = {
   label: string;
@@ -82,19 +83,11 @@ export function MarketingHero({
               <div className="absolute inset-x-6 top-6 h-40 rounded-full bg-[radial-gradient(circle,rgba(196,162,123,0.22),transparent_70%)] blur-3xl hero-glow-pulse" />
               <div className="relative mx-auto max-w-[560px] pr-2 pt-6 sm:pr-6">
                 <div className="hero-float absolute right-0 top-4 z-20 w-[190px] rounded-[24px] border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_20px_44px_-28px_var(--shadow-color)] transition-transform duration-500 ease-out group-hover/hero:translate-x-1 group-hover/hero:-translate-y-1">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--text-tertiary)]">Role Match</p>
-                    <div className="hero-chip-glow rounded-full bg-[rgba(69,106,90,0.12)] px-2.5 py-1 text-xs font-semibold text-[color:var(--success)]">
-                      92%
-                    </div>
-                  </div>
-                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-[rgba(96,117,138,0.14)]">
-                    <div className="hero-progress-sheen h-full w-[92%] rounded-full bg-[linear-gradient(90deg,var(--accent),var(--field-focus),var(--accent))]" />
-                  </div>
+                  <HeroRoleMatchMeter label="Role Match" />
                   <div className="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--text-secondary)]">
-                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1 transition-transform duration-300 group-hover/hero:-translate-y-0.5">ATS</span>
-                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1 transition-transform duration-300 group-hover/hero:-translate-y-0.5">PM</span>
-                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1 transition-transform duration-300 group-hover/hero:-translate-y-0.5">Growth</span>
+                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1">ATS</span>
+                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1">PM</span>
+                    <span className="rounded-full bg-[color:var(--surface)] px-2.5 py-1">Growth</span>
                   </div>
                 </div>
 
@@ -119,9 +112,9 @@ export function MarketingHero({
                           Summary
                         </p>
                         <div className="mt-3 space-y-2">
-                          <div className="hero-skeleton-line h-2 rounded-full bg-[#d1d5db] dark:bg-[rgba(255,255,255,0.12)]" />
-                          <div className="hero-skeleton-line h-2 w-[86%] rounded-full bg-[#e5e7eb] dark:bg-[rgba(255,255,255,0.08)]" />
-                          <div className="hero-skeleton-line h-2 w-[74%] rounded-full bg-[#e5e7eb] dark:bg-[rgba(255,255,255,0.08)]" />
+                          <div className="hero-skeleton-line [--hero-line-delay:80ms] h-2 rounded-full bg-[#d1d5db] dark:bg-[rgba(255,255,255,0.12)]" />
+                          <div className="hero-skeleton-line [--hero-line-delay:320ms] h-2 w-[86%] rounded-full bg-[#e5e7eb] dark:bg-[rgba(255,255,255,0.08)]" />
+                          <div className="hero-skeleton-line [--hero-line-delay:580ms] h-2 w-[74%] rounded-full bg-[#e5e7eb] dark:bg-[rgba(255,255,255,0.08)]" />
                         </div>
                       </div>
 
@@ -131,13 +124,13 @@ export function MarketingHero({
                         </p>
                         <div className="mt-3 space-y-3">
                           <div className="rounded-2xl bg-[#f8fafc] p-3 dark:bg-[color:var(--surface-elevated)]">
-                            <div className="hero-skeleton-line h-2 w-[48%] rounded-full bg-[#cbd5e1] dark:bg-[rgba(255,255,255,0.14)]" />
-                            <div className="hero-skeleton-line mt-2 h-2 w-[84%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
-                            <div className="hero-skeleton-line mt-2 h-2 w-[68%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
+                            <div className="hero-skeleton-line [--hero-line-delay:200ms] h-2 w-[48%] rounded-full bg-[#cbd5e1] dark:bg-[rgba(255,255,255,0.14)]" />
+                            <div className="hero-skeleton-line [--hero-line-delay:460ms] mt-2 h-2 w-[84%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
+                            <div className="hero-skeleton-line [--hero-line-delay:700ms] mt-2 h-2 w-[68%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
                           </div>
                           <div className="rounded-2xl bg-[#f8fafc] p-3 dark:bg-[color:var(--surface-elevated)]">
-                            <div className="hero-skeleton-line h-2 w-[52%] rounded-full bg-[#cbd5e1] dark:bg-[rgba(255,255,255,0.14)]" />
-                            <div className="hero-skeleton-line mt-2 h-2 w-[78%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
+                            <div className="hero-skeleton-line [--hero-line-delay:300ms] h-2 w-[52%] rounded-full bg-[#cbd5e1] dark:bg-[rgba(255,255,255,0.14)]" />
+                            <div className="hero-skeleton-line [--hero-line-delay:640ms] mt-2 h-2 w-[78%] rounded-full bg-[#e2e8f0] dark:bg-[rgba(255,255,255,0.08)]" />
                           </div>
                         </div>
                       </div>

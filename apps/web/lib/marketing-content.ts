@@ -12,12 +12,19 @@ export const marketingHeroPreviewLines = [
 ] as const;
 
 export const marketingTestimonialProfiles = [
-  { id: "maya", initials: "ML" },
-  { id: "ethan", initials: "EC" },
-  { id: "sophia", initials: "SY" },
-  { id: "leo", initials: "LR" },
-  { id: "nina", initials: "NZ" },
-  { id: "owen", initials: "OW" },
+  { id: "maya", initials: "ML", avatarSrc: "/testimonials/testimonial-avatar-maya.png" },
+  { id: "ethan", initials: "EC", avatarSrc: "/testimonials/testimonial-avatar-ethan.png" },
+  { id: "sophia", initials: "SY", avatarSrc: "/testimonials/testimonial-avatar-sophia.png" },
+  { id: "leo", initials: "LR", avatarSrc: "/testimonials/testimonial-avatar-leo.png" },
+  { id: "nina", initials: "NZ", avatarSrc: "/testimonials/testimonial-avatar-nina.png" },
+  { id: "owen", initials: "OW", avatarSrc: "/testimonials/testimonial-avatar-owen.png" },
+  { id: "amara", initials: "AI", avatarSrc: "/testimonials/testimonial-avatar-amara.png" },
+  { id: "julien", initials: "JB", avatarSrc: "/testimonials/testimonial-avatar-julien.png" },
+  { id: "priya", initials: "PS", avatarSrc: "/testimonials/testimonial-avatar-priya.png" },
+  { id: "hana", initials: "HM", avatarSrc: "/testimonials/testimonial-avatar-hana.png" },
+  { id: "diego", initials: "DS", avatarSrc: "/testimonials/testimonial-avatar-diego.png" },
+  { id: "clara", initials: "CB", avatarSrc: "/testimonials/testimonial-avatar-clara.png" },
+  { id: "marcus", initials: "MJ", avatarSrc: "/testimonials/testimonial-avatar-marcus.png" },
 ] as const;
 
 export const marketingWorksWithTags = [

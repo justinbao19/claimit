@@ -154,23 +154,63 @@ html.dark ::-webkit-scrollbar-thumb {
 @keyframes hero-progress-sheen {
   0% {
     background-position: 0% 0;
+    filter: saturate(0.9);
+  }
+
+  50% {
+    background-position: 140% 0;
+    filter: saturate(1.15);
   }
 
   100% {
     background-position: 200% 0;
+    filter: saturate(0.96);
+  }
+}
+
+@keyframes hero-progress-breathe {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scaleX(0.965);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-progress-glint {
+  0% {
+    transform: translateX(-130%);
+  }
+
+  100% {
+    transform: translateX(160%);
   }
 }
 
 @keyframes hero-skeleton-line {
   0%,
   100% {
-    opacity: 0.92;
-    transform: scaleX(1);
+    opacity: 0.82;
+    transform: scaleX(0.985);
   }
 
-  50% {
+  45% {
     opacity: 1;
-    transform: scaleX(1.01);
+    transform: scaleX(1.02);
+  }
+}
+
+@keyframes hero-skeleton-scan {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(170%);
   }
 }
 
@@ -196,14 +236,48 @@ html.dark ::-webkit-scrollbar-thumb {
 }
 
 .hero-progress-sheen {
+  position: relative;
+  overflow: hidden;
+  transform-origin: left center;
   background-size: 220% 100%;
-  animation: hero-progress-sheen 4.8s linear infinite;
+  animation: hero-progress-sheen 2.8s linear infinite, hero-progress-breathe 2.2s ease-in-out infinite;
+  will-change: transform, background-position, opacity;
+}
+
+.hero-progress-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 24%, rgba(255, 255, 255, 0.72) 50%, transparent 76%);
+  animation: hero-progress-glint 1.9s linear infinite;
+  pointer-events: none;
+}
+
+html.dark .hero-progress-sheen::after {
+  background: linear-gradient(100deg, transparent 24%, rgba(255, 255, 255, 0.42) 50%, transparent 76%);
 }
 
 .hero-skeleton-line {
+  position: relative;
+  overflow: hidden;
   transform-origin: left center;
-  animation: hero-skeleton-line 3.8s ease-in-out infinite;
+  animation: hero-skeleton-line 2.6s ease-in-out infinite;
+  animation-delay: var(--hero-line-delay, 0ms);
   will-change: transform, opacity;
+}
+
+.hero-skeleton-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.62) 50%, transparent 80%);
+  animation: hero-skeleton-scan 2.4s ease-in-out infinite;
+  animation-delay: inherit;
+  pointer-events: none;
+}
+
+html.dark .hero-skeleton-line::after {
+  background: linear-gradient(105deg, transparent 18%, rgba(255, 255, 255, 0.26) 50%, transparent 82%);
 }
 
 .hero-chip-glow {
@@ -220,6 +294,11 @@ html.dark ::-webkit-scrollbar-thumb {
   .hero-progress-sheen,
   .hero-skeleton-line,
   .hero-chip-glow {
+    animation: none;
+  }
+
+  .hero-progress-sheen::after,
+  .hero-skeleton-line::after {
     animation: none;
   }
 }
