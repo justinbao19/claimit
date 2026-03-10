@@ -547,7 +547,7 @@
     "features": {
       "eyebrow": "What it does",
       "title": "Everything you need to move from a raw resume file to a role-ready output.",
-      "description": "Keep the factual core, expose weak spots, and reuse the same evidence across variants and exports.",
+      "description": "Keep the factual core and reuse the same evidence across variants and exports.",
       "badge": "CLI + Web workflow",
       "items": {
         "cliFirst": {
@@ -599,7 +599,7 @@
     "workflow": {
       "eyebrow": "How it works",
       "title": "One factual core, multiple outputs.",
-      "description": "Import source material, tighten the evidence, tailor versions, then export.",
+      "description": "Import, tighten, tailor, export.",
       "badge": "Operational loop",
       "items": {
         "import": {

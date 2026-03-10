@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
 import { Badge } from "../ui/badge";
-import { Card } from "../ui/card";
 
 type FeatureItem = {
   title: string;
@@ -35,18 +34,20 @@ export function FeaturesGrid({
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-x-10 gap-y-3 md:grid-cols-2">
         {items.map((item) => {
           const Icon = item.icon;
 
           return (
-            <Card key={item.title} variant="interactive" padding="lg">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-[color:var(--surface)] text-[color:var(--text-primary)] shadow-[0_14px_28px_-24px_var(--shadow-color)]">
+            <div key={item.title} className="flex gap-4 border-t border-[color:var(--border)] py-5 first:border-t-0 first:pt-0 md:first:pt-0">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[color:var(--surface)] text-[color:var(--text-primary)] shadow-[0_14px_28px_-24px_var(--shadow-color)]">
                 <Icon className="size-5" />
               </div>
-              <h4 className="mt-5 text-xl font-semibold text-[color:var(--text-primary)]">{item.title}</h4>
-              <p className="mt-3 text-sm leading-6 text-[color:var(--text-secondary)]">{item.description}</p>
-            </Card>
+              <div className="min-w-0">
+                <h4 className="text-lg font-semibold text-[color:var(--text-primary)]">{item.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">{item.description}</p>
+              </div>
+            </div>
           );
         })}
       </div>

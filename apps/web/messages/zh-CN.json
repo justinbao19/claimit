@@ -547,7 +547,7 @@
     "features": {
       "eyebrow": "它能做什么",
       "title": "从旧简历文件到贴岗输出，所需能力都在同一条链路里。",
-      "description": "保留事实底稿，补齐叙事缺口，并把同一套证据复用到多个版本和导出流程中。",
+      "description": "保留事实底稿，把同一套证据复用到版本和导出流程中。",
       "badge": "CLI + Web 工作流",
       "items": {
         "cliFirst": {
@@ -599,7 +599,7 @@
     "workflow": {
       "eyebrow": "工作方式",
       "title": "同一套事实底稿，产出多个版本。",
-      "description": "导入素材、补齐事实、生成版本，然后导出。",
+      "description": "导入、补齐、定制、导出。",
       "badge": "工作闭环",
       "items": {
         "import": {
