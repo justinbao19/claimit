@@ -360,8 +360,8 @@
     },
     "hero": {
       "eyebrow": "Launch Claimit locally",
-      "title": "Claimit turns a resume into a local, reusable system.",
-      "description": "Start from the CLI, keep your evidence in one vault, and move from import to assistant guidance, tailored variants, and polished export without breaking the factual thread.",
+      "title": "Turn resume editing into a maintainable system.",
+      "description": "Import an old resume, organize the evidence, tailor role-specific versions, and export a cleaner final resume.",
       "badges": {
         "cli": "CLI-first setup",
         "web": "Web companion",
@@ -370,7 +370,7 @@
       "primaryCta": "See quick start",
       "secondaryCta": "Open workspace",
       "previewLabel": "Preview flow",
-      "previewTitle": "Run the core loop from the terminal, then keep refining in the browser.",
+      "previewTitle": "Run the workflow, then make the resume sharper and more tailored.",
       "previewTabs": {
         "cli": "CLI flow",
         "web": "Web surface"
@@ -402,23 +402,7 @@
           }
         }
       },
-      "proofStats": {
-        "setup": {
-          "value": "4",
-          "label": "commands to first run",
-          "description": "Install, initialize, inspect, and launch the web companion."
-        },
-        "vault": {
-          "value": "1",
-          "label": "local vault",
-          "description": "Keep the base resume, achievements, and variants in one factual source of truth."
-        },
-        "output": {
-          "value": "CLI + Web",
-          "label": "editing loop",
-          "description": "Automate with commands, then do the final human pass in the browser."
-        }
-      }
+      "proofStats": {}
     },
     "openSource": {
       "eyebrow": "Open tooling",

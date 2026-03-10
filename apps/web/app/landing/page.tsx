@@ -11,6 +11,7 @@ import {
 
 import { FeaturesGrid } from "../../components/marketing/features-grid";
 import { FinalCta } from "../../components/marketing/final-cta";
+import { LanguageSwitcher } from "../../components/layout/language-switcher";
 import { MarketingHero } from "../../components/marketing/marketing-hero";
 import { OpenToolingStrip } from "../../components/marketing/open-tooling-strip";
 import { ProductShowcaseSection } from "../../components/marketing/product-showcase-section";
@@ -102,6 +103,10 @@ export default async function LandingPage() {
 
   return (
     <div className="space-y-8 pb-10">
+      <div className="flex justify-end">
+        <LanguageSwitcher />
+      </div>
+
       <MarketingHero
         eyebrow={t("marketing.hero.eyebrow")}
         title={t("marketing.hero.title")}
@@ -147,23 +152,6 @@ export default async function LandingPage() {
               t("marketing.hero.previewModes.web.details.review"),
               t("marketing.hero.previewModes.web.details.export"),
             ],
-          },
-        ]}
-        proofStats={[
-          {
-            value: t("marketing.hero.proofStats.setup.value"),
-            label: t("marketing.hero.proofStats.setup.label"),
-            description: t("marketing.hero.proofStats.setup.description"),
-          },
-          {
-            value: t("marketing.hero.proofStats.vault.value"),
-            label: t("marketing.hero.proofStats.vault.label"),
-            description: t("marketing.hero.proofStats.vault.description"),
-          },
-          {
-            value: t("marketing.hero.proofStats.output.value"),
-            label: t("marketing.hero.proofStats.output.label"),
-            description: t("marketing.hero.proofStats.output.description"),
           },
         ]}
       />

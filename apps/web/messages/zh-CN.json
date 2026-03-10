@@ -360,8 +360,8 @@
     },
     "hero": {
       "eyebrow": "本地启动 Claimit",
-      "title": "Claimit 把简历变成一套可持续维护的本地系统。",
-      "description": "从 CLI 开始，把事实素材收进同一个 vault，再从导入、档案整理、助手补强、岗位定制到最终导出，始终不丢掉表述背后的事实主线。",
+      "title": "把简历从文档，变成可维护的制作系统。",
+      "description": "导入旧简历，整理事实素材，生成岗位版本，再导出更干净的最终简历。",
       "badges": {
         "cli": "CLI 优先",
         "web": "Web 工作台",
@@ -370,7 +370,7 @@
       "primaryCta": "查看快速开始",
       "secondaryCta": "打开工作台",
       "previewLabel": "预览流程",
-      "previewTitle": "先在终端跑通核心流程，再到浏览器里继续细修。",
+      "previewTitle": "先跑通流程，再把简历做得更好看、更贴岗。",
       "previewTabs": {
         "cli": "CLI 流程",
         "web": "Web 界面"
@@ -402,23 +402,7 @@
           }
         }
       },
-      "proofStats": {
-        "setup": {
-          "value": "4",
-          "label": "条命令即可启动",
-          "description": "安装、初始化、查看状态，再启动 Web 工作台。"
-        },
-        "vault": {
-          "value": "1",
-          "label": "个本地 vault",
-          "description": "把基础简历、成就素材和岗位版本都收进同一个事实底稿。"
-        },
-        "output": {
-          "value": "CLI + Web",
-          "label": "双层编辑闭环",
-          "description": "命令负责初始化和自动化，浏览器负责最后一轮人工判断。"
-        }
-      }
+      "proofStats": {}
     },
     "openSource": {
       "eyebrow": "开源工具生态",

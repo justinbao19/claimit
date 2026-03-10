@@ -127,8 +127,118 @@ html.dark ::-webkit-scrollbar-thumb {
   will-change: transform;
 }
 
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes hero-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    box-shadow: 0 32px 72px -36px rgba(0, 0, 0, 0.28);
+  }
+
+  50% {
+    transform: translate3d(0, -3px, 0) scale(1.006);
+    box-shadow: 0 40px 82px -38px rgba(0, 0, 0, 0.32);
+  }
+}
+
+@keyframes hero-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hero-progress-sheen {
+  0% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes hero-skeleton-line {
+  0%,
+  100% {
+    opacity: 0.92;
+    transform: scaleX(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.01);
+  }
+}
+
+@keyframes hero-chip-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(138, 104, 70, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(138, 104, 70, 0.06);
+  }
+}
+
+.hero-float {
+  animation: hero-float 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-breathe {
+  animation: hero-breathe 6.6s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.hero-glow-pulse {
+  animation: hero-glow-pulse 7.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.hero-progress-sheen {
+  background-size: 220% 100%;
+  animation: hero-progress-sheen 4.8s linear infinite;
+}
+
+.hero-skeleton-line {
+  transform-origin: left center;
+  animation: hero-skeleton-line 3.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.hero-chip-glow {
+  animation: hero-chip-glow 5.6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-marquee-track {
+    animation: none;
+  }
+
+  .hero-float,
+  .hero-breathe,
+  .hero-glow-pulse,
+  .hero-progress-sheen,
+  .hero-skeleton-line,
+  .hero-chip-glow {
     animation: none;
   }
 }
