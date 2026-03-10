@@ -98,7 +98,7 @@ export function MarketingHero({
                   </div>
                 </div>
 
-                <div className="hero-breathe relative rounded-[30px] border border-[rgba(0,0,0,0.05)] bg-white p-5 shadow-[0_32px_72px_-36px_rgba(0,0,0,0.28)] transition-transform duration-500 ease-out group-hover/hero:-translate-x-1 group-hover/hero:translate-y-1 dark:border-[rgba(255,255,255,0.08)] dark:bg-[color:var(--surface)]">
+                <div className="relative rounded-[30px] border border-[rgba(0,0,0,0.05)] bg-white p-5 shadow-[0_32px_72px_-36px_rgba(0,0,0,0.28)] dark:border-[rgba(255,255,255,0.08)] dark:bg-[color:var(--surface)]">
                   <div className="pointer-events-none absolute inset-x-6 top-0 h-20 rounded-full bg-[radial-gradient(circle,rgba(196,162,123,0.16),transparent_68%)] blur-2xl" />
                   <div className="flex items-start justify-between gap-4">
                     <div>
