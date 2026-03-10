@@ -294,18 +294,13 @@ html.dark .hero-skeleton-line::after {
   }
 }
 
-.testimonial-marquee-track-fast {
-  animation: testimonial-marquee-left 24s linear infinite;
+.testimonial-marquee-track-forward {
+  animation: testimonial-marquee-left 38s linear infinite;
   will-change: transform;
 }
 
-.testimonial-marquee-track-base {
-  animation: testimonial-marquee-left 28s linear infinite;
-  will-change: transform;
-}
-
-.testimonial-marquee-track-slow {
-  animation: testimonial-marquee-left 33s linear infinite;
+.testimonial-marquee-track-reverse {
+  animation: testimonial-marquee-left 42s linear infinite reverse;
   will-change: transform;
 }
 
@@ -342,9 +337,8 @@ html.dark .testimonial-marquee-fade-right {
   .hero-progress-sheen,
   .hero-skeleton-line,
   .hero-chip-glow,
-  .testimonial-marquee-track-fast,
-  .testimonial-marquee-track-base,
-  .testimonial-marquee-track-slow {
+  .testimonial-marquee-track-forward,
+  .testimonial-marquee-track-reverse {
     animation: none;
   }
 
