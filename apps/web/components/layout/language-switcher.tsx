@@ -92,17 +92,17 @@ export function LanguageSwitcher() {
       <button
         ref={buttonRef}
         type="button"
-        className="inline-flex h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-[rgba(255,255,255,0.78)] px-3 text-sm text-[color:var(--text-primary)] shadow-[0_10px_22px_-18px_var(--shadow-color)] backdrop-blur transition hover:bg-[rgba(255,255,255,0.9)]"
+        className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--panel)] px-2.5 text-[11px] font-medium text-[color:var(--text-primary)] shadow-[0_8px_18px_-16px_var(--shadow-color)] backdrop-blur transition hover:bg-[color:var(--surface-elevated)]"
         aria-label={t("language.label")}
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >
-        <Languages className="size-4 text-[color:var(--text-secondary)]" />
-        <span className="min-w-[2.5rem] text-left text-xs font-medium tracking-[0.12em] uppercase">
+        <Languages className="size-3.5 text-[color:var(--text-secondary)]" />
+        <span className="min-w-[1.5rem] text-left text-[11px] font-medium tracking-[0.08em] uppercase">
           {activeOption.shortLabel}
         </span>
-        <ChevronDown className={cn("size-4 text-[color:var(--text-secondary)] transition", open && "rotate-180")} />
+        <ChevronDown className={cn("size-3.5 text-[color:var(--text-secondary)] transition", open && "rotate-180")} />
       </button>
 
       {mounted && open
@@ -116,7 +116,7 @@ export function LanguageSwitcher() {
                 top: menuPosition.top,
                 left: menuPosition.left,
               }}
-              className="z-[200] min-w-[11rem] rounded-2xl border border-[color:var(--border)] bg-[rgba(255,255,255,0.96)] p-1.5 shadow-[0_18px_36px_-24px_var(--shadow-color)]"
+              className="z-[200] min-w-[11rem] rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] p-1.5 shadow-[0_18px_36px_-24px_var(--shadow-color)]"
             >
               {localeOptions.map((option) => {
                 const active = option.value === locale;

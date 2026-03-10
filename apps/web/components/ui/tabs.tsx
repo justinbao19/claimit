@@ -8,7 +8,7 @@ export function TabsList({ className, ...props }: React.ComponentProps<typeof Ta
   return (
     <TabsPrimitive.List
       className={cn(
-        "inline-flex rounded-[20px] border border-[color:var(--border)] bg-[rgba(255,255,255,0.78)] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.58)]",
+        "inline-flex rounded-[20px] border border-[color:var(--border)] bg-[color:var(--panel)] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
         className,
       )}
       {...props}
@@ -20,7 +20,7 @@ export function TabsTrigger({ className, ...props }: React.ComponentProps<typeof
   return (
     <TabsPrimitive.Trigger
       className={cn(
-        "inline-flex min-w-[120px] items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-medium text-[color:var(--text-secondary)] transition hover:text-[color:var(--text-primary)] data-[state=active]:bg-[rgba(255,255,255,0.94)] data-[state=active]:text-[color:var(--text-primary)] data-[state=active]:shadow-[0_8px_18px_-18px_var(--shadow-color)]",
+        "inline-flex min-w-[120px] items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-medium text-[color:var(--text-secondary)] transition hover:text-[color:var(--text-primary)] data-[state=active]:bg-[color:var(--surface-elevated)] data-[state=active]:text-[color:var(--text-primary)] data-[state=active]:shadow-[0_8px_18px_-18px_var(--shadow-color)]",
         className,
       )}
       {...props}

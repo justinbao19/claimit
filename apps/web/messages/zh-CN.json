@@ -2,7 +2,7 @@
   "common": {
     "appName": "Claimit",
     "baseResume": "基础简历",
-    "backToDashboard": "返回总览",
+    "backToDashboard": "返回工作台",
     "edit": "编辑",
     "present": "至今",
     "dateUnavailable": "日期暂缺",
@@ -21,7 +21,7 @@
     "switchToDark": "切换到深色模式"
   },
   "nav": {
-    "dashboard": "总览",
+    "dashboard": "工作台",
     "import": "导入",
     "memory": "档案库",
     "assistant": "优化助手",
@@ -346,6 +346,243 @@
       "title": "文档预览",
       "description": "这里显示的实时 HTML 预览，会和当前导出流程保持一致。",
       "iframeTitle": "简历预览"
+    }
+  },
+  "marketing": {
+    "nav": {
+      "title": "简历系统",
+      "productBadge": "CLI + Web",
+      "quickStart": "快速开始",
+      "capabilities": "能力说明",
+      "testimonials": "用户评价",
+      "openWorkspace": "打开工作台",
+      "launchQuickStart": "快速开始"
+    },
+    "hero": {
+      "eyebrow": "本地启动 Claimit",
+      "title": "Claimit 把简历变成一套可持续维护的本地系统。",
+      "description": "从 CLI 开始，把事实素材收进同一个 vault，再从导入、档案整理、助手补强、岗位定制到最终导出，始终不丢掉表述背后的事实主线。",
+      "badges": {
+        "cli": "CLI 优先",
+        "web": "Web 工作台",
+        "local": "本地 vault"
+      },
+      "primaryCta": "查看快速开始",
+      "secondaryCta": "打开工作台",
+      "previewLabel": "预览流程",
+      "previewTitle": "先在终端跑通核心流程，再到浏览器里继续细修。",
+      "previewTabs": {
+        "cli": "CLI 流程",
+        "web": "Web 界面"
+      },
+      "previewModes": {
+        "cli": {
+          "headline": "先从终端完成核心操作",
+          "description": "先初始化 vault、查看结构化状态、补齐薄弱信息，再生成岗位版本，整个基础链路可以先不打开浏览器。",
+          "details": {
+            "import": "导入原始简历",
+            "gapFill": "运行缺口分析",
+            "variant": "生成岗位版本",
+            "export": "导出最终结果"
+          }
+        },
+        "web": {
+          "headline": "再用 Web 做最后的人类精修",
+          "description": "回到工作台查看档案库、回答助手问题、对比版本差异，等叙事成熟后再完成最终导出。",
+          "lines": {
+            "base": "基础简历已接入本地 vault",
+            "library": "档案库已可继续编辑",
+            "assistant": "助手问题已准备好等待补充",
+            "render": "导出工作室已可做最后精修"
+          },
+          "details": {
+            "workspace": "档案库 + 版本管理",
+            "review": "助手引导式改写",
+            "export": "预览到 PDF"
+          }
+        }
+      },
+      "proofStats": {
+        "setup": {
+          "value": "4",
+          "label": "条命令即可启动",
+          "description": "安装、初始化、查看状态，再启动 Web 工作台。"
+        },
+        "vault": {
+          "value": "1",
+          "label": "个本地 vault",
+          "description": "把基础简历、成就素材和岗位版本都收进同一个事实底稿。"
+        },
+        "output": {
+          "value": "CLI + Web",
+          "label": "双层编辑闭环",
+          "description": "命令负责初始化和自动化，浏览器负责最后一轮人工判断。"
+        }
+      }
+    },
+    "openSource": {
+      "eyebrow": "开源工具生态",
+      "title": "围绕开发者已经熟悉的开源工具来构建。",
+      "description": "首页如果能展示真实的技术锚点，产品就更容易建立可信感。Claimit 更像是融入现有本地工作流，而不是重新发明一套封闭生态。",
+      "badge": "开发者原生技术栈"
+    },
+    "quickStart": {
+      "eyebrow": "快速开始",
+      "title": "用四条命令把 Claimit 跑起来。",
+      "description": "先用 CLI 安装依赖、初始化本地 vault、查看结构化状态，再在需要更强可视化编辑时启动 Web UI。",
+      "badge": "4 步完成启动",
+      "terminalLabel": "terminal",
+      "copy": "复制命令",
+      "copied": "已复制",
+      "cta": "打开当前工作台界面",
+      "steps": {
+        "install": {
+          "label": "第 1 步",
+          "title": "安装 monorepo 依赖",
+          "description": "先把工作区依赖装好，这样 CLI 和 Next.js Web 应用都能直接运行。"
+        },
+        "init": {
+          "label": "第 2 步",
+          "title": "创建本地 vault",
+          "description": "初始化一个干净的 Claimit vault，把基础简历、档案库和版本都放进同一套本地结构里。"
+        },
+        "inspect": {
+          "label": "第 3 步",
+          "title": "查看结构化简历状态",
+          "description": "用 CLI 确认 vault 已可读取，并能直接拿到当前简历数据的 JSON 视图。"
+        },
+        "launch": {
+          "label": "第 4 步",
+          "title": "启动 Web 工作台",
+          "description": "当你想用更直观的界面继续整理档案、回答助手问题或导出时，再切到浏览器。"
+        }
+      }
+    },
+    "features": {
+      "eyebrow": "它能做什么",
+      "title": "从旧简历文件到贴岗输出，所需能力都在同一条链路里。",
+      "description": "Claimit 不只是一个排版工具。它会保留事实底稿、暴露叙事短板，并让同一套证据可以在多个版本和导出流程里复用。",
+      "badge": "CLI + Web 工作流",
+      "items": {
+        "cliFirst": {
+          "title": "默认以 CLI 为先",
+          "description": "适合接入自动化、本地脚本或 agent 工作流，用命令先把基础流程跑通。"
+        },
+        "localVault": {
+          "title": "一个本地事实 vault",
+          "description": "把基础简历、成就、论据和定制版本放在一起，而不是散落在多个文件里。"
+        },
+        "assistedReview": {
+          "title": "助手辅助补强",
+          "description": "在版本生成或导出前，提前找出影响力、范围和表达清晰度上的薄弱点。"
+        },
+        "roleVariants": {
+          "title": "岗位定制版本",
+          "description": "围绕同一套事实重组叙事重点，不必每次面对新岗位都从头改写。"
+        },
+        "exportFlow": {
+          "title": "结构化导出链路",
+          "description": "从结构化 JSON 到模板预览再到 PDF 导出，尽量减少最后阶段的返工。"
+        },
+        "webCompanion": {
+          "title": "需要时再切到 Web",
+          "description": "想要更丰富的可视化编辑体验时再进入浏览器，但底层仍然是同一个本地 vault。"
+        }
+      }
+    },
+    "worksWith": {
+      "eyebrow": "适配你的工作流",
+      "title": "围绕你已经在用的格式、交接方式和输出结果来设计。",
+      "description": "这块区块的作用，是让用户一眼看出 Claimit 不是一个只能演示的概念页，而是真的能接住现有简历文件、CLI 工作流和最终导出需求。",
+      "badge": "兼容你真正会用到的东西",
+      "highlights": {
+        "formats": {
+          "title": "直接接现有输入",
+          "description": "从你已经有的简历文件和 JD 开始，而不是先被迫迁移到一套新系统。"
+        },
+        "workflow": {
+          "title": "CLI 到浏览器的切换",
+          "description": "初始化和自动化继续用命令，等需要更直观的编辑体验时再切进 Web UI。"
+        },
+        "output": {
+          "title": "结构化输出路径",
+          "description": "同一套事实底稿可以一路贯穿版本生成、预览和最终 PDF 导出。"
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "工作方式",
+      "title": "同一套事实底稿，产出多个版本。",
+      "description": "流程很简单：先导入素材，再收口事实，借助助手补齐缺口，为不同岗位组织版本，最后在确认叙事成熟后导出。",
+      "badge": "工作闭环",
+      "items": {
+        "import": {
+          "title": "导入原始简历",
+          "description": "把现有简历解析成后续流程可真正使用的结构化数据。"
+        },
+        "library": {
+          "title": "建立档案库",
+          "description": "把高价值成就和支撑信息只整理一次，后续版本都能复用。"
+        },
+        "assistant": {
+          "title": "补齐叙事缺口",
+          "description": "通过引导式提问补强结果、范围和清晰度，而不是凭空编造新事实。"
+        },
+        "variants": {
+          "title": "生成岗位版本",
+          "description": "针对具体 JD 调整叙事重心，同时保持基础事实记录稳定不变。"
+        },
+        "export": {
+          "title": "预览并导出",
+          "description": "选择模板、检查文档表面，准备好之后再导出成最终 PDF。"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "用户评价",
+      "title": "这类首页想传达的，就是这种“第一晚就上手”的感觉。",
+      "description": "这里先用一组用于落地页排版的 mock 用户评价，模拟早期用户反馈的语气和节奏。",
+      "badge": "早期反馈",
+      "items": {
+        "maya": {
+          "name": "Maya Lin",
+          "role": "产品负责人",
+          "quote": "我比预期更快地把旧 PDF 整理进了一个干净的 vault，CLI 和 Web 之间的切换也很顺。"
+        },
+        "ethan": {
+          "name": "Ethan Cole",
+          "role": "资深工程师",
+          "quote": "最打动我的是本地优先这点。基础简历、版本和导出终于都能落在同一个地方。"
+        },
+        "sophia": {
+          "name": "Sophia Yang",
+          "role": "增长负责人",
+          "quote": "助手提问很会抓缺失的数据点，但又不会把我往编造指标的方向带。"
+        },
+        "leo": {
+          "name": "Leo Romero",
+          "role": "设计技术专家",
+          "quote": "我喜欢先从终端开始，只有在需要更直观地精修时，才切到浏览器里继续。"
+        },
+        "nina": {
+          "name": "Nina Zhao",
+          "role": "职业教练",
+          "quote": "它更像是在维护一套系统，而不是每遇到一个新岗位就重写一份文档。"
+        },
+        "owen": {
+          "name": "Owen Wu",
+          "role": "独立顾问",
+          "quote": "整个流程很顺：导入、补强事实、生成版本，等叙事真正成熟后再导出。"
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "现在开始",
+      "title": "先从 CLI 起步，再回到工作台完成最后的人类判断。",
+      "description": "如果你已经知道自己的工作方式，Claimit 就尽量不打扰你：先用命令完成初始化和自动化，再在 UI 里做最后一轮人工精修。",
+      "badge": "本地优先工作流",
+      "primary": "跳到快速开始",
+      "secondary": "打开工作台"
     }
   },
   "notFound": {

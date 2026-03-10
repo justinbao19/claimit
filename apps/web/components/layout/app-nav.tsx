@@ -17,13 +17,12 @@ import { ClaimitMark } from "../brand/claimit-mark";
 import { Badge } from "../ui/badge";
 import { LanguageSwitcher } from "./language-switcher";
 import { useTranslations } from "./locale-provider";
-import { ThemeToggle } from "./theme-toggle";
 
 export function AppNav() {
   const pathname = usePathname();
   const t = useTranslations();
   const navItems = [
-    { href: "/", label: t("nav.dashboard"), icon: LayoutDashboard },
+    { href: "/workspace", label: t("nav.dashboard"), icon: LayoutDashboard },
     { href: "/import", label: t("nav.import"), icon: FilePlus2 },
     { href: "/memory", label: t("nav.memory"), icon: FolderKanban },
     { href: "/assistant", label: t("nav.assistant"), icon: Bot },
@@ -32,7 +31,7 @@ export function AppNav() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <div className="relative flex flex-col gap-4 pr-18 lg:flex-row lg:items-center lg:justify-between lg:pr-20">
       <div className="flex items-center gap-4">
         <div className="flex size-20 shrink-0 items-center justify-center rounded-[28px] bg-[linear-gradient(145deg,var(--accent-strong),var(--accent))] text-[color:var(--accent-contrast)] shadow-[0_18px_46px_-24px_rgba(112,82,56,0.55)] ring-1 ring-[rgba(255,255,255,0.12)]">
           <ClaimitMark className="size-[3.75rem]" accentClassName="fill-transparent" />
@@ -47,7 +46,7 @@ export function AppNav() {
       </div>
 
       <div className="relative z-20 flex flex-wrap items-center gap-3">
-        <nav className="flex flex-wrap gap-2 rounded-[22px] border border-[color:var(--border)] bg-[rgba(255,255,255,0.76)] p-2 shadow-[0_10px_24px_-20px_var(--shadow-color)] backdrop-blur-xl">
+        <nav className="flex flex-wrap gap-2 rounded-[22px] border border-[color:var(--border)] bg-[color:var(--surface)] p-2 shadow-[0_18px_42px_-28px_var(--shadow-color)] backdrop-blur-xl">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
@@ -67,7 +66,7 @@ export function AppNav() {
                   {active ? (
                     <motion.span
                       layoutId="nav-highlight"
-                      className="absolute inset-0 rounded-2xl border border-[color:var(--border)] bg-[rgba(255,255,255,0.88)] shadow-[0_10px_20px_-18px_var(--shadow-color)]"
+                      className="absolute inset-0 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] shadow-[0_16px_30px_-22px_var(--shadow-color)]"
                       transition={{ type: "spring", stiffness: 320, damping: 28 }}
                     />
                   ) : null}
@@ -80,7 +79,8 @@ export function AppNav() {
             );
           })}
         </nav>
-        <ThemeToggle />
+      </div>
+      <div className="absolute right-0 top-0 z-30">
         <LanguageSwitcher />
       </div>
     </div>

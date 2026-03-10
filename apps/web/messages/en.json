@@ -2,7 +2,7 @@
   "common": {
     "appName": "Claimit",
     "baseResume": "Base resume",
-    "backToDashboard": "Back to dashboard",
+    "backToDashboard": "Back to workspace",
     "edit": "Edit",
     "present": "Present",
     "dateUnavailable": "Date unavailable",
@@ -21,7 +21,7 @@
     "switchToDark": "Switch to dark mode"
   },
   "nav": {
-    "dashboard": "Dashboard",
+    "dashboard": "Workspace",
     "import": "Import",
     "memory": "Library",
     "assistant": "Assistant",
@@ -346,6 +346,243 @@
       "title": "Document preview",
       "description": "The live HTML surface mirrors the current export pipeline output.",
       "iframeTitle": "Resume preview"
+    }
+  },
+  "marketing": {
+    "nav": {
+      "title": "Resume system",
+      "productBadge": "CLI + Web",
+      "quickStart": "Quick start",
+      "capabilities": "Capabilities",
+      "testimonials": "Testimonials",
+      "openWorkspace": "Open workspace",
+      "launchQuickStart": "Quick start"
+    },
+    "hero": {
+      "eyebrow": "Launch Claimit locally",
+      "title": "Claimit turns a resume into a local, reusable system.",
+      "description": "Start from the CLI, keep your evidence in one vault, and move from import to assistant guidance, tailored variants, and polished export without breaking the factual thread.",
+      "badges": {
+        "cli": "CLI-first setup",
+        "web": "Web companion",
+        "local": "Local vault"
+      },
+      "primaryCta": "See quick start",
+      "secondaryCta": "Open workspace",
+      "previewLabel": "Preview flow",
+      "previewTitle": "Run the core loop from the terminal, then keep refining in the browser.",
+      "previewTabs": {
+        "cli": "CLI flow",
+        "web": "Web surface"
+      },
+      "previewModes": {
+        "cli": {
+          "headline": "Terminal-first operations",
+          "description": "Initialize the vault, inspect structured state, fill weak spots, and generate role-aware variants before you even open the browser.",
+          "details": {
+            "import": "Import source resume",
+            "gapFill": "Run gap analysis",
+            "variant": "Create role variant",
+            "export": "Export polished output"
+          }
+        },
+        "web": {
+          "headline": "Visual refinement layer",
+          "description": "Use the web workspace for the human pass: review the evidence library, answer assistant prompts, compare versions, and export when the story is ready.",
+          "lines": {
+            "base": "Base resume is connected to the vault",
+            "library": "Evidence library is ready for edits",
+            "assistant": "Assistant prompts are queued for review",
+            "render": "Export studio is ready for final polish"
+          },
+          "details": {
+            "workspace": "Library + variants",
+            "review": "Assistant-guided editing",
+            "export": "Preview to PDF"
+          }
+        }
+      },
+      "proofStats": {
+        "setup": {
+          "value": "4",
+          "label": "commands to first run",
+          "description": "Install, initialize, inspect, and launch the web companion."
+        },
+        "vault": {
+          "value": "1",
+          "label": "local vault",
+          "description": "Keep the base resume, achievements, and variants in one factual source of truth."
+        },
+        "output": {
+          "value": "CLI + Web",
+          "label": "editing loop",
+          "description": "Automate with commands, then do the final human pass in the browser."
+        }
+      }
+    },
+    "openSource": {
+      "eyebrow": "Open tooling",
+      "title": "Built around the open tools developers already trust.",
+      "description": "The product story lands better when the page shows real technology anchors. Claimit fits naturally into a modern local workflow instead of inventing a closed ecosystem.",
+      "badge": "Developer-native stack"
+    },
+    "quickStart": {
+      "eyebrow": "Quick start",
+      "title": "Go from install to a working Claimit vault in four commands.",
+      "description": "Use the CLI to install dependencies, initialize a local vault, inspect the structured resume state, and launch the web UI when you want a richer editing surface.",
+      "badge": "4-step setup",
+      "terminalLabel": "terminal",
+      "copy": "Copy block",
+      "copied": "Copied",
+      "cta": "Open the current workspace UI",
+      "steps": {
+        "install": {
+          "label": "Step 1",
+          "title": "Install the monorepo dependencies",
+          "description": "Set up the workspace once so both the CLI and the Next.js app are ready to run."
+        },
+        "init": {
+          "label": "Step 2",
+          "title": "Create a local vault",
+          "description": "Initialize a clean Claimit vault where your base resume, evidence library, and variants can live together."
+        },
+        "inspect": {
+          "label": "Step 3",
+          "title": "Inspect the structured resume state",
+          "description": "Use the CLI to confirm the vault is readable and that the current data is available as JSON."
+        },
+        "launch": {
+          "label": "Step 4",
+          "title": "Launch the web companion",
+          "description": "Switch to the browser whenever you want a more visual workflow for library editing, assistant prompts, and export."
+        }
+      }
+    },
+    "features": {
+      "eyebrow": "What it does",
+      "title": "Everything you need to move from a raw resume file to a role-ready output.",
+      "description": "Claimit is not just a formatter. It keeps the factual core, exposes weak spots, and helps you reuse the same evidence across multiple versions and exports.",
+      "badge": "CLI + Web workflow",
+      "items": {
+        "cliFirst": {
+          "title": "CLI-first by default",
+          "description": "Start with commands that fit into automation, local tooling, or an agent-driven workflow."
+        },
+        "localVault": {
+          "title": "One local evidence vault",
+          "description": "Keep base resume data, achievements, claims, and variants together instead of scattering them across files."
+        },
+        "assistedReview": {
+          "title": "Assistant-guided review",
+          "description": "Find missing impact, scope, and clarity before your next version or export leaves the workspace."
+        },
+        "roleVariants": {
+          "title": "Role-specific variants",
+          "description": "Reshape the same factual record into targeted narratives without rewriting everything from scratch."
+        },
+        "exportFlow": {
+          "title": "Structured export flow",
+          "description": "Move from structured JSON to previewable templates and final PDF export with less formatting churn."
+        },
+        "webCompanion": {
+          "title": "Web companion when needed",
+          "description": "Drop into the browser for a richer editing surface while keeping the same local vault underneath."
+        }
+      }
+    },
+    "worksWith": {
+      "eyebrow": "Works with your flow",
+      "title": "Built for the formats, handoffs, and outputs you already use.",
+      "description": "This page should make it obvious that Claimit is not a dead-end demo. It fits real resume inputs, CLI-first workflows, and the final export steps people actually care about.",
+      "badge": "Works with everything you need",
+      "highlights": {
+        "formats": {
+          "title": "Inputs that already exist",
+          "description": "Start from the resume files and job descriptions you already have instead of migrating to a new system first."
+        },
+        "workflow": {
+          "title": "CLI to browser handoff",
+          "description": "Use commands for setup and automation, then move into the web UI when you want a more visual editing pass."
+        },
+        "output": {
+          "title": "Structured output path",
+          "description": "Keep the same evidence base all the way through variants, preview, and final PDF export."
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "How it works",
+      "title": "One factual core, multiple outputs.",
+      "description": "The flow stays simple: bring in source material, tighten your evidence, let the assistant expose gaps, tailor versions for roles, then export with confidence.",
+      "badge": "Operational loop",
+      "items": {
+        "import": {
+          "title": "Import source material",
+          "description": "Parse an existing resume into structured data that the rest of the system can actually use."
+        },
+        "library": {
+          "title": "Build the evidence library",
+          "description": "Capture achievements and supporting details once so they can power future versions."
+        },
+        "assistant": {
+          "title": "Close the narrative gaps",
+          "description": "Use guided prompts to strengthen impact, scope, and clarity without inventing new facts."
+        },
+        "variants": {
+          "title": "Generate role variants",
+          "description": "Reframe the same evidence for a specific job description while keeping the base record stable."
+        },
+        "export": {
+          "title": "Preview and export",
+          "description": "Choose a template, verify the surface, and ship a polished PDF when the story is ready."
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Social proof",
+      "title": "The kind of first-night reactions this page is designed to evoke.",
+      "description": "A mock set of believable user quotes for landing-page layout and tone, styled like early feedback cards.",
+      "badge": "Early feedback",
+      "items": {
+        "maya": {
+          "name": "Maya Lin",
+          "role": "Product lead",
+          "quote": "I got a clean vault from an old PDF faster than expected, and the CLI plus web handoff felt surprisingly natural."
+        },
+        "ethan": {
+          "name": "Ethan Cole",
+          "role": "Staff engineer",
+          "quote": "What clicked for me was the local-first model. My source resume, variants, and exports finally live in one place."
+        },
+        "sophia": {
+          "name": "Sophia Yang",
+          "role": "Growth operator",
+          "quote": "The assistant prompts were good at surfacing missing metrics without pushing me into made-up claims."
+        },
+        "leo": {
+          "name": "Leo Romero",
+          "role": "Design technologist",
+          "quote": "I like that I can start from the terminal, then move into the browser only when I want a more visual editing pass."
+        },
+        "nina": {
+          "name": "Nina Zhao",
+          "role": "Career coach",
+          "quote": "This feels much more like maintaining a system than rewriting a document every time a new role shows up."
+        },
+        "owen": {
+          "name": "Owen Wu",
+          "role": "Independent consultant",
+          "quote": "The workflow makes sense: import, tighten the evidence, tailor the version, and export when the story is actually ready."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Start now",
+      "title": "Start with the CLI, keep polishing in the workspace.",
+      "description": "If you already know how you want to work, Claimit stays out of the way: use commands for setup and automation, then switch to the UI for the final human pass.",
+      "badge": "Local-first workflow",
+      "primary": "Jump to quick start",
+      "secondary": "Open workspace"
     }
   },
   "notFound": {

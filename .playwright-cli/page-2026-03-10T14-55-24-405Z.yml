@@ -1,0 +1,182 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e15]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: Dashboard
+            - link "Import" [ref=e28] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [ref=e34] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [ref=e39] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [ref=e45] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e51] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - button "Language" [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e66]: EN
+            - img [ref=e67]
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - img [ref=e74]
+            - paragraph [ref=e77]: Workspace
+            - generic [ref=e78]: Editorial workspace
+          - generic [ref=e79]:
+            - heading "Build a living resume system, not a one-off file" [level=2] [ref=e80]
+            - paragraph [ref=e81]: Capture achievements, tighten weak spots, and keep every version anchored to a clean factual core.
+        - generic [ref=e82]:
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: Guided editing
+                - generic [ref=e89]: Structured source of truth
+              - generic [ref=e90]:
+                - heading "Claimit keeps your evidence organized, adaptable, and ready to ship." [level=3] [ref=e91]
+                - paragraph [ref=e92]: Move from import to library, assistant, tailored versions, and final export without losing the reasoning behind each line.
+              - generic [ref=e93]:
+                - link "Import resume" [ref=e94] [cursor=pointer]:
+                  - /url: /import
+                  - text: Import resume
+                  - img [ref=e95]
+                - link "Run assistant" [ref=e97] [cursor=pointer]:
+                  - /url: /assistant
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - img [ref=e102]
+                  - generic [ref=e106]: "01"
+                - paragraph [ref=e107]: Import
+                - paragraph [ref=e108]: Turn existing resume files into structured source material.
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - img [ref=e112]
+                  - generic [ref=e114]: "02"
+                - paragraph [ref=e115]: Library
+                - paragraph [ref=e116]: Store achievements, signals, and supporting details in one place.
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - img [ref=e120]
+                  - generic [ref=e123]: "03"
+                - paragraph [ref=e124]: Assistant
+                - paragraph [ref=e125]: Spot gaps in impact, scope, and clarity before they ship.
+              - generic [ref=e126]:
+                - generic [ref=e127]:
+                  - img [ref=e129]
+                  - generic [ref=e132]: "04"
+                - paragraph [ref=e133]: Variants
+                - paragraph [ref=e134]: Shape the same facts into role-specific narratives.
+              - generic [ref=e135]:
+                - generic [ref=e136]:
+                  - img [ref=e138]
+                  - generic [ref=e142]: "05"
+                - paragraph [ref=e143]: Export
+                - paragraph [ref=e144]: Preview polished layouts and produce final output quickly.
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - generic [ref=e148]:
+                  - paragraph [ref=e149]: Workspace readiness
+                  - generic [ref=e150]:
+                    - generic [ref=e151]: "0"
+                    - generic [ref=e152]: / 100
+                - generic [ref=e153]: Healthy editing flow
+              - generic [ref=e156]:
+                - generic [ref=e157]:
+                  - paragraph [ref=e158]: Current base resume
+                  - paragraph [ref=e159]: Your Name
+                  - paragraph [ref=e160]: No experience entries imported yet.
+                - generic [ref=e161]:
+                  - paragraph [ref=e162]: Recommended next step
+                  - paragraph [ref=e163]: Start capturing achievements
+                  - paragraph [ref=e164]: Turn raw experience into structured evidence you can reuse later.
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: Quick access
+              - generic [ref=e167]:
+                - link "Open evidence library" [ref=e168] [cursor=pointer]:
+                  - /url: /memory
+                  - generic [ref=e169]: Open evidence library
+                  - img [ref=e170]
+                - link "Create tailored versions" [ref=e172] [cursor=pointer]:
+                  - /url: /variants
+                  - generic [ref=e173]: Create tailored versions
+                  - img [ref=e174]
+                - link "Preview final output" [ref=e176] [cursor=pointer]:
+                  - /url: /render
+                  - generic [ref=e177]: Preview final output
+                  - img [ref=e178]
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - paragraph [ref=e182]: Experience
+            - paragraph [ref=e183]: "0"
+            - paragraph [ref=e184]: Structured source of truth
+          - generic [ref=e185]:
+            - paragraph [ref=e186]: Achievements
+            - paragraph [ref=e187]: "0"
+            - paragraph [ref=e188]: Structured source of truth
+          - generic [ref=e189]:
+            - paragraph [ref=e190]: Claims
+            - paragraph [ref=e191]: "0"
+            - paragraph [ref=e192]: Structured source of truth
+          - generic [ref=e193]:
+            - paragraph [ref=e194]: Variants
+            - paragraph [ref=e195]: "0"
+            - paragraph [ref=e196]: Structured source of truth
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]:
+                - paragraph [ref=e201]: Operational loop
+                - heading "Your resume workflow, kept deliberately organized" [level=3] [ref=e202]
+              - generic [ref=e203]: Always-ready output
+            - generic [ref=e204]:
+              - generic [ref=e205]:
+                - paragraph [ref=e206]: Evidence library
+                - paragraph [ref=e207]: Capture achievements once, then reuse them across versions, claims, and exports.
+              - generic [ref=e208]:
+                - paragraph [ref=e209]: Assistant guidance
+                - paragraph [ref=e210]: Surface missing metrics, scope, and narrative clarity before a version goes out.
+              - generic [ref=e211]:
+                - paragraph [ref=e212]: Tailored versions
+                - paragraph [ref=e213]: Reframe the same factual record for different roles without rewriting from scratch.
+              - generic [ref=e214]:
+                - paragraph [ref=e215]: Export pipeline
+                - paragraph [ref=e216]: Move from structured data to polished ATS-friendly output with less formatting friction.
+          - generic [ref=e217]:
+            - paragraph [ref=e218]: Workspace snapshot
+            - heading "What is already in motion" [level=3] [ref=e219]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - paragraph [ref=e222]: Base summary
+                - paragraph [ref=e223]: No summary yet. Use the assistant to sharpen the narrative.
+              - generic [ref=e224]:
+                - paragraph [ref=e225]: Variant coverage
+                - paragraph [ref=e226]: No tailored versions yet. Create one once the base resume is stable.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e232] [cursor=pointer]:
+    - img [ref=e233]
+  - alert [ref=e236]

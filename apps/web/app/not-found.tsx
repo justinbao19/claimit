@@ -16,7 +16,7 @@ export default async function NotFound() {
       />
       <div className="mt-6 text-center">
         <Link
-          href="/"
+          href="/workspace"
           className="inline-flex items-center rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] px-4 py-2 text-sm text-[color:var(--text-primary)] transition hover:bg-[color:var(--surface)]"
         >
           {t("common.backToDashboard")}

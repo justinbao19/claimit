@@ -1,8 +1,8 @@
 import "./globals.css";
 
 import { AmbientBackground } from "../components/layout/ambient-background";
-import { AppNav } from "../components/layout/app-nav";
 import { ContentFrame } from "../components/layout/content-frame";
+import { SiteHeader } from "../components/layout/site-header";
 import { getServerI18n } from "../lib/i18n";
 import { Providers } from "./providers";
 
@@ -16,14 +16,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { locale } = await getServerI18n();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className="dark" suppressHydrationWarning>
       <body>
         <Providers initialLocale={locale}>
           <div className="relative min-h-screen overflow-hidden">
             <AmbientBackground />
             <div className="relative z-10 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
-              <header className="sticky top-4 z-30 rounded-[30px] border border-[color:var(--border)] bg-[rgba(255,252,247,0.82)] px-4 py-4 shadow-[0_18px_42px_-30px_var(--shadow-color)] backdrop-blur-2xl sm:px-6">
-                <AppNav />
+              <header className="sticky top-4 z-30 rounded-[30px] border border-[color:var(--border)] bg-[color:var(--surface-overlay)] px-4 py-4 shadow-[0_18px_42px_-30px_var(--shadow-color)] backdrop-blur-2xl sm:px-6">
+                <SiteHeader />
               </header>
             </div>
             <ContentFrame>{children}</ContentFrame>

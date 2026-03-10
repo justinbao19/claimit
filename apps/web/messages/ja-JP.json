@@ -2,7 +2,7 @@
   "common": {
     "appName": "Claimit",
     "baseResume": "ベース履歴書",
-    "backToDashboard": "ダッシュボードへ戻る",
+    "backToDashboard": "ワークスペースへ戻る",
     "edit": "編集",
     "present": "現在",
     "dateUnavailable": "日付未設定",
@@ -21,7 +21,7 @@
     "switchToDark": "ダークモードに切り替える"
   },
   "nav": {
-    "dashboard": "ダッシュボード",
+    "dashboard": "ワークスペース",
     "import": "取り込み",
     "memory": "実績ライブラリ",
     "assistant": "改善アシスタント",
@@ -346,6 +346,243 @@
       "title": "文書プレビュー",
       "description": "ここに表示される HTML は、現在の書き出し結果をそのまま反映しています。",
       "iframeTitle": "履歴書プレビュー"
+    }
+  },
+  "marketing": {
+    "nav": {
+      "title": "履歴書システム",
+      "productBadge": "CLI + Web",
+      "quickStart": "Quick start",
+      "capabilities": "機能",
+      "testimonials": "感想",
+      "openWorkspace": "ワークスペースを開く",
+      "launchQuickStart": "Quick start"
+    },
+    "hero": {
+      "eyebrow": "Claimit をローカルで起動",
+      "title": "Claimit は履歴書を、使い捨てのファイルではなく再利用できるローカルな仕組みに変えます。",
+      "description": "CLI から始めて、証拠を 1 つの vault に集約し、取り込み、整理、アシスタント補強、職種別バージョン、書き出しまでを同じ事実の流れの上で進められます。",
+      "badges": {
+        "cli": "CLI-first",
+        "web": "Web companion",
+        "local": "Local vault"
+      },
+      "primaryCta": "Quick start を見る",
+      "secondaryCta": "ワークスペースを開く",
+      "previewLabel": "フロープレビュー",
+      "previewTitle": "まずはターミナルで中核フローを回し、必要なところだけブラウザで仕上げます。",
+      "previewTabs": {
+        "cli": "CLI flow",
+        "web": "Web surface"
+      },
+      "previewModes": {
+        "cli": {
+          "headline": "まずはターミナル中心で進める",
+          "description": "vault の初期化、構造化状態の確認、弱い部分の補強、職種別バージョン作成までを、ブラウザを開かずに進められます。",
+          "details": {
+            "import": "履歴書を取り込む",
+            "gapFill": "ギャップ分析を実行",
+            "variant": "職種別バージョンを作る",
+            "export": "最終出力を書き出す"
+          }
+        },
+        "web": {
+          "headline": "最後は Web で人の目で整える",
+          "description": "ライブラリ確認、アシスタント回答、バージョン比較、最終書き出しまでを、より視覚的な面で仕上げられます。",
+          "lines": {
+            "base": "ベース履歴書が vault に接続済み",
+            "library": "evidence library をそのまま編集可能",
+            "assistant": "アシスタントの質問が準備完了",
+            "render": "export studio で最終仕上げ"
+          },
+          "details": {
+            "workspace": "ライブラリ + バージョン管理",
+            "review": "アシスタント主導の見直し",
+            "export": "プレビューから PDF"
+          }
+        }
+      },
+      "proofStats": {
+        "setup": {
+          "value": "4",
+          "label": "コマンドで起動開始",
+          "description": "依存関係の導入、初期化、状態確認、Web companion 起動まで。"
+        },
+        "vault": {
+          "value": "1",
+          "label": "local vault",
+          "description": "ベース履歴書、実績、バージョンを 1 つの事実ソースにまとめます。"
+        },
+        "output": {
+          "value": "CLI + Web",
+          "label": "編集ループ",
+          "description": "自動化はコマンドで、人の最終判断はブラウザで行えます。"
+        }
+      }
+    },
+    "openSource": {
+      "eyebrow": "オープンツール",
+      "title": "開発者がすでに信頼しているオープンな道具の上に作られています。",
+      "description": "実際の技術的な土台が見えると、ページ全体の説得力が上がります。Claimit は閉じた独自世界ではなく、今のローカル workflow に自然に入るように設計されています。",
+      "badge": "Developer-native stack"
+    },
+    "quickStart": {
+      "eyebrow": "Quick start",
+      "title": "4 つのコマンドで Claimit を動かし始められます。",
+      "description": "CLI で依存関係を入れ、ローカル vault を初期化し、構造化状態を確認し、必要になったら Web UI を起動します。",
+      "badge": "4-step setup",
+      "terminalLabel": "terminal",
+      "copy": "コピー",
+      "copied": "コピー済み",
+      "cta": "現在のワークスペース UI を開く",
+      "steps": {
+        "install": {
+          "label": "Step 1",
+          "title": "monorepo の依存関係を入れる",
+          "description": "CLI と Next.js アプリの両方をそのまま動かせるように、最初に workspace をセットアップします。"
+        },
+        "init": {
+          "label": "Step 2",
+          "title": "ローカル vault を作る",
+          "description": "ベース履歴書、実績ライブラリ、バージョンをまとめて持てる Claimit vault を初期化します。"
+        },
+        "inspect": {
+          "label": "Step 3",
+          "title": "構造化された状態を確認する",
+          "description": "CLI で vault が読めることを確認し、現在の履歴書データを JSON として確認します。"
+        },
+        "launch": {
+          "label": "Step 4",
+          "title": "Web companion を起動する",
+          "description": "より視覚的に編集したいときだけブラウザに切り替えれば、同じ vault をそのまま使えます。"
+        }
+      }
+    },
+    "features": {
+      "eyebrow": "できること",
+      "title": "生の履歴書ファイルから職種向けの完成版まで、必要な流れを 1 本にまとめます。",
+      "description": "Claimit は単なる整形ツールではありません。事実の核を保ち、弱いところを見つけ、同じ証拠を複数のバージョンと書き出しで再利用できるようにします。",
+      "badge": "CLI + Web workflow",
+      "items": {
+        "cliFirst": {
+          "title": "CLI-first で始められる",
+          "description": "自動化やローカルスクリプト、agent workflow に合わせて、まずコマンドで流れを組み立てられます。"
+        },
+        "localVault": {
+          "title": "1 つのローカル evidence vault",
+          "description": "ベース履歴書、実績、論拠、バージョンを複数ファイルに散らさず 1 箇所に集められます。"
+        },
+        "assistedReview": {
+          "title": "アシスタントによる見直し",
+          "description": "次のバージョンや書き出しに進む前に、インパクト、範囲、明確さの抜けを見つけます。"
+        },
+        "roleVariants": {
+          "title": "職種別バージョン",
+          "description": "同じ事実の記録を保ったまま、役割ごとの語り方に組み替えられます。"
+        },
+        "exportFlow": {
+          "title": "構造化された export flow",
+          "description": "構造化 JSON からテンプレート比較、最終 PDF までを少ない手戻りで進められます。"
+        },
+        "webCompanion": {
+          "title": "必要なときだけ Web",
+          "description": "より豊かな編集面が欲しい場面だけブラウザに入り、下では同じローカル vault を使い続けられます。"
+        }
+      }
+    },
+    "worksWith": {
+      "eyebrow": "今の流れにそのまま乗る",
+      "title": "すでに使っている形式、受け渡し方、出力先を前提にしています。",
+      "description": "このセクションで伝えたいのは、Claimit が見せるだけのデモではないということです。実際の履歴書ファイル、CLI 中心の流れ、そして最終的な書き出しまできちんとつながります。",
+      "badge": "実際に必要なものへ対応",
+      "highlights": {
+        "formats": {
+          "title": "すでにある入力から始める",
+          "description": "先に新しいシステムへ移行しなくても、手元の履歴書ファイルや JD からそのまま始められます。"
+        },
+        "workflow": {
+          "title": "CLI からブラウザへ",
+          "description": "セットアップや自動化はコマンドで、より視覚的に詰めたい場面だけ Web UI に移れます。"
+        },
+        "output": {
+          "title": "構造化された出力ルート",
+          "description": "同じ事実の基盤を保ったまま、バージョン作成、プレビュー、最終 PDF 書き出しまで進められます。"
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "流れ",
+      "title": "1 つの事実コアから、複数の出力へ。",
+      "description": "ソースを取り込み、証拠を整理し、アシスタントで抜けを埋め、職種向けに整え、納得できたら書き出す。流れはずっとシンプルです。",
+      "badge": "Operational loop",
+      "items": {
+        "import": {
+          "title": "ソースを取り込む",
+          "description": "既存の履歴書を、後続の流れが本当に使える構造化データに変えます。"
+        },
+        "library": {
+          "title": "evidence library を作る",
+          "description": "実績と補足情報を 1 回きれいに整理すれば、後のバージョンでも再利用できます。"
+        },
+        "assistant": {
+          "title": "語りの抜けを埋める",
+          "description": "新しい事実を作らずに、結果、範囲、明快さをガイド付きで補強します。"
+        },
+        "variants": {
+          "title": "職種別バージョンを作る",
+          "description": "ベースの事実を保ちながら、特定の JD に合わせて強調点を調整します。"
+        },
+        "export": {
+          "title": "プレビューして書き出す",
+          "description": "テンプレートを選び、見た目を確認し、準備ができたら PDF を出力します。"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "感想",
+      "title": "このページが狙っているのは、こんな“初日の手応え”です。",
+      "description": "ランディングページのレイアウト確認用に置いた mock の感想カードですが、初期ユーザーの反応らしい温度感でまとめています。",
+      "badge": "Early feedback",
+      "items": {
+        "maya": {
+          "name": "Maya Lin",
+          "role": "プロダクトリード",
+          "quote": "古い PDF から想像より早くきれいな vault を作れたし、CLI と Web の行き来もとても自然でした。"
+        },
+        "ethan": {
+          "name": "Ethan Cole",
+          "role": "スタッフエンジニア",
+          "quote": "いちばん刺さったのは local-first でした。ベース履歴書、バージョン、書き出しがようやく 1 箇所にまとまります。"
+        },
+        "sophia": {
+          "name": "Sophia Yang",
+          "role": "グロースオペレーター",
+          "quote": "アシスタントの質問は足りない指標をうまく見つけてくれるのに、作り話の数字へは誘導しませんでした。"
+        },
+        "leo": {
+          "name": "Leo Romero",
+          "role": "デザインテクノロジスト",
+          "quote": "まずターミナルから始めて、もっと視覚的に詰めたいところだけブラウザに移れるのが気に入っています。"
+        },
+        "nina": {
+          "name": "Nina Zhao",
+          "role": "キャリアコーチ",
+          "quote": "新しい求人が来るたびに文書を書き直すより、システムを育てていく感覚に近いです。"
+        },
+        "owen": {
+          "name": "Owen Wu",
+          "role": "独立コンサルタント",
+          "quote": "取り込み、証拠の整理、バージョン作成、そして準備ができたら書き出し。流れがとても分かりやすいです。"
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "始める",
+      "title": "CLI で始めて、最後の人間判断はワークスペースで。",
+      "description": "やり方が決まっているなら Claimit は邪魔をしません。セットアップや自動化はコマンドで進め、最後の仕上げだけ UI で行えます。",
+      "badge": "Local-first workflow",
+      "primary": "Quick start へ",
+      "secondary": "ワークスペースを開く"
     }
   },
   "notFound": {

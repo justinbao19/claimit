@@ -66,9 +66,9 @@ export function ImportDropzone() {
       <motion.div whileHover={{ y: -4, scale: 1.005 }} transition={{ duration: 0.25, ease: "easeOut" }}>
         <div
           {...getRootProps()}
-          className="relative rounded-[30px] border border-dashed border-[color:var(--field-border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(246,238,228,0.96))] p-10 text-center shadow-[0_24px_64px_-34px_var(--shadow-color)]"
+          className="relative rounded-[30px] border border-dashed border-[color:var(--field-border)] bg-[linear-gradient(180deg,var(--panel-strong),var(--panel))] p-10 text-center shadow-[0_24px_64px_-34px_var(--shadow-color)]"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.14),transparent_48%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.14),transparent_48%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent)] dark:bg-[radial-gradient(circle_at_top,rgba(196,162,123,0.08),transparent_48%),linear-gradient(135deg,rgba(255,255,255,0.03),transparent)]" />
           <input {...getInputProps()} />
           <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center">
             <div className="flex size-20 items-center justify-center rounded-[28px] bg-[linear-gradient(145deg,var(--accent-strong),var(--accent))] text-[color:var(--accent-contrast)] shadow-[0_22px_48px_-24px_rgba(112,82,56,0.5)]">
