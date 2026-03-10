@@ -284,39 +284,52 @@ html.dark .hero-skeleton-line::after {
   animation: hero-chip-glow 5.6s ease-in-out infinite;
 }
 
-@keyframes testimonial-marquee-up {
+@keyframes testimonial-marquee-left {
   from {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   to {
-    transform: translateY(calc(-50% - 0.5rem));
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
 
-@keyframes testimonial-marquee-down {
-  from {
-    transform: translateY(calc(-50% - 0.5rem));
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.testimonial-marquee-track-up {
-  animation: testimonial-marquee-up 34s linear infinite;
+.testimonial-marquee-track-fast {
+  animation: testimonial-marquee-left 24s linear infinite;
   will-change: transform;
 }
 
-.testimonial-marquee-track-down {
-  animation: testimonial-marquee-down 38s linear infinite;
+.testimonial-marquee-track-base {
+  animation: testimonial-marquee-left 28s linear infinite;
   will-change: transform;
 }
 
-.testimonial-marquee:hover .testimonial-marquee-track-up,
-.testimonial-marquee:hover .testimonial-marquee-track-down {
-  animation-play-state: paused;
+.testimonial-marquee-track-slow {
+  animation: testimonial-marquee-left 33s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-marquee-fade-left,
+.testimonial-marquee-fade-right {
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.testimonial-marquee-fade-left {
+  background: linear-gradient(90deg, rgba(250, 247, 241, 0.98) 0%, rgba(250, 247, 241, 0.88) 46%, rgba(250, 247, 241, 0) 100%);
+}
+
+.testimonial-marquee-fade-right {
+  background: linear-gradient(270deg, rgba(250, 247, 241, 0.98) 0%, rgba(250, 247, 241, 0.88) 46%, rgba(250, 247, 241, 0) 100%);
+}
+
+html.dark .testimonial-marquee-fade-left {
+  background: linear-gradient(90deg, rgba(17, 20, 23, 0.98) 0%, rgba(17, 20, 23, 0.88) 46%, rgba(17, 20, 23, 0) 100%);
+}
+
+html.dark .testimonial-marquee-fade-right {
+  background: linear-gradient(270deg, rgba(17, 20, 23, 0.98) 0%, rgba(17, 20, 23, 0.88) 46%, rgba(17, 20, 23, 0) 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -329,8 +342,9 @@ html.dark .hero-skeleton-line::after {
   .hero-progress-sheen,
   .hero-skeleton-line,
   .hero-chip-glow,
-  .testimonial-marquee-track-up,
-  .testimonial-marquee-track-down {
+  .testimonial-marquee-track-fast,
+  .testimonial-marquee-track-base,
+  .testimonial-marquee-track-slow {
     animation: none;
   }
 

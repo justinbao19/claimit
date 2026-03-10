@@ -514,16 +514,16 @@
     },
     "quickStart": {
       "eyebrow": "Quick start",
-      "title": "CV Agent が履歴書を継続的に展開し、補強し、同期し続けます。",
-      "description": "CLI で取り込みと開始を行い、ワークスペースで CV Agent が書き戻した内容を確認しながら、抜けを埋めて同じ事実をそのまま書き出し可能な版へ整えていきます。",
+      "title": "CV Agent が履歴書を育て続ける。",
+      "description": "CLI で開始し、更新はワークスペースで即確認。",
       "badge": "4-step setup",
       "terminalLabel": "terminal",
       "copy": "コピー",
       "copied": "コピー済み",
       "ctaBadge": "ライブ同期",
-      "ctaEyebrow": "CV Agent の更新を反映",
-      "cta": "ワークスペースで CV Agent の更新をライブ確認",
-      "ctaDescription": "ワークスペースを開くと、CV Agent が同じローカル vault に書き戻した最新の変更をそのまま確認でき、証拠、質問、編集結果がずれません。",
+      "ctaEyebrow": "CV Agent Live",
+      "cta": "更新をライブ確認",
+      "ctaDescription": "CV Agent がローカル vault に書き戻し、ワークスペースが同期します。",
       "steps": {
         "install": {
           "label": "Step 1",
@@ -701,11 +701,11 @@
       }
     },
     "cta": {
-      "eyebrow": "始める",
-      "title": "CLI で始めて、最後の人間判断はワークスペースで。",
-      "description": "やり方が決まっているなら Claimit は邪魔をしません。セットアップや自動化はコマンドで進め、最後の仕上げだけ UI で行えます。",
-      "badge": "Local-first workflow",
-      "primary": "Quick start へ",
+      "eyebrow": "CV Agent",
+      "title": "古い履歴書を、強いストーリーへ。",
+      "description": "一度取り込み、継続展開、ライブ同期。",
+      "badge": "展開 + 同期",
+      "primary": "流れを見る",
       "secondary": "ワークスペースを開く"
     }
   },

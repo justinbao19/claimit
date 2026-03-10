@@ -475,16 +475,16 @@
     },
     "quickStart": {
       "eyebrow": "快速开始",
-      "title": "把简历交给 CV Agent 持续展开、补强和同步更新。",
-      "description": "CLI 负责导入与启动流程，工作台负责查看 CV Agent 写回的展开结果、补充缺口，并把同一套事实继续整理成可导出的版本。",
+      "title": "让 CV Agent 持续展开你的简历。",
+      "description": "CLI 启动，工作台实时查看更新。",
       "badge": "4 步完成启动",
       "terminalLabel": "terminal",
       "copy": "复制命令",
       "copied": "已复制",
       "ctaBadge": "实时同步",
-      "ctaEyebrow": "CV Agent 更新已写回",
-      "cta": "进入工作台查看 CV Agent 的实时更新",
-      "ctaDescription": "打开工作台，直接查看 CV Agent 写回本地 vault 的最新变更，让事实素材、待补问题和编辑结果始终保持同步。",
+      "ctaEyebrow": "CV Agent Live",
+      "cta": "查看实时更新",
+      "ctaDescription": "CV Agent 写回本地 vault，工作台同步显示。",
       "steps": {
         "install": {
           "label": "第 1 步",
@@ -662,11 +662,11 @@
       }
     },
     "cta": {
-      "eyebrow": "现在开始",
-      "title": "先用 CLI，最后在工作台收口。",
-      "description": "初始化和自动化交给命令，最后一轮精修交给 UI。",
-      "badge": "本地优先工作流",
-      "primary": "跳到快速开始",
+      "eyebrow": "CV Agent",
+      "title": "把旧简历变成更强的职业故事。",
+      "description": "导入一次，持续展开，实时同步。",
+      "badge": "展开 + 同步",
+      "primary": "查看流程",
       "secondary": "打开工作台"
     }
   },

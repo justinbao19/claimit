@@ -475,16 +475,16 @@
     },
     "quickStart": {
       "eyebrow": "Quick start",
-      "title": "Let CV Agent expand, strengthen, and keep your resume in sync.",
-      "description": "Use the CLI to import and start the workflow, then use the workspace to review CV Agent updates, fill narrative gaps, and shape the same evidence into export-ready versions.",
+      "title": "Let CV Agent expand your resume.",
+      "description": "Start in CLI. See updates live in the workspace.",
       "badge": "4-step setup",
       "terminalLabel": "terminal",
       "copy": "Copy block",
       "copied": "Copied",
       "ctaBadge": "Live sync",
-      "ctaEyebrow": "CV Agent updates",
-      "cta": "See CV Agent changes live in the workspace",
-      "ctaDescription": "Open the workspace to review the latest updates as CV Agent writes them back into the same local vault, so evidence, prompts, and edits stay in sync.",
+      "ctaEyebrow": "CV Agent Live",
+      "cta": "See updates live",
+      "ctaDescription": "CV Agent writes back to your local vault. The workspace stays in sync.",
       "steps": {
         "install": {
           "label": "Step 1",
@@ -662,11 +662,11 @@
       }
     },
     "cta": {
-      "eyebrow": "Start now",
-      "title": "Start in the CLI, finish in the workspace.",
-      "description": "Use commands for setup and automation, then switch to the UI for the final pass.",
-      "badge": "Local-first workflow",
-      "primary": "Jump to quick start",
+      "eyebrow": "CV Agent",
+      "title": "Turn an old resume into a stronger story.",
+      "description": "Import once. Expand continuously. Stay in sync.",
+      "badge": "Expand + sync",
+      "primary": "See the flow",
       "secondary": "Open workspace"
     }
   },
