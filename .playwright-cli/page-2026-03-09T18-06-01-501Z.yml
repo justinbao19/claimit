@@ -1,0 +1,185 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "简历工作台" [level=1] [ref=e856]
+              - generic [ref=e16]: 结构化写作系统
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "总览" [ref=e857] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: 总览
+            - link "导入" [ref=e858] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: 导入
+            - link "档案库" [ref=e859] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: 档案库
+            - link "优化助手" [ref=e860] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: 优化助手
+            - link "定制版本" [ref=e861] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: 定制版本
+            - link "导出" [ref=e862] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: 导出
+          - group "语言" [ref=e863]:
+            - img [ref=e62]
+            - button "EN" [ref=e66]
+            - button "中文" [active] [pressed] [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "切换到深色模式" [ref=e864]:
+            - img [ref=e695]
+    - main [ref=e698]:
+      - generic [ref=e699]:
+        - generic [ref=e700]:
+          - generic [ref=e701]:
+            - img [ref=e703]
+            - paragraph [ref=e706]: 工作台
+            - generic [ref=e707]: 编辑工作台
+          - generic [ref=e708]:
+            - heading "把简历做成可持续维护的系统，而不是一次性文件" [level=2] [ref=e865]
+            - paragraph [ref=e710]: 沉淀成就、补齐薄弱信息，让每一个版本都建立在可靠、清晰的事实底稿之上。
+        - generic [ref=e711]:
+          - generic [ref=e714]:
+            - generic [ref=e715]:
+              - generic [ref=e716]:
+                - generic [ref=e717]: 辅助梳理
+                - generic [ref=e718]: 结构化事实底稿
+              - generic [ref=e719]:
+                - heading "Claimit 帮你把履历证据整理得更清楚，也更便于定制。" [level=3] [ref=e866]
+                - paragraph [ref=e721]: 从导入到档案整理、优化建议、岗位定制，再到最终导出，始终保留每一条表述背后的事实依据。
+              - generic [ref=e722]:
+                - link "导入简历" [ref=e867] [cursor=pointer]:
+                  - /url: /import
+                  - text: 导入简历
+                  - img [ref=e724]
+                - link "运行助手" [ref=e868] [cursor=pointer]:
+                  - /url: /assistant
+            - generic [ref=e727]:
+              - generic [ref=e869]:
+                - generic [ref=e870]:
+                  - img [ref=e872]
+                  - generic [ref=e876]: "01"
+                - paragraph [ref=e877]: 导入
+                - paragraph [ref=e878]: 把现有简历文件整理成可继续编辑的结构化底稿。
+              - generic [ref=e879]:
+                - generic [ref=e880]:
+                  - img [ref=e882]
+                  - generic [ref=e884]: "02"
+                - paragraph [ref=e885]: 档案库
+                - paragraph [ref=e886]: 集中保存成就、关键信号和支撑信息。
+              - generic [ref=e887]:
+                - generic [ref=e888]:
+                  - img [ref=e890]
+                  - generic [ref=e893]: "03"
+                - paragraph [ref=e894]: 优化助手
+                - paragraph [ref=e895]: 在投递前先找出影响力、范围和表达清晰度上的缺口。
+              - generic [ref=e896]:
+                - generic [ref=e897]:
+                  - img [ref=e899]
+                  - generic [ref=e902]: "04"
+                - paragraph [ref=e903]: 定制版本
+                - paragraph [ref=e904]: 用同一套事实，组织出更贴合岗位的叙事。
+              - generic [ref=e905]:
+                - generic [ref=e906]:
+                  - img [ref=e908]
+                  - generic [ref=e912]: "05"
+                - paragraph [ref=e913]: 导出
+                - paragraph [ref=e914]: 预览版式并快速产出最终文件。
+          - generic [ref=e774]:
+            - generic [ref=e775]:
+              - generic [ref=e776]:
+                - generic [ref=e777]:
+                  - paragraph [ref=e778]: 工作台完善度
+                  - generic [ref=e779]:
+                    - generic [ref=e780]: "28"
+                    - generic [ref=e781]: / 100
+                - generic [ref=e782]: 状态良好
+              - generic [ref=e785]:
+                - generic [ref=e786]:
+                  - paragraph [ref=e787]: 当前基础简历
+                  - paragraph [ref=e788]: Your Name
+                  - paragraph [ref=e789]: 还没有导入任何经历。
+                - generic [ref=e790]:
+                  - paragraph [ref=e791]: 建议下一步
+                  - paragraph [ref=e792]: 先补充关键成就
+                  - paragraph [ref=e793]: 先把零散经历整理成可复用的事实素材。
+            - generic [ref=e794]:
+              - paragraph [ref=e795]: 快捷入口
+              - generic [ref=e796]:
+                - link "打开档案库" [ref=e915] [cursor=pointer]:
+                  - /url: /memory
+                  - generic [ref=e798]: 打开档案库
+                  - img [ref=e799]
+                - link "创建定制版本" [ref=e916] [cursor=pointer]:
+                  - /url: /variants
+                  - generic [ref=e802]: 创建定制版本
+                  - img [ref=e803]
+                - link "预览最终输出" [ref=e917] [cursor=pointer]:
+                  - /url: /render
+                  - generic [ref=e806]: 预览最终输出
+                  - img [ref=e807]
+        - generic [ref=e809]:
+          - generic [ref=e918]:
+            - paragraph [ref=e919]: 经历
+            - paragraph [ref=e920]: "0"
+            - paragraph [ref=e921]: 结构化事实底稿
+          - generic [ref=e922]:
+            - paragraph [ref=e923]: 成就
+            - paragraph [ref=e924]: "0"
+            - paragraph [ref=e925]: 结构化事实底稿
+          - generic [ref=e926]:
+            - paragraph [ref=e927]: 论据
+            - paragraph [ref=e928]: "0"
+            - paragraph [ref=e929]: 结构化事实底稿
+          - generic [ref=e930]:
+            - paragraph [ref=e931]: 版本
+            - paragraph [ref=e932]: "0"
+            - paragraph [ref=e933]: 结构化事实底稿
+        - generic [ref=e826]:
+          - generic [ref=e827]:
+            - generic [ref=e828]:
+              - generic [ref=e829]:
+                - paragraph [ref=e830]: 工作闭环
+                - heading "把简历编辑流程整理成一套稳定系统" [level=3] [ref=e934]
+              - generic [ref=e832]: 随时可导出
+            - generic [ref=e833]:
+              - generic [ref=e834]:
+                - paragraph [ref=e835]: 成就档案
+                - paragraph [ref=e836]: 成就只整理一次，后续可在不同版本、论据和导出场景中反复复用。
+              - generic [ref=e837]:
+                - paragraph [ref=e838]: 优化建议
+                - paragraph [ref=e839]: 在版本产出前，先补齐指标、范围和叙事清晰度上的缺口。
+              - generic [ref=e840]:
+                - paragraph [ref=e841]: 岗位定制版本
+                - paragraph [ref=e842]: 面对不同岗位时，重组同一套事实，而不是从头重写。
+              - generic [ref=e843]:
+                - paragraph [ref=e844]: 导出流程
+                - paragraph [ref=e845]: 从结构化数据顺滑过渡到干净、适合投递的最终文档。
+          - generic [ref=e846]:
+            - paragraph [ref=e847]: 当前概览
+            - heading "现在已经推进到哪一步" [level=3] [ref=e935]
+            - generic [ref=e849]:
+              - generic [ref=e850]:
+                - paragraph [ref=e851]: 基础概述
+                - paragraph [ref=e852]: 还没有概述，可以先用助手把主线梳理清楚。
+              - generic [ref=e853]:
+                - paragraph [ref=e854]: 版本覆盖
+                - paragraph [ref=e855]: 还没有定制版本，等基础简历稳定后可以先做一个。
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]: Claimit

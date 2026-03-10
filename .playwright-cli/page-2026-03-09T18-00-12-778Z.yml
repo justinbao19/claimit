@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "履歴書ワークスペース" [level=1] [ref=e663]
+              - generic [ref=e16]: 構造化ライティング環境
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "ダッシュボード" [ref=e664] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: ダッシュボード
+            - link "取り込み" [ref=e665] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: 取り込み
+            - link "実績ライブラリ" [ref=e666] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: 実績ライブラリ
+            - link "改善アシスタント" [ref=e667] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: 改善アシスタント
+            - link "職種別バージョン" [ref=e668] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: 職種別バージョン
+            - link "書き出し" [ref=e669] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: 書き出し
+          - group "言語" [ref=e670]:
+            - img [ref=e62]
+            - button "EN" [ref=e66]
+            - button "中文" [ref=e67]
+            - button "日本語" [active] [pressed] [ref=e68]
+          - button "ライトモードに切り替える" [ref=e671]:
+            - img [ref=e640]
+    - main [ref=e551]:
+      - generic [ref=e552]:
+        - generic [ref=e553]:
+          - generic [ref=e554]:
+            - img [ref=e556]
+            - paragraph [ref=e562]: 書き出し
+            - generic [ref=e563]: 出力スタジオ
+          - generic [ref=e564]:
+            - heading "プレビューして整え、最終文書を書き出す" [level=2] [ref=e672]
+            - paragraph [ref=e566]: テンプレートを切り替えながら表面を確認し、そのまま PDF を出力できます。
+        - generic [ref=e567]:
+          - generic [ref=e568]:
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - generic [ref=e572]: テンプレート設定
+                - generic [ref=e573]:
+                  - generic [ref=e574]:
+                    - heading "文書の見せ方を切り替える" [level=3] [ref=e673]
+                    - paragraph [ref=e576]: まずはプレビューで比較し、レイアウトに納得してから PDF を書き出しましょう。
+                  - img [ref=e578]
+              - generic [ref=e582]:
+                - tablist [ref=e583]:
+                  - tab "ATS Minimal" [selected] [ref=e674]
+                  - tab "Modern Clean" [ref=e675]
+                - tabpanel "ATS Minimal" [ref=e676]:
+                  - generic [ref=e587]:
+                    - paragraph [ref=e588]: ATS Minimal
+                    - paragraph [ref=e589]: 階層が素直で、ATS を意識したすっきりした体裁に向いています。
+              - generic [ref=e590]:
+                - button "プレビューを更新" [ref=e677]:
+                  - img [ref=e592]
+                  - text: プレビューを更新
+                - button "PDF を書き出す" [ref=e678]:
+                  - img [ref=e596]
+                  - text: PDF を書き出す
+              - generic [ref=e599]:
+                - generic [ref=e600]:
+                  - img [ref=e601]
+                  - paragraph [ref=e604]: 書き出しメモ
+                - paragraph [ref=e605]: 内容は先に整え、そのうえで最後に見せ方を調整するのが理想です。
+            - generic [ref=e606]:
+              - generic [ref=e607]:
+                - img [ref=e609]
+                - generic [ref=e614]:
+                  - paragraph [ref=e615]: 書き出しの考え方
+                  - paragraph [ref=e616]: テンプレート層は見せ方を整える場所であり、事実不足を補修する場所ではありません。
+              - generic [ref=e617]: ベース履歴書と職種別バージョンがきれいに整っていれば、書き出しは最後の仕上げとして機能します。
+          - generic [ref=e618]:
+            - generic [ref=e620]:
+              - img [ref=e622]
+              - generic [ref=e625]:
+                - paragraph [ref=e626]: プレビュー面
+                - paragraph [ref=e627]: 書き出す前に、現在の文書表面を確認します。
+            - generic [ref=e628]:
+              - generic [ref=e629]:
+                - heading "文書プレビュー" [level=3] [ref=e679]
+                - paragraph [ref=e631]: ここに表示される HTML は、現在の書き出し結果をそのまま反映しています。
+              - iframe [ref=e638]:
+                - paragraph [ref=f1e2]: Document preview
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]: Claimit

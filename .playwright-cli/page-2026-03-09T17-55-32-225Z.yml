@@ -1,0 +1,100 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e15]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: Dashboard
+            - link "Import" [ref=e28] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [ref=e34] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [active] [ref=e39] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [ref=e45] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e51] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - group "Language" [ref=e60]:
+            - img [ref=e62]
+            - button "EN" [pressed] [ref=e66]
+            - button "中文" [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "Switch to dark mode" [ref=e69]:
+            - img [ref=e70]
+    - main [ref=e402]:
+      - generic [ref=e403]:
+        - generic [ref=e404]:
+          - generic [ref=e405]:
+            - img [ref=e407]
+            - paragraph [ref=e410]: Assistant
+            - generic [ref=e411]: 0 prompts
+          - generic [ref=e412]:
+            - heading "Let the assistant expose the weak spots" [level=2] [ref=e413]
+            - paragraph [ref=e414]: The assistant reviews the current resume, spots missing impact, scope, and clarity, then helps you strengthen the story without bending the facts.
+        - generic [ref=e415]:
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - generic [ref=e419]:
+                  - generic [ref=e420]: Gap analysis
+                  - generic [ref=e421]: 0 prompts
+                - generic [ref=e422]:
+                  - heading "--" [level=2] [ref=e423]
+                  - paragraph [ref=e424]: resume readiness
+                - paragraph [ref=e425]: No resume content found yet. Import a resume or add experience before running gap analysis.
+              - generic [ref=e428]:
+                - generic [ref=e429]:
+                  - generic [ref=e430]:
+                    - img [ref=e431]
+                    - generic [ref=e443]: Analysis
+                  - paragraph [ref=e444]: Scores the current resume and highlights where impact, scope, or clarity are still thin.
+                - generic [ref=e445]:
+                  - generic [ref=e446]:
+                    - img [ref=e447]
+                    - generic [ref=e450]: Question set
+                  - paragraph [ref=e451]: Focus on the highest-value prompts first instead of rewriting everything at once.
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - img [ref=e454]
+                    - generic [ref=e457]: Apply changes
+                  - paragraph [ref=e458]: Write improved wording and metrics back into the workspace once your answers are ready.
+            - generic [ref=e459]:
+              - generic [ref=e460]:
+                - img [ref=e462]
+                - paragraph [ref=e465]: Import or add resume content first so the assistant has material to analyze.
+              - button "Apply answers" [disabled]:
+                - text: Apply answers
+                - img
+          - generic [ref=e466]:
+            - generic [ref=e467]:
+              - img [ref=e469]
+              - heading "Applied changes" [level=3] [ref=e473]
+            - generic [ref=e475]:
+              - img [ref=e477]
+              - heading "No changes applied yet" [level=3] [ref=e480]
+              - paragraph [ref=e481]: Answer a few assistant prompts and apply them to see your improvement log here.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]

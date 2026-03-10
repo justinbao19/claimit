@@ -1,0 +1,98 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e15]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: Dashboard
+            - link "Import" [ref=e28] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [ref=e34] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [ref=e39] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [active] [ref=e45] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e51] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - group "Language" [ref=e60]:
+            - img [ref=e62]
+            - button "EN" [pressed] [ref=e66]
+            - button "中文" [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "Switch to dark mode" [ref=e69]:
+            - img [ref=e70]
+    - main [ref=e483]:
+      - generic [ref=e484]:
+        - generic [ref=e485]:
+          - generic [ref=e486]:
+            - img [ref=e488]
+            - paragraph [ref=e491]: Variants
+            - generic [ref=e492]: 0 saved versions
+          - generic [ref=e493]:
+            - heading "Shape the same facts into role-specific narratives" [level=2] [ref=e494]
+            - paragraph [ref=e495]: Versions help you reposition your experience for a specific opportunity. Build one from the current workspace, then review the changes before export.
+        - generic [ref=e496]:
+          - generic [ref=e498]:
+            - generic [ref=e499]:
+              - generic [ref=e500]: Version builder
+              - generic [ref=e501]:
+                - generic [ref=e502]:
+                  - heading "Create a role-specific narrative" [level=3] [ref=e503]
+                  - paragraph [ref=e504]: Use a job description to reorder emphasis, surface the right claims, and prepare a more targeted version.
+                - img [ref=e506]
+            - generic [ref=e509]:
+              - paragraph [ref=e510]: Version name
+              - textbox "pm-growth" [ref=e511]
+            - generic [ref=e512]:
+              - paragraph [ref=e513]: Target role
+              - textbox "Product Manager" [ref=e514]
+            - generic [ref=e515]:
+              - paragraph [ref=e516]: Job description
+              - textbox "Paste the job description here..." [ref=e517]
+            - generic [ref=e518]:
+              - generic [ref=e519]:
+                - img [ref=e520]
+                - paragraph [ref=e524]: Role fit
+                - paragraph [ref=e525]: Clarify which experience should lead the story.
+              - generic [ref=e526]:
+                - img [ref=e527]
+                - paragraph [ref=e530]: Keyword signal
+                - paragraph [ref=e531]: Map the base resume against role-specific language.
+              - generic [ref=e532]:
+                - img [ref=e533]
+                - paragraph [ref=e536]: Stable evidence
+                - paragraph [ref=e537]: Adjust emphasis without changing the underlying truth.
+            - generic [ref=e538]:
+              - button "Create version" [disabled]
+          - generic [ref=e539]:
+            - heading "Saved versions" [level=3] [ref=e540]
+            - paragraph [ref=e541]: Reopen any saved version to compare it against the base resume.
+            - generic [ref=e543]:
+              - img [ref=e545]
+              - heading "No versions created yet" [level=3] [ref=e548]
+              - paragraph [ref=e549]: Once the base resume has enough signal, use the panel on the left to generate a more targeted version.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]: Resume workspace

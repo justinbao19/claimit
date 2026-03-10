@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e680]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e681] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: Dashboard
+            - link "Import" [ref=e682] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [ref=e683] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [ref=e684] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [ref=e685] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e686] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - group "Language" [ref=e687]:
+            - img [ref=e62]
+            - button "EN" [active] [pressed] [ref=e66]
+            - button "中文" [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "Switch to light mode" [ref=e688]:
+            - img [ref=e640]
+    - main [ref=e551]:
+      - generic [ref=e552]:
+        - generic [ref=e553]:
+          - generic [ref=e554]:
+            - img [ref=e556]
+            - paragraph [ref=e562]: Export
+            - generic [ref=e563]: Output studio
+          - generic [ref=e564]:
+            - heading "Preview, polish, and export the final document" [level=2] [ref=e689]
+            - paragraph [ref=e566]: Switch templates, inspect the document surface, and produce an export-ready PDF without leaving the workspace.
+        - generic [ref=e567]:
+          - generic [ref=e568]:
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - generic [ref=e572]: Template controls
+                - generic [ref=e573]:
+                  - generic [ref=e574]:
+                    - heading "Switch the document presentation" [level=3] [ref=e690]
+                    - paragraph [ref=e576]: Use the preview loop to compare templates, then export a PDF once the layout feels right.
+                  - img [ref=e578]
+              - generic [ref=e582]:
+                - tablist [ref=e583]:
+                  - tab "ATS Minimal" [selected] [ref=e674]
+                  - tab "Modern Clean" [ref=e675]
+                - tabpanel "ATS Minimal" [ref=e676]:
+                  - generic [ref=e587]:
+                    - paragraph [ref=e588]: ATS Minimal
+                    - paragraph [ref=e589]: Best for crisp, ATS-oriented formatting with a straightforward hierarchy.
+              - generic [ref=e590]:
+                - button "Update preview" [ref=e691]:
+                  - img [ref=e592]
+                  - text: Update preview
+                - button "Export PDF" [ref=e692]:
+                  - img [ref=e596]
+                  - text: Export PDF
+              - generic [ref=e599]:
+                - generic [ref=e600]:
+                  - img [ref=e601]
+                  - paragraph [ref=e604]: Render notes
+                - paragraph [ref=e605]: Keep versions factual, then use export to tune presentation instead of rewriting content at the last step.
+            - generic [ref=e606]:
+              - generic [ref=e607]:
+                - img [ref=e609]
+                - generic [ref=e614]:
+                  - paragraph [ref=e615]: Output mindset
+                  - paragraph [ref=e616]: Use the template layer to polish, not to rescue missing facts.
+              - generic [ref=e617]: Claimit works best when the base resume and any tailored version are already clean. The export studio should feel like a final pass, not a repair step.
+          - generic [ref=e618]:
+            - generic [ref=e620]:
+              - img [ref=e622]
+              - generic [ref=e625]:
+                - paragraph [ref=e626]: Preview canvas
+                - paragraph [ref=e627]: Inspect the current document surface before exporting.
+            - generic [ref=e628]:
+              - generic [ref=e629]:
+                - heading "Document preview" [level=3] [ref=e693]
+                - paragraph [ref=e631]: The live HTML surface mirrors the current export pipeline output.
+              - iframe [ref=e638]:
+                - paragraph [ref=f1e2]: Document preview
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]: Claimit

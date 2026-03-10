@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "简历工作台" [level=1] [ref=e646]
+              - generic [ref=e16]: 结构化写作系统
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "总览" [ref=e647] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: 总览
+            - link "导入" [ref=e648] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: 导入
+            - link "档案库" [ref=e649] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: 档案库
+            - link "优化助手" [ref=e650] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: 优化助手
+            - link "定制版本" [ref=e651] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: 定制版本
+            - link "导出" [ref=e652] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: 导出
+          - group "语言" [ref=e653]:
+            - img [ref=e62]
+            - button "EN" [ref=e66]
+            - button "中文" [active] [pressed] [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "切换到浅色模式" [ref=e654]:
+            - img [ref=e640]
+    - main [ref=e551]:
+      - generic [ref=e552]:
+        - generic [ref=e553]:
+          - generic [ref=e554]:
+            - img [ref=e556]
+            - paragraph [ref=e562]: 导出
+            - generic [ref=e563]: 输出工作室
+          - generic [ref=e564]:
+            - heading "预览、微调并导出最终文档" [level=2] [ref=e655]
+            - paragraph [ref=e566]: 切换模板、检查文档表面，再直接导出 PDF，不需要离开工作台。
+        - generic [ref=e567]:
+          - generic [ref=e568]:
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - generic [ref=e572]: 模板控制
+                - generic [ref=e573]:
+                  - generic [ref=e574]:
+                    - heading "切换文档呈现方式" [level=3] [ref=e656]
+                    - paragraph [ref=e576]: 先在预览里比较模板，再在布局满意后导出 PDF。
+                  - img [ref=e578]
+              - generic [ref=e582]:
+                - tablist [ref=e583]:
+                  - tab "ATS 极简版" [selected] [ref=e657]
+                  - tab "现代清爽版" [ref=e658]
+                - tabpanel "ATS 极简版" [ref=e659]:
+                  - generic [ref=e587]:
+                    - paragraph [ref=e588]: ATS 极简版
+                    - paragraph [ref=e589]: 适合层级直接、对 ATS 更友好的简洁排版。
+              - generic [ref=e590]:
+                - button "更新预览" [ref=e660]:
+                  - img [ref=e592]
+                  - text: 更新预览
+                - button "导出 PDF" [ref=e661]:
+                  - img [ref=e596]
+                  - text: 导出 PDF
+              - generic [ref=e599]:
+                - generic [ref=e600]:
+                  - img [ref=e601]
+                  - paragraph [ref=e604]: 导出提示
+                - paragraph [ref=e605]: 先把版本内容整理准确，再用导出区微调呈现，而不是在最后一步重写内容。
+            - generic [ref=e606]:
+              - generic [ref=e607]:
+                - img [ref=e609]
+                - generic [ref=e614]:
+                  - paragraph [ref=e615]: 导出思路
+                  - paragraph [ref=e616]: 模板层负责打磨呈现，而不是补救事实缺失。
+              - generic [ref=e617]: 只有当基础简历和岗位版本本身已经足够干净时，导出区才会像最后一道精修，而不是返工现场。
+          - generic [ref=e618]:
+            - generic [ref=e620]:
+              - img [ref=e622]
+              - generic [ref=e625]:
+                - paragraph [ref=e626]: 预览画布
+                - paragraph [ref=e627]: 导出前先检查当前文档表面效果。
+            - generic [ref=e628]:
+              - generic [ref=e629]:
+                - heading "文档预览" [level=3] [ref=e662]
+                - paragraph [ref=e631]: 这里显示的实时 HTML 预览，会和当前导出流程保持一致。
+              - iframe [ref=e638]:
+                - paragraph [ref=f1e2]: Document preview
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]: Claimit

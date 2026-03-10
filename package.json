@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "latest",
+    "puppeteer": "^24.38.0",
     "tsup": "latest",
     "tsx": "latest",
     "typescript": "latest",

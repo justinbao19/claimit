@@ -1,0 +1,117 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - paragraph [ref=e13]: Claimit
+            - generic [ref=e14]:
+              - heading "Resume workspace" [level=1] [ref=e15]
+              - generic [ref=e16]: Structured writing system
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Dashboard" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e22]
+              - generic [ref=e27]: Dashboard
+            - link "Import" [ref=e28] [cursor=pointer]:
+              - /url: /import
+              - img [ref=e30]
+              - generic [ref=e33]: Import
+            - link "Library" [active] [ref=e34] [cursor=pointer]:
+              - /url: /memory
+              - img [ref=e36]
+              - generic [ref=e38]: Library
+            - link "Assistant" [ref=e39] [cursor=pointer]:
+              - /url: /assistant
+              - img [ref=e41]
+              - generic [ref=e44]: Assistant
+            - link "Variants" [ref=e45] [cursor=pointer]:
+              - /url: /variants
+              - img [ref=e47]
+              - generic [ref=e50]: Variants
+            - link "Export" [ref=e51] [cursor=pointer]:
+              - /url: /render
+              - img [ref=e53]
+              - generic [ref=e59]: Export
+          - group "Language" [ref=e60]:
+            - img [ref=e62]
+            - button "EN" [pressed] [ref=e66]
+            - button "中文" [ref=e67]
+            - button "日本語" [ref=e68]
+          - button "Switch to dark mode" [ref=e69]:
+            - img [ref=e70]
+    - main [ref=e307]:
+      - generic [ref=e308]:
+        - generic [ref=e309]:
+          - generic [ref=e310]:
+            - img [ref=e312]
+            - paragraph [ref=e314]: Library
+            - generic [ref=e315]: 0 entries
+          - generic [ref=e316]:
+            - heading "Turn raw work into a reusable evidence library" [level=2] [ref=e317]
+            - paragraph [ref=e318]: This is where accomplishments become durable building blocks. Capture them cleanly and reuse them across assistant suggestions, versions, and final resume lines.
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - generic [ref=e325]: Add entry
+                  - generic [ref=e326]:
+                    - heading "Capture a reusable achievement" [level=3] [ref=e327]
+                    - paragraph [ref=e328]: Structure high-signal facts once so the assistant, versions, and export pipeline can reuse them later.
+                - img [ref=e330]
+              - generic [ref=e332]:
+                - generic [ref=e333]:
+                  - paragraph [ref=e334]: Title
+                  - textbox "Launch growth experiment" [ref=e335]
+                - generic [ref=e336]:
+                  - paragraph [ref=e337]: Summary
+                  - textbox "Describe the achievement and why it mattered." [ref=e338]
+                - generic [ref=e339]:
+                  - generic [ref=e340]:
+                    - paragraph [ref=e341]: Tags
+                    - textbox "growth, product, analytics" [ref=e342]
+                  - generic [ref=e343]:
+                    - paragraph [ref=e344]: Tools
+                    - textbox "SQL, Amplitude, Figma" [ref=e345]
+                - generic [ref=e346]:
+                  - generic [ref=e347]:
+                    - img [ref=e349]
+                    - generic [ref=e352]:
+                      - paragraph [ref=e353]: Write for reuse
+                      - paragraph [ref=e354]: Include the action, outcome, and tools so later versions have stronger raw material to work with.
+                  - generic [ref=e355]:
+                    - paragraph [ref=e356]: Suggested tags
+                    - paragraph [ref=e357]: impact, growth, product, platform, ops, ai
+                - generic [ref=e358]:
+                  - button "Add entry" [disabled]:
+                    - text: Add entry
+                    - img
+            - generic [ref=e359]:
+              - img [ref=e361]
+              - heading "Your evidence library is empty" [level=3] [ref=e364]
+              - paragraph [ref=e365]: Add one entry or import a resume first. Once the library has enough signal, Claimit can produce sharper suggestions and stronger versions.
+          - generic [ref=e366]:
+            - generic [ref=e368]:
+              - generic [ref=e369]:
+                - paragraph [ref=e370]: Resume preview
+                - heading "Your Name" [level=2] [ref=e371]
+              - generic [ref=e372]: Base resume
+            - generic [ref=e373]:
+              - heading "Experience" [level=3] [ref=e374]
+              - generic [ref=e375]:
+                - img [ref=e377]
+                - heading "No experience entries yet" [level=3] [ref=e381]
+                - paragraph [ref=e382]: Import a resume or add achievements so the structured timeline has something to render.
+            - generic [ref=e383]:
+              - heading "Skills" [level=3] [ref=e384]
+              - generic [ref=e385]:
+                - img [ref=e387]
+                - heading "No skills listed yet" [level=3] [ref=e399]
+                - paragraph [ref=e400]: Skills become more useful once they are imported or grouped into categories for versions and export.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e88] [cursor=pointer]:
+    - img [ref=e89]
+  - alert [ref=e249]
