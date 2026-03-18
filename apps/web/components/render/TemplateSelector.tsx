@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { Download, Eye, LayoutTemplate, WandSparkles } from "lucide-react";
+import { CheckCircle2, Download, Eye, LayoutTemplate, WandSparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -18,7 +18,33 @@ interface TemplateSelectorProps {
   onHtmlChange: (html: string) => void;
 }
 
-const templates = ["ats_minimal", "modern_clean"] as const;
+const templates = ["ats_minimal", "modern_clean", "creative_dynamic"] as const;
+type TemplateId = (typeof templates)[number];
+
+const templateMeta: Record<
+  TemplateId,
+  {
+    titleKey: string;
+    descriptionKey: string;
+    accentClassName: string;
+  }
+> = {
+  ats_minimal: {
+    titleKey: "render.templateSelector.atsTitle",
+    descriptionKey: "render.templateSelector.atsDescription",
+    accentClassName: "bg-slate-800",
+  },
+  modern_clean: {
+    titleKey: "render.templateSelector.modernTitle",
+    descriptionKey: "render.templateSelector.modernDescription",
+    accentClassName: "bg-sky-700",
+  },
+  creative_dynamic: {
+    titleKey: "render.templateSelector.creativeTitle",
+    descriptionKey: "render.templateSelector.creativeDescription",
+    accentClassName: "bg-[#ff7f7f]",
+  },
+};
 
 export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onHtmlChange }: TemplateSelectorProps) {
   const [selectedTemplate, setSelectedTemplate] = useState(initialTemplate);
@@ -32,11 +58,13 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ template, variant }),
       }),
-    onSuccess: (data) => {
+    onSuccess: (data, template) => {
       onHtmlChange(data.html);
       setMessage(t("render.templateSelector.previewUpdatedMessage"));
       toast.success(t("render.templateSelector.previewUpdatedToastTitle"), {
-        description: t("render.templateSelector.previewUpdatedToastDescription", { template: selectedTemplate }),
+        description: t("render.templateSelector.previewUpdatedToastDescription", {
+          template: t(templateMeta[template as TemplateId].titleKey),
+        }),
       });
     },
     onError: (error) => {
@@ -80,24 +108,50 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
           </div>
         </div>
 
-        <Tabs value={selectedTemplate} onValueChange={setSelectedTemplate} className="space-y-4">
-          <TabsList className="w-full">
+        <Tabs
+          value={selectedTemplate}
+          onValueChange={(value) => {
+            const nextTemplate = value as TemplateId;
+            setSelectedTemplate(nextTemplate);
+            previewMutation.mutate(nextTemplate);
+          }}
+          className="space-y-4"
+        >
+          <TabsList className="grid w-full grid-cols-1 gap-3 border-0 bg-transparent p-0 shadow-none sm:grid-cols-2 xl:grid-cols-1">
             {templates.map((template) => (
-              <TabsTrigger key={template} value={template} className="flex-1">
-                {template === "ats_minimal" ? t("render.templateSelector.atsTitle") : t("render.templateSelector.modernTitle")}
+              <TabsTrigger
+                key={template}
+                value={template}
+                className="h-auto min-w-0 flex-col items-start justify-start gap-3 rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 text-left text-[color:var(--text-primary)] shadow-[0_16px_32px_-24px_var(--shadow-color)] transition-all hover:border-[color:var(--border-strong)] hover:bg-[color:var(--panel)] data-[state=active]:border-[rgba(164,118,61,0.38)] data-[state=active]:bg-[color:var(--panel)] data-[state=active]:shadow-[0_22px_44px_-28px_var(--shadow-color)]"
+              >
+                <div className="flex w-full items-start justify-between gap-3">
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-[color:var(--text-primary)]">{t(templateMeta[template].titleKey)}</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--text-tertiary)]">
+                      {template.replaceAll("_", " ")}
+                    </p>
+                  </div>
+                  <CheckCircle2
+                    className={`size-4 transition-opacity ${
+                      selectedTemplate === template ? "opacity-100 text-[rgba(164,118,61,0.92)]" : "opacity-0"
+                    }`}
+                  />
+                </div>
+                <div className="flex w-full items-center justify-between gap-3">
+                  <p className="line-clamp-2 text-xs leading-5 text-[color:var(--text-secondary)]">
+                    {t(templateMeta[template].descriptionKey)}
+                  </p>
+                  <span className={`h-2.5 w-2.5 flex-shrink-0 rounded-full ${templateMeta[template].accentClassName}`} />
+                </div>
               </TabsTrigger>
             ))}
           </TabsList>
           {templates.map((template) => (
             <TabsContent key={template} value={template}>
               <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
-                <p className="text-sm font-medium text-[color:var(--text-primary)]">
-                  {template === "ats_minimal" ? t("render.templateSelector.atsTitle") : t("render.templateSelector.modernTitle")}
-                </p>
+                <p className="text-sm font-medium text-[color:var(--text-primary)]">{t(templateMeta[template].titleKey)}</p>
                 <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
-                  {template === "ats_minimal"
-                    ? t("render.templateSelector.atsDescription")
-                    : t("render.templateSelector.modernDescription")}
+                  {t(templateMeta[template].descriptionKey)}
                 </p>
               </div>
             </TabsContent>

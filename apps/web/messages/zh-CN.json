@@ -326,6 +326,8 @@
       "atsDescription": "适合层级直接、对 ATS 更友好的简洁排版。",
       "modernTitle": "现代清爽版",
       "modernDescription": "适合更平和、更有质感一点的文档表面。",
+      "creativeTitle": "创意动感版",
+      "creativeDescription": "适合设计、品牌、创意岗位，强调视觉节奏与更鲜明的个人表达。",
       "updateButton": "更新预览",
       "updatingButton": "更新中",
       "exportButton": "导出 PDF",

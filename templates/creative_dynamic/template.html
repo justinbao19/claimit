@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{basics.name}} Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── Print ──────────────────────────────────────────────── */
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    @media print {
+      body { background: white; }
+      .resume-container { margin: 0; box-shadow: none; width: 100%; }
+    }
+
+    /* ── Base ───────────────────────────────────────────────── */
+    body {
+      background: #e5e7eb;
+      font-family: "Poppins", sans-serif;
+      color: #1a1a1a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Paper ──────────────────────────────────────────────── */
+    .resume-container {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 2rem auto;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      position: relative;
+      /* NO overflow:hidden — content must flow freely for multi-page */
+    }
+
+    /* ── Coral accent block ─────────────────────────────────── */
+    .coral-accent-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%;
+      height: 250px;
+      background-color: #FF7F7F;
+      z-index: 1;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    .resume-header {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 3rem 0;   /* pt-16 px-12 — mirrors reference */
+      margin-bottom: 3rem;    /* mb-12 */
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* ── Name ───────────────────────────────────────────────── */
+    .name-heading {
+      font-size: 4.5rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+      color: #000000;
+      text-transform: uppercase;
+    }
+
+    .role-heading {
+      font-size: 1.5rem;     /* text-2xl */
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Logo box (initials) ────────────────────────────────── */
+    .logo-box {
+      width: 6rem;           /* w-24 */
+      height: 6rem;          /* h-24 */
+      border: 4px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;       /* p-2 */
+      flex-shrink: 0;
+    }
+
+    .logo-box svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Contact strip ──────────────────────────────────────── */
+    .contact-strip {
+      margin-top: 2rem;       /* mt-8 */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 2rem;            /* gap-8 */
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 2rem;   /* pb-8 */
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;            /* gap-2 */
+      font-size: 0.875rem;    /* text-sm */
+      font-weight: 500;
+    }
+
+    .contact-item svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .portfolio-btn {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 0.5rem 1.5rem;   /* py-2 px-6 */
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      max-width: 18rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Body grid ──────────────────────────────────────────── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 4fr 8fr;   /* col-span-4 / col-span-8 */
+      gap: 3rem;                         /* gap-12 */
+      padding: 0 3rem 4rem;             /* px-12 pb-16 */
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── Section titles ─────────────────────────────────────── */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      font-size: 1.125rem;   /* text-lg */
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem; /* mb-6 */
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 40px;
+      height: 4px;
+      background: #FF7F7F;
+    }
+
+    /* ── Sidebar sections ───────────────────────────────────── */
+    .sidebar > section {
+      margin-bottom: 2.5rem; /* mb-10 */
+      break-inside: avoid;
+    }
+
+    .sidebar > section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Specialties tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;           /* gap-2 */
+      margin-top: 1rem;      /* mt-4 */
+    }
+
+    .tag {
+      background: #f3f4f6;   /* bg-gray-100 */
+      font-size: 0.625rem;   /* text-[10px] */
+      font-weight: 700;
+      padding: 0.25rem 0.75rem; /* py-1 px-3 */
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    /* Tools list */
+    .tools-list {
+      display: grid;
+      gap: 1rem;             /* space-y-4 */
+      margin-top: 1rem;      /* mt-4 */
+    }
+
+    .tool-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;          /* gap-3 */
+    }
+
+    .tool-badge {
+      width: 2rem;           /* w-8 */
+      height: 2rem;          /* h-8 */
+      background: #000000;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.625rem;   /* text-[10px] */
+      font-weight: 700;
+      flex-shrink: 0;
+      overflow: hidden;
+      letter-spacing: 0;
+    }
+
+    .tool-name {
+      font-size: 0.875rem;   /* text-sm */
+      font-weight: 500;
+    }
+
+    /* Education */
+    .education-item {
+      margin-top: 1rem;      /* mt-4 */
+    }
+
+    .education-item + .education-item {
+      margin-top: 1.5rem;
+    }
+
+    .education-degree {
+      font-weight: 700;
+      font-size: 0.875rem;   /* text-sm */
+    }
+
+    .education-school {
+      font-size: 0.75rem;    /* text-xs */
+      color: #6b7280;        /* text-gray-500 */
+      font-style: italic;
+      margin-top: 0.15rem;
+    }
+
+    .education-date {
+      font-size: 0.75rem;    /* text-xs */
+      font-weight: 700;
+      margin-top: 0.25rem;   /* mt-1 */
+    }
+
+    /* ── Experience column ──────────────────────────────────── */
+    .main-column > section {
+      break-inside: avoid;
+    }
+
+    /* Timeline entry */
+    .job-entry {
+      position: relative;
+      padding-left: 1.5rem;  /* pl-6 */
+      border-left: 2px solid #f3f4f6; /* border-gray-100 */
+      margin-bottom: 2.5rem; /* mb-10 */
+      break-inside: avoid;
+    }
+
+    .job-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Timeline dot */
+    .job-dot {
+      position: absolute;
+      left: -0.5625rem;      /* -left-[9px] */
+      top: 0;
+      width: 1rem;           /* w-4 */
+      height: 1rem;          /* h-4 */
+      border-radius: 9999px;
+      background: #FF7F7F;
+    }
+
+    .job-dot.muted {
+      background: #d1d5db;   /* bg-gray-300 */
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem; /* mb-2 */
+      gap: 1rem;
+    }
+
+    .job-title {
+      font-size: 1.25rem;    /* text-xl */
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .job-meta {
+      font-size: 0.875rem;   /* text-sm */
+      font-weight: 700;
+      color: #FF7F7F;
+    }
+
+    .job-description {
+      font-size: 0.875rem;   /* text-sm */
+      color: #4b5563;        /* text-gray-600 */
+      line-height: 1.625;    /* leading-relaxed */
+      margin-bottom: 1rem;   /* mb-4 */
+    }
+
+    /* Achievement callout */
+    .achievement-callout {
+      background: rgba(255, 127, 127, 0.1); /* bg-coral-pink/10 */
+      border-left: 4px solid #FF7F7F;
+      padding: 1rem;         /* p-4 */
+      margin-bottom: 1rem;   /* mb-4 */
+    }
+
+    .achievement-heading {
+      font-size: 0.75rem;    /* text-xs */
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #FF7F7F;
+      margin-bottom: 0.25rem; /* mb-1 */
+      letter-spacing: 0.08em;
+    }
+
+    .achievement-body {
+      font-size: 0.75rem;    /* text-xs */
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Highlights bullet list */
+    .highlights-list {
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .highlights-list li {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlights-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Footer decoration ──────────────────────────────────── */
+    .footer-corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 8rem;           /* w-32 */
+      height: 8rem;          /* h-32 */
+      background: #f9fafb;   /* bg-gray-50 */
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 1rem;         /* p-4 */
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    .footer-text {
+      font-size: 0.5rem;     /* text-[8px] */
+      font-weight: 700;
+      color: #d1d5db;        /* text-gray-300 */
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transform: rotate(-45deg);
+      transform-origin: bottom right;
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 5rem;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Page-break helpers ─────────────────────────────────── */
+    .page-break-before {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+<main class="resume-container" id="resume-document">
+
+  <!-- Coral accent block -->
+  <div class="coral-accent-block"></div>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="resume-header">
+    <div class="header-top">
+
+      <!-- Name + role -->
+      <div>
+        <h1 class="name-heading">{{basics.name}}</h1>
+        <p class="role-heading">
+          {{#if experience.[0]}}{{experience.[0].title}}{{else}}Creative Professional{{/if}}
+        </p>
+      </div>
+
+      <!-- Initials logo -->
+      <div class="logo-box">
+        <svg fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 L80 20 L80 80 L20 80 Z" stroke="#1a1a1a" stroke-width="4"></path>
+          <text
+            dominant-baseline="middle"
+            fill="#1a1a1a"
+            font-family="Poppins, sans-serif"
+            font-size="22"
+            font-weight="700"
+            text-anchor="middle"
+            x="50%"
+            y="55%"
+          >{{initials basics.name}}</text>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Contact strip -->
+    <div class="contact-strip">
+
+      {{#if basics.email}}
+      <div class="contact-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span>{{basics.email}}</span>
+      </div>
+      {{/if}}
+
+      {{#if basics.phone}}
+      <div class="contact-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span>{{basics.phone}}</span>
+      </div>
+      {{/if}}
+
+      {{#if basics.location}}
+      <div class="contact-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span>{{basics.location}}</span>
+      </div>
+      {{/if}}
+
+      {{#if basics.website}}
+      <div class="contact-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span>{{basics.linkedin}}</span>
+      </div>
+      {{/if}}
+
+      <!-- Portfolio / website button -->
+      {{#if basics.website}}
+      <a class="portfolio-btn" href="{{basics.website}}">{{basics.website}}</a>
+      {{else}}
+        {{#if basics.linkedin}}
+        <a class="portfolio-btn" href="{{basics.linkedin}}">{{basics.linkedin}}</a>
+        {{else}}
+          {{#if basics.github}}
+          <a class="portfolio-btn" href="{{basics.github}}">{{basics.github}}</a>
+          {{/if}}
+        {{/if}}
+      {{/if}}
+
+    </div>
+  </header>
+
+  <!-- ── BODY ───────────────────────────────────────────── -->
+  <div class="body-grid">
+
+    <!-- ── LEFT SIDEBAR ─────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <!-- Specialties -->
+      {{#if skills.[0]}}
+      <section>
+        <h3 class="section-title">Specialties</h3>
+        <div class="tags">
+          {{#each skills.[0].items}}
+          <span class="tag">{{this}}</span>
+          {{/each}}
+        </div>
+      </section>
+      {{/if}}
+
+      <!-- Tools — uses skills[1] if present, otherwise skills[0] -->
+      {{#if skills.[1]}}
+      <section>
+        <h3 class="section-title">Tools</h3>
+        <div class="tools-list">
+          {{#each skills.[1].items}}
+          <div class="tool-row">
+            <div class="tool-badge">{{abbr this}}</div>
+            <span class="tool-name">{{this}}</span>
+          </div>
+          {{/each}}
+        </div>
+      </section>
+      {{/if}}
+
+      <!-- Education -->
+      {{#if education.length}}
+      <section>
+        <h3 class="section-title">Education</h3>
+        {{#each education}}
+        <div class="education-item">
+          <h4 class="education-degree">
+            {{degree}}{{#if field}} in {{field}}{{/if}}
+          </h4>
+          <p class="education-school">{{institution}}</p>
+          <p class="education-date">{{formatDateRange date_range}}{{#if gpa}} &middot; GPA {{gpa}}{{/if}}</p>
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+
+    </aside>
+
+    <!-- ── MAIN EXPERIENCE ───────────────────────────────── -->
+    <section class="main-column">
+      <h3 class="section-title">Experience</h3>
+
+      {{#each experience}}
+      <div class="job-entry">
+        <!-- First entry gets coral dot; subsequent entries get muted dot -->
+        <div class="job-dot{{#unless @first}} muted{{/unless}}"></div>
+
+        <div class="job-header">
+          <div>
+            <h4 class="job-title">{{title}}</h4>
+            <p class="job-meta">
+              {{company}}{{#if location}} | {{location}}{{/if}} | {{formatDateRange date_range}}
+            </p>
+          </div>
+        </div>
+
+        {{#if description}}
+        <p class="job-description">{{description}}</p>
+        {{else}}
+          {{#if highlights.[1]}}
+          <p class="job-description">{{highlights.[1]}}</p>
+          {{/if}}
+        {{/if}}
+
+        {{#if highlights.[0]}}
+        <div class="achievement-callout">
+          <h5 class="achievement-heading">Key Achievement</h5>
+          <p class="achievement-body">{{highlights.[0]}}</p>
+        </div>
+        {{/if}}
+
+        {{#if highlights.[2]}}
+        <ul class="highlights-list">
+          {{#each highlights}}
+          {{#if @index}}
+          {{#unless @first}}
+          <li>{{this}}</li>
+          {{/unless}}
+          {{/if}}
+          {{/each}}
+        </ul>
+        {{/if}}
+
+      </div>
+      {{/each}}
+
+    </section>
+
+  </div>
+
+  <!-- ── FOOTER CORNER ──────────────────────────────────── -->
+  <footer class="footer-corner">
+    <span class="footer-text">{{basics.name}}</span>
+  </footer>
+
+</main>
+
+</body>
+</html>

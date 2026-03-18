@@ -1,13 +1,14 @@
-import { initVault, loadBaseResume, renderToHtml } from "@claimit/core";
+import { initVault, renderToHtml } from "@claimit/core";
 import { Palette } from "lucide-react";
 
 import { PageIntro } from "../../components/layout/page-intro";
 import { RenderWorkspace } from "../../components/render/RenderWorkspace";
 import { getServerI18n } from "../../lib/i18n";
+import { loadPreviewResume } from "../../lib/preview-resume";
 
 export default async function RenderPage() {
   await initVault();
-  const resume = await loadBaseResume();
+  const resume = await loadPreviewResume();
   const { t } = await getServerI18n();
   const initialHtml = await renderToHtml(resume, "ats_minimal").catch(
     () => `<html><body><p>${t("render.pdfPreview.title")}</p></body></html>`,

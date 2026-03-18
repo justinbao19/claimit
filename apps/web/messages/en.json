@@ -326,6 +326,8 @@
       "atsDescription": "Best for crisp, ATS-oriented formatting with a straightforward hierarchy.",
       "modernTitle": "Modern Clean",
       "modernDescription": "Best for a calmer document surface with slightly more warmth.",
+      "creativeTitle": "Creative Dynamic",
+      "creativeDescription": "Best for design, brand, and creative roles that benefit from stronger visual rhythm and personality.",
       "updateButton": "Update preview",
       "updatingButton": "Updating preview",
       "exportButton": "Export PDF",

@@ -22,6 +22,8 @@ import {
   type Resume,
 } from "@claimit/core";
 
+import { loadPreviewResume } from "../../../lib/preview-resume";
+
 export const runtime = "nodejs";
 
 type RouteContext = {
@@ -196,14 +198,14 @@ async function handleVariantsDelete(name: string) {
 
 async function handleRender(request: NextRequest) {
   const payload = (await request.json()) as { template: string; variant?: string };
-  const resume = payload.variant ? await loadVariant(payload.variant) : await loadBaseResume();
+  const resume = await loadPreviewResume(payload.variant);
   const html = await renderToHtml(resume, payload.template);
   return json({ html });
 }
 
 async function handleExportPdf(request: NextRequest) {
   const payload = (await request.json()) as { template: string; variant?: string; filename?: string };
-  const resume = payload.variant ? await loadVariant(payload.variant) : await loadBaseResume();
+  const resume = await loadPreviewResume(payload.variant);
   const html = await renderToHtml(resume, payload.template);
   const vaultPaths = getVaultPaths();
   await mkdir(vaultPaths.exportsDir, { recursive: true });

@@ -21,6 +21,10 @@ templates/
 │   └── template.html
 ├── ats_minimal/        ← ATS 友好风格
 │   └── template.html
+ ├── professional_cv/    ← 专业通用 CV 风格
+ │   └── template.html
+ ├── creative_dynamic/   ← 创意动感风格
+ │   └── template.html
 └── [新模板名]/
     └── template.html
 ```

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --accent: #1f3a5f;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: Letter;
+      margin: 0.5in;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 8.5in;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      padding: 0.55in;
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 14pt;
+      margin-bottom: 16pt;
+    }
+
+    h1 {
+      font-size: 24pt;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 8pt;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 16pt 0 8pt;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6pt 14pt;
+      color: var(--muted);
+      font-size: 9.5pt;
+    }
+
+    .summary {
+      margin-top: 10pt;
+      color: var(--ink);
+    }
+
+    .section {
+      margin-bottom: 6pt;
+    }
+
+    .entry {
+      margin-bottom: 12pt;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12pt;
+      margin-bottom: 2pt;
+    }
+
+    .entry-main {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .entry-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .entry-subtitle {
+      color: var(--muted);
+      margin-top: 1pt;
+    }
+
+    .entry-date {
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 9.5pt;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .entry-description {
+      margin-top: 4pt;
+      color: var(--ink);
+    }
+
+    ul {
+      margin: 6pt 0 0 18pt;
+    }
+
+    li {
+      margin-bottom: 3pt;
+    }
+
+    .education-note,
+    .gpa,
+    .skill-line {
+      color: var(--muted);
+    }
+
+    .skill-line {
+      margin-bottom: 4pt;
+    }
+
+    .skill-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-label {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .divider {
+      border-top: 1px solid var(--line);
+      margin-top: 14pt;
+      padding-top: 2pt;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{basics.name}}</h1>
+    <div class="contact-list">
+      {{#if basics.location}}<span>{{basics.location}}</span>{{/if}}
+      {{#if basics.email}}<span>{{basics.email}}</span>{{/if}}
+      {{#if basics.phone}}<span>{{basics.phone}}</span>{{/if}}
+      {{#if basics.website}}<span>{{basics.website}}</span>{{/if}}
+      {{#if basics.linkedin}}<span>{{basics.linkedin}}</span>{{/if}}
+      {{#if basics.github}}<span>{{basics.github}}</span>{{/if}}
+    </div>
+    {{#if basics.summary}}
+    <p class="summary">{{basics.summary}}</p>
+    {{/if}}
+  </header>
+
+  {{#if experience.length}}
+  <section class="section">
+    <h2>Experience</h2>
+    {{#each experience}}
+    <article class="entry">
+      <div class="entry-head">
+        <div class="entry-main">
+          <div class="entry-title">{{title}}</div>
+          <div class="entry-subtitle">
+            {{company}}{{#if location}} | {{location}}{{/if}}
+          </div>
+        </div>
+        <div class="entry-date">{{formatDateRange date_range}}</div>
+      </div>
+      {{#if highlights.length}}
+      <ul>
+        {{#each highlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if projects.length}}
+  <section class="section divider">
+    <h2>Projects</h2>
+    {{#each projects}}
+    <article class="entry">
+      <div class="entry-head">
+        <div class="entry-main">
+          <div class="entry-title">{{name}}</div>
+          {{#if description}}<p class="entry-description">{{description}}</p>{{/if}}
+        </div>
+        {{#if date_range}}<div class="entry-date">{{formatDateRange date_range}}</div>{{/if}}
+      </div>
+      {{#if highlights.length}}
+      <ul>
+        {{#each highlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if education.length}}
+  <section class="section divider">
+    <h2>Education</h2>
+    {{#each education}}
+    <article class="entry">
+      <div class="entry-head">
+        <div class="entry-main">
+          <div class="entry-title">{{degree}}{{#if field}} | {{field}}{{/if}}</div>
+          <div class="entry-subtitle">{{institution}}</div>
+          {{#if gpa}}<div class="gpa">GPA: {{gpa}}</div>{{/if}}
+        </div>
+        <div class="entry-date">{{formatDateRange date_range}}</div>
+      </div>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if skills.length}}
+  <section class="section divider">
+    <h2>Skills</h2>
+    {{#each skills}}
+    <p class="skill-line"><span class="skill-label">{{category}}:</span> {{join items ", "}}</p>
+    {{/each}}
+  </section>
+  {{/if}}
+</body>
+</html>
