@@ -87,21 +87,31 @@
       margin-top: 0.5rem;
     }
 
-    /* ── Logo box (initials) ────────────────────────────────── */
-    .logo-box {
+    /* ── Photo box (top-right) ──────────────────────────────── */
+    .photo-box {
       width: 6rem;           /* w-24 */
       height: 6rem;          /* h-24 */
-      border: 4px solid #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;       /* p-2 */
       flex-shrink: 0;
+      overflow: hidden;
+      /* border shown only when there IS a photo */
     }
 
-    .logo-box svg {
+    .photo-box.has-photo {
+      border: 4px solid #1a1a1a;
+    }
+
+    .photo-box img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* When no photo: completely invisible (blank) for both screen and print */
+    .photo-box.no-photo {
+      border: none;
+      background: transparent;
     }
 
     /* ── Contact strip ──────────────────────────────────────── */
@@ -425,22 +435,14 @@
         </p>
       </div>
 
-      <!-- Initials logo -->
-      <div class="logo-box">
-        <svg fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 20 L80 20 L80 80 L20 80 Z" stroke="#1a1a1a" stroke-width="4"></path>
-          <text
-            dominant-baseline="middle"
-            fill="#1a1a1a"
-            font-family="Poppins, sans-serif"
-            font-size="22"
-            font-weight="700"
-            text-anchor="middle"
-            x="50%"
-            y="55%"
-          >{{initials basics.name}}</text>
-        </svg>
+      <!-- Photo box: filled when basics.photo is set, blank otherwise -->
+      {{#if basics.photo}}
+      <div class="photo-box has-photo">
+        <img src="{{basics.photo}}" alt="{{basics.name}}" />
       </div>
+      {{else}}
+      <div class="photo-box no-photo"></div>
+      {{/if}}
 
     </div>
 

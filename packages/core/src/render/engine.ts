@@ -39,7 +39,7 @@ Handlebars.registerHelper("abbr", (value: unknown) => {
   if (!str.trim()) return "??";
   const words = str.trim().split(/\s+/);
   if (words.length >= 2) {
-    return (words[0][0] ?? "").toUpperCase() + (words[1][0] ?? "").toLowerCase();
+    return (words[0]?.[0] ?? "").toUpperCase() + (words[1]?.[0] ?? "").toLowerCase();
   }
   return str.slice(0, 2);
 });

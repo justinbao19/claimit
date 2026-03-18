@@ -113,6 +113,7 @@ export const BasicsSchema = z.object({
   github: z.string().url().optional(),
   website: z.string().url().optional(),
   summary: z.string().optional(),
+  photo: z.string().optional(),
 });
 
 export const ResumeMetaSchema = z.object({
