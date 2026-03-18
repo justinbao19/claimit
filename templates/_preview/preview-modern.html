@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>简历预览 - Modern Clean</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0 auto;
+      max-width: 8.5in;
+      padding: 0.65in;
+      background: #f8fafc;
+      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .sheet {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+    }
+    h1 { font-size: 24pt; margin-bottom: 6pt; }
+    h2 {
+      margin: 18pt 0 8pt;
+      color: #334155;
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .contact { color: #475569; font-size: 10pt; }
+    .entry { margin-bottom: 12pt; }
+    .entryHeader { display: flex; justify-content: space-between; gap: 12pt; }
+    .entryTitle { font-size: 12pt; font-weight: 700; }
+    .meta { color: #475569; font-size: 10pt; }
+    ul { margin: 6pt 0 0 18pt; }
+    li { margin-bottom: 3pt; }
+    
+    /* 打印优化 */
+    @media print {
+      body { background: white; padding: 0; }
+      .sheet { border: none; border-radius: 0; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <h1>张三</h1>
+      <p class="contact">
+        上海 · zhangsan@example.com · +86 138 0000 0000 · github.com/zhangsan
+      </p>
+      <p style="margin-top: 12pt;">8年产品经理经验，专注 AI 产品和增长策略。曾主导多个从 0 到 1 的产品，用户规模达百万级。</p>
+    </header>
+
+    <section>
+      <h2>工作经历</h2>
+      
+      <div class="entry">
+        <div class="entryHeader">
+          <div>
+            <div class="entryTitle">高级产品经理</div>
+            <div class="meta">字节跳动 · 上海</div>
+          </div>
+          <div class="meta">2022年3月 - 至今</div>
+        </div>
+        <ul>
+          <li>主导 AI 写作助手产品，DAU 从 0 增长至 50 万</li>
+          <li>设计增长漏斗，注册转化率提升 35%</li>
+          <li>带领 6 人产品团队，协调研发、设计、运营</li>
+        </ul>
+      </div>
+      
+      <div class="entry">
+        <div class="entryHeader">
+          <div>
+            <div class="entryTitle">产品经理</div>
+            <div class="meta">阿里巴巴 · 杭州</div>
+          </div>
+          <div class="meta">2019年7月 - 2022年2月</div>
+        </div>
+        <ul>
+          <li>负责淘宝商家工具，服务 200 万商家</li>
+          <li>优化商家后台体验，NPS 提升 20 分</li>
+          <li>主导商家智能推荐系统，GMV 提升 15%</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>项目经历</h2>
+      <div class="entry">
+        <div class="entryHeader">
+          <div class="entryTitle">AI 简历助手</div>
+          <div class="meta">2024年1月 - 2024年6月</div>
+        </div>
+        <p>基于 LLM 的智能简历生成和优化工具</p>
+        <ul>
+          <li>集成 GPT-4 进行简历内容优化</li>
+          <li>支持多模板导出，ATS 友好</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>教育背景</h2>
+      <div class="entry">
+        <div class="entryHeader">
+          <div class="entryTitle">硕士 · 计算机科学</div>
+          <div class="meta">2015 - 2018</div>
+        </div>
+        <div class="meta">上海交通大学 · GPA: 3.8/4.0</div>
+      </div>
+      <div class="entry">
+        <div class="entryHeader">
+          <div class="entryTitle">学士 · 软件工程</div>
+          <div class="meta">2011 - 2015</div>
+        </div>
+        <div class="meta">浙江大学</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>技能</h2>
+      <p><strong>产品技能</strong>: PRD 撰写, 用户调研, 数据分析, A/B 测试, 原型设计</p>
+      <p><strong>工具</strong>: Figma, SQL, Amplitude, 神策, 飞书</p>
+      <p><strong>技术理解</strong>: Python, LLM/RAG, 推荐系统, 微服务</p>
+    </section>
+  </div>
+</body>
+</html>

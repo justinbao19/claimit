@@ -1,0 +1,75 @@
+{
+  "basics": {
+    "name": "张三",
+    "email": "zhangsan@example.com",
+    "phone": "+86 138 0000 0000",
+    "location": "上海",
+    "linkedin": "linkedin.com/in/zhangsan",
+    "github": "github.com/zhangsan",
+    "summary": "8年产品经理经验，专注 AI 产品和增长策略。曾主导多个从 0 到 1 的产品，用户规模达百万级。"
+  },
+  "experience": [
+    {
+      "title": "高级产品经理",
+      "company": "字节跳动",
+      "location": "上海",
+      "date_range": { "start": "2022-03", "ongoing": true },
+      "highlights": [
+        "主导 AI 写作助手产品，DAU 从 0 增长至 50 万",
+        "设计增长漏斗，注册转化率提升 35%",
+        "带领 6 人产品团队，协调研发、设计、运营"
+      ]
+    },
+    {
+      "title": "产品经理",
+      "company": "阿里巴巴",
+      "location": "杭州",
+      "date_range": { "start": "2019-07", "end": "2022-02" },
+      "highlights": [
+        "负责淘宝商家工具，服务 200 万商家",
+        "优化商家后台体验，NPS 提升 20 分",
+        "主导商家智能推荐系统，GMV 提升 15%"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI 简历助手",
+      "description": "基于 LLM 的智能简历生成和优化工具",
+      "date_range": { "start": "2024-01", "end": "2024-06" },
+      "highlights": [
+        "集成 GPT-4 进行简历内容优化",
+        "支持多模板导出，ATS 友好"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "上海交通大学",
+      "degree": "硕士",
+      "field": "计算机科学",
+      "date_range": { "start": "2015", "end": "2018" },
+      "gpa": "3.8/4.0"
+    },
+    {
+      "institution": "浙江大学",
+      "degree": "学士",
+      "field": "软件工程",
+      "date_range": { "start": "2011", "end": "2015" }
+    }
+  ],
+  "skills": [
+    {
+      "category": "产品技能",
+      "items": ["PRD 撰写", "用户调研", "数据分析", "A/B 测试", "原型设计"]
+    },
+    {
+      "category": "工具",
+      "items": ["Figma", "SQL", "Amplitude", "神策", "飞书"]
+    },
+    {
+      "category": "技术理解",
+      "items": ["Python", "LLM/RAG", "推荐系统", "微服务"]
+    }
+  ]
+}
