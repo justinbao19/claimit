@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{basics.name}} — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sidebar-w: 292px;
+  --page-w:    794px;
+}
+
+html, body {
+  font-family: 'Noto Sans SC', 'Inter', sans-serif;
+  background: white;
+  color: #2d3748;
+  -webkit-font-smoothing: antialiased;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* ════════════════════════════════════════
+   PAGE LAYOUT (single flowing document)
+════════════════════════════════════════ */
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  display: flex;
+  margin: 0 auto;
+  background: white;
+}
+
+/* ════════════════════════════════════════
+   SIDEBAR
+════════════════════════════════════════ */
+.sidebar {
+  /* Morandi Blue — matches Figma A4-活泼[莫兰迪蓝] */
+  --sb-bg:          #406495;
+  --sb-text:        rgba(255,255,255,0.9);
+  --sb-text-bright: #ffffff;
+  --sb-text-dim:    rgba(255,255,255,0.65);
+  --sb-border:      rgba(255,255,255,0.18);
+  --sb-bullet:      rgba(255,255,255,0.5);
+
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  padding: 48px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* SVG paths inherit parent text color */
+.sidebar .sb-section-title svg path,
+.sidebar .sb-section-title svg rect,
+.sidebar .sb-section-title svg circle,
+.sidebar .sb-info-row svg path,
+.sidebar .sb-info-row svg rect { fill: currentColor; }
+
+/* Name block */
+.sb-name-block {
+  margin-bottom: 20px;
+}
+
+/* Photo */
+.sb-photo-wrap {
+  margin-bottom: 16px;
+  width: 100%;
+  height: 238px;
+}
+.sb-photo-img {
+  width: 100%;
+  height: 238px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background: #E1D4D7;
+}
+
+.sb-name-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--sb-text-bright);
+  line-height: 1.083;
+  letter-spacing: 0.02em;
+}
+.sb-name-sub {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sb-text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Sidebar section */
+.sb-section { margin-bottom: 18px; }
+.sb-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--sb-text-bright);
+  border-bottom: 1px solid var(--sb-border);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+.sb-section-title svg { flex-shrink: 0; width: 18px; height: 18px; }
+
+/* Info rows */
+.sb-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 5px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  color: var(--sb-text);
+  line-height: 1.6;
+}
+.sb-info-row svg { flex-shrink: 0; width: 13px; height: 13px; opacity: 0.85; margin-top: 1px; }
+.sb-info-row a { color: var(--sb-text); text-decoration: none; }
+.sb-info-row a:hover { text-decoration: underline; }
+
+/* Highlight list */
+.sb-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sb-highlights li {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  color: var(--sb-text);
+  line-height: 1.875;
+  padding-left: 14px;
+  position: relative;
+}
+.sb-highlights li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--sb-bullet);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  line-height: 1.875;
+}
+
+/* Other items */
+.sb-other-item { margin-bottom: 6px; }
+.sb-other-label {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sb-text);
+  margin-bottom: 1px;
+}
+.sb-other-value {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  color: var(--sb-text);
+  line-height: 1.875;
+}
+
+/* ════════════════════════════════════════
+   MAIN CONTENT
+════════════════════════════════════════ */
+.main {
+  flex: 1;
+  padding: 48px 38px 86px 40px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section */
+.cv-section { margin-bottom: 16px; }
+.cv-section:last-child { margin-bottom: 0; }
+
+.cv-section-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(0,0,0,0.9);
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+.cv-section-title svg {
+  color: rgba(0,0,0,0.9);
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Entry */
+.entry {
+  position: relative;
+  margin-bottom: 10px;
+}
+.entry:last-child { margin-bottom: 0; }
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.entry-header > div:first-child {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+}
+.entry-company {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.9);
+  line-height: 1.448;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.entry-company::after {
+  content: '\00a0·\00a0';
+  font-weight: 400;
+  color: rgba(0,0,0,0.4);
+}
+.entry-role {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.9);
+  line-height: 1.448;
+  flex: 1;
+  min-width: 0;
+}
+.entry-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(0,0,0,0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.21;
+}
+.entry-sub {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  color: rgba(0,0,0,0.7);
+  font-weight: 400;
+  margin-bottom: 3px;
+  margin-top: 1px;
+}
+
+/* Bullets */
+.entry-bullets {
+  list-style: none;
+  margin: 2px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.entry-bullets li {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.75;
+  padding-left: 14px;
+  position: relative;
+}
+.entry-bullets li::before {
+  content: '•';
+  font-family: 'Inter', sans-serif;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: rgba(0,0,0,0.5);
+  font-size: 11px;
+  line-height: 1.75;
+  opacity: 0.5;
+}
+
+/* ════════════════════════════════════════
+   PRINT
+════════════════════════════════════════ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  html, body { background: white; }
+  .resume-page { width: 210mm; }
+
+  /* Preserve sidebar colors */
+  .sb-name-zh        { color: var(--sb-text-bright) !important; }
+  .sb-name-sub       { color: var(--sb-text-dim) !important; }
+  .sb-section-title  { color: var(--sb-text-bright) !important; }
+  .sb-info-row       { color: var(--sb-text) !important; }
+  .sb-highlights li  { color: var(--sb-text) !important; }
+  .sb-other-value    { color: var(--sb-text) !important; }
+  .sb-other-label    { color: var(--sb-text) !important; }
+  .sb-highlights li::before { color: var(--sb-bullet) !important; }
+  .entry-bullets li::before { color: rgba(0,0,0,0.5) !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="resume-page">
+
+  <!-- ════════════════════════════════════════
+       SIDEBAR
+  ════════════════════════════════════════ -->
+  <div class="sidebar">
+
+    <!-- Name block -->
+    <div class="sb-name-block">
+      {{#if basics.photo}}
+      <div class="sb-photo-wrap">
+        <img class="sb-photo-img" src="{{basics.photo}}" alt="photo">
+      </div>
+      {{/if}}
+      <div class="sb-name-zh">{{basics.name}}</div>
+      {{#if basics.summary}}
+      <div class="sb-name-sub">{{basics.summary}}</div>
+      {{/if}}
+    </div>
+
+    <!-- 个人信息 -->
+    <div class="sb-section">
+      <div class="sb-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="white"><path d="M2.91634 1.16699H11.083C11.2377 1.16699 11.3861 1.22845 11.4955 1.33785C11.6049 1.44724 11.6663 1.59562 11.6663 1.75033V12.9171C11.6664 12.9692 11.6525 13.0204 11.626 13.0654C11.5996 13.1103 11.5616 13.1474 11.5159 13.1726C11.4703 13.1979 11.4187 13.2104 11.3666 13.209C11.3145 13.2076 11.2637 13.1922 11.2195 13.1644L6.99967 10.5178L2.77984 13.1638C2.73572 13.1915 2.68498 13.2069 2.6329 13.2084C2.58082 13.2099 2.52929 13.1974 2.48368 13.1722C2.43807 13.147 2.40004 13.11 2.37354 13.0652C2.34704 13.0203 2.33305 12.9692 2.33301 12.9171V1.75033C2.33301 1.59562 2.39447 1.44724 2.50386 1.33785C2.61326 1.22845 2.76163 1.16699 2.91634 1.16699Z"/></svg>
+        个人信息
+      </div>
+      {{#if basics.phone}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 10 10" fill="white" fill-opacity="0.9"><path d="M2.91634 1.66634V8.33301H7.08301V1.66634H2.91634ZM2.49967 0.833008H7.49967C7.61018 0.833008 7.71616 0.876906 7.7943 0.955047C7.87244 1.03319 7.91634 1.13917 7.91634 1.24967V8.74967C7.91634 8.86018 7.87244 8.96616 7.7943 9.0443C7.71616 9.12244 7.61018 9.16634 7.49967 9.16634H2.49967C2.38917 9.16634 2.28319 9.12244 2.20505 9.0443C2.12691 8.96616 2.08301 8.86018 2.08301 8.74967V1.24967C2.08301 1.13917 2.12691 1.03319 2.20505 0.955047C2.28319 0.876906 2.38917 0.833008 2.49967 0.833008ZM4.99967 7.08301C5.11018 7.08301 5.21616 7.12691 5.2943 7.20505C5.37244 7.28319 5.41634 7.38917 5.41634 7.49967C5.41634 7.61018 5.37244 7.71616 5.2943 7.7943C5.21616 7.87244 5.11018 7.91634 4.99967 7.91634C4.88917 7.91634 4.78319 7.87244 4.70505 7.7943C4.62691 7.71616 4.58301 7.61018 4.58301 7.49967C4.58301 7.38917 4.62691 7.28319 4.70505 7.20505C4.78319 7.12691 4.88917 7.08301 4.99967 7.08301Z"/></svg>
+        <span>{{basics.phone}}</span>
+      </div>
+      {{/if}}
+      {{#if basics.email}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 10 10" fill="white" fill-opacity="0.9"><path d="M8.75033 1.25H1.25033C1.13982 1.25 1.03384 1.2939 0.955698 1.37204C0.877558 1.45018 0.833659 1.55616 0.833659 1.66667V8.33333C0.833659 8.44384 0.877558 8.54982 0.955698 8.62796C1.03384 8.7061 1.13982 8.75 1.25033 8.75H8.75033C8.86083 8.75 8.96681 8.7061 9.04495 8.62796C9.12309 8.54982 9.16699 8.44384 9.16699 8.33333V1.66667C9.16699 1.55616 9.12309 1.45018 9.04495 1.37204C8.96681 1.2939 8.86083 1.25 8.75033 1.25ZM1.66699 3.01583L4.97033 5.97417L8.33366 3.00667V7.91667H1.66699V3.01583ZM8.12074 2.08333L4.97491 4.85917L1.87449 2.08333H8.12074Z"/></svg>
+        <a href="mailto:{{basics.email}}">{{basics.email}}</a>
+      </div>
+      {{/if}}
+      {{#if basics.linkedin}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="white" fill-opacity="0.9"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
+        <a href="{{basics.linkedin}}" target="_blank">{{basics.linkedin}}</a>
+      </div>
+      {{/if}}
+      {{#if basics.website}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="white" fill-opacity="0.9"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12" stroke="white" stroke-width="2"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="white" stroke-width="2"/></svg>
+        <a href="{{basics.website}}" target="_blank">{{basics.website}}</a>
+      </div>
+      {{/if}}
+      {{#if basics.location}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 10 10" fill="white" fill-opacity="0.9"><path d="M5 8.70797L7.0625 6.64547C7.47038 6.23756 7.74813 5.71786 7.86065 5.15209C7.97316 4.58632 7.91539 3.99989 7.69462 3.46696C7.47386 2.93402 7.10002 2.47852 6.62038 2.15805C6.14075 1.83757 5.57685 1.66652 5 1.66652C4.42315 1.66652 3.85926 1.83757 3.37962 2.15805C2.89998 2.47852 2.52615 2.93402 2.30538 3.46696C2.08462 3.99989 2.02684 4.58632 2.13936 5.15209C2.25187 5.71786 2.52963 6.23756 2.9375 6.64547L5 8.70797ZM5 9.88631L2.34834 7.23464C1.82389 6.71019 1.46674 6.04201 1.32205 5.31458C1.17736 4.58715 1.25163 3.83315 1.53546 3.14793C1.81929 2.46271 2.29993 1.87705 2.91662 1.46499C3.5333 1.05294 4.25832 0.833008 5 0.833008C5.74168 0.833008 6.4667 1.05294 7.08339 1.46499C7.70007 1.87705 8.18072 2.46271 8.46455 3.14793C8.74838 3.83315 8.82264 4.58715 8.67795 5.31458C8.53326 6.04201 8.17611 6.71019 7.65167 7.23464L5 9.88631ZM5 5.41631C5.22102 5.41631 5.43298 5.32851 5.58926 5.17223C5.74554 5.01595 5.83333 4.80399 5.83333 4.58298C5.83333 4.36196 5.74554 4.15 5.58926 3.99372C5.43298 3.83744 5.22102 3.74964 5 3.74964C4.77899 3.74964 4.56703 3.83744 4.41075 3.99372C4.25447 4.15 4.16667 4.36196 4.16667 4.58298C4.16667 4.80399 4.25447 5.01595 4.41075 5.17223C4.56703 5.32851 4.77899 5.41631 5 5.41631ZM5 6.24964C4.55797 6.24964 4.13405 6.07405 3.82149 5.76149C3.50893 5.44893 3.33333 5.025 3.33333 4.58298C3.33333 4.14095 3.50893 3.71702 3.82149 3.40446C4.13405 3.0919 4.55797 2.91631 5 2.91631C5.44203 2.91631 5.86595 3.0919 6.17851 3.40446C6.49107 3.71702 6.66667 4.14095 6.66667 4.58298C6.66667 5.025 6.49107 5.44893 6.17851 5.76149C5.86595 6.07405 5.44203 6.24964 5 6.24964Z"/></svg>
+        <span>{{basics.location}}</span>
+      </div>
+      {{/if}}
+      {{#if education.[0]}}
+      <div class="sb-info-row">
+        <svg width="13" height="13" viewBox="0 0 10 10" fill="white" fill-opacity="0.9"><path d="M8.75033 7.91667H9.58366V8.75H0.416992V7.91667H1.25033V1.66667C1.25033 1.55616 1.29422 1.45018 1.37236 1.37204C1.4505 1.2939 1.55649 1.25 1.66699 1.25H5.83366C5.94417 1.25 6.05015 1.2939 6.12829 1.37204C6.20643 1.45018 6.25033 1.55616 6.25033 1.66667V7.91667H7.91699V4.58333H7.08366V3.75H8.33366C8.44417 3.75 8.55015 3.7939 8.62829 3.87204C8.70643 3.95018 8.75033 4.05616 8.75033 4.16667V7.91667ZM2.08366 2.08333V7.91667H5.41699V2.08333H2.08366ZM2.91699 4.58333H4.58366V5.41667H2.91699V4.58333ZM2.91699 2.91667H4.58366V3.75H2.91699V2.91667Z"/></svg>
+        <span>{{education.[0].degree}}{{#if education.[0].field}} {{education.[0].field}}{{/if}}</span>
+      </div>
+      {{/if}}
+    </div>
+
+    <!-- 个人亮点 (skills[0].items) -->
+    {{#if skills.[0]}}
+    <div class="sb-section">
+      <div class="sb-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="white"><path d="M1.75 1.75H7.22283C7.33114 1.75006 7.43728 1.78027 7.52939 1.83724C7.6215 1.89421 7.69592 1.9757 7.74433 2.07258L8.16667 2.91667H11.6667C11.8214 2.91667 11.9697 2.97812 12.0791 3.08752C12.1885 3.19692 12.25 3.34529 12.25 3.5V9.91667C12.25 10.0714 12.1885 10.2197 12.0791 10.3291C11.9697 10.4385 11.8214 10.5 11.6667 10.5H7.94383C7.83553 10.4999 7.72938 10.4697 7.63728 10.4128C7.54517 10.3558 7.47074 10.2743 7.42233 10.1774L7 9.33333H2.91667V12.8333H1.75V1.75Z"/></svg>
+        个人亮点
+      </div>
+      <ul class="sb-highlights">
+        {{#each skills.[0].items}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+
+    <!-- 其它 (skills[1+]): each remaining category as label + joined values -->
+    {{#if skills.[1]}}
+    <div class="sb-section">
+      <div class="sb-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="white"><path d="M6.41646 10.4997H4.63204C4.45879 9.75716 3.67713 9.14991 3.35629 8.74974C2.8069 8.06333 2.4626 7.23568 2.36303 6.36214C2.26347 5.4886 2.41269 4.6047 2.79352 3.81226C3.17436 3.01982 3.7713 2.35108 4.51558 1.88308C5.25987 1.41508 6.12123 1.16685 7.00042 1.16699C7.87962 1.16713 8.7409 1.41564 9.48503 1.88388C10.2292 2.35212 10.8259 3.02105 11.2065 3.81361C11.5871 4.60617 11.736 5.49011 11.6362 6.36362C11.5363 7.23713 11.1917 8.06467 10.6421 8.75091C10.3213 9.15049 9.54079 9.75774 9.36754 10.4997H7.58313V7.58307H6.41646V10.4997ZM9.33313 11.6664V12.2497C9.33313 12.5592 9.21021 12.8559 8.99142 13.0747C8.77263 13.2935 8.47588 13.4164 8.16646 13.4164H5.83313C5.52371 13.4164 5.22696 13.2935 5.00817 13.0747C4.78938 12.8559 4.66646 12.5592 4.66646 12.2497V11.6664H9.33313Z"/></svg>
+        其它
+      </div>
+      {{#each skills}}
+      {{#unless @first}}
+      <div class="sb-other-item">
+        <div class="sb-other-label">{{name}}</div>
+        <div class="sb-other-value">{{join items "、"}}</div>
+      </div>
+      {{/unless}}
+      {{/each}}
+    </div>
+    {{/if}}
+
+  </div><!-- /sidebar -->
+
+  <!-- ════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════ -->
+  <div class="main">
+
+    <!-- 工作经历 -->
+    {{#if experience}}
+    <div class="cv-section">
+      <div class="cv-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="currentColor"><path d="M5.08333 7.58301V9.33301H8.58333V7.58301H12.6667V11.6663C12.6667 11.8211 12.6052 11.9694 12.4958 12.0788C12.3864 12.1882 12.238 12.2497 12.0833 12.2497H1.58333C1.42862 12.2497 1.28025 12.1882 1.17085 12.0788C1.06146 11.9694 1 11.8211 1 11.6663V7.58301H5.08333ZM6.25 6.41634H7.41667V8.16634H6.25V6.41634ZM3.91667 2.91634V1.16634C3.91667 1.01163 3.97813 0.863258 4.08752 0.753862C4.19692 0.644466 4.34529 0.583008 4.5 0.583008H9.16667C9.32138 0.583008 9.46975 0.644466 9.57915 0.753862C9.68854 0.863258 9.75 1.01163 9.75 1.16634V2.91634H12.0833C12.238 2.91634 12.3864 2.9778 12.4958 3.0872C12.6052 3.19659 12.6667 3.34496 12.6667 3.49967V6.41634H8.58333V5.24967H5.08333V6.41634H1V3.49967C1 3.34496 1.06146 3.19659 1.17085 3.0872C1.28025 2.9778 1.42862 2.91634 1.58333 2.91634H3.91667ZM5.08333 1.74967V2.91634H8.58333V1.74967H5.08333Z"/></svg>
+        工作经历
+      </div>
+      {{#each experience}}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <div class="entry-company">{{company}}</div>
+            <div class="entry-role">{{title}}</div>
+          </div>
+          <div class="entry-meta">{{date_range.start}}{{#if date_range.ongoing}} — 至今{{else}}{{#if date_range.end}} — {{date_range.end}}{{/if}}{{/if}}{{#if location}} · {{location}}{{/if}}</div>
+        </div>
+        {{#if highlights}}
+        <ul class="entry-bullets">
+          {{#each highlights}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- 教育经历 -->
+    {{#if education}}
+    <div class="cv-section">
+      <div class="cv-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="currentColor"><path d="M12.0833 12.25H7.41667V3.5C7.41667 3.03587 7.60104 2.59075 7.92923 2.26256C8.25742 1.93437 8.70254 1.75 9.16667 1.75H12.0833C12.238 1.75 12.3864 1.81146 12.4958 1.92085C12.6052 2.03025 12.6667 2.17862 12.6667 2.33333V11.6667C12.6667 11.8214 12.6052 11.9697 12.4958 12.0791C12.3864 12.1885 12.238 12.25 12.0833 12.25ZM6.25 12.25H1.58333C1.42862 12.25 1.28025 12.1885 1.17085 12.0791C1.06146 11.9697 1 11.8214 1 11.6667V2.33333C1 2.17862 1.06146 2.03025 1.17085 1.92085C1.28025 1.81146 1.42862 1.75 1.58333 1.75H4.5C4.96413 1.75 5.40925 1.93437 5.73744 2.26256C6.06563 2.59075 6.25 3.03587 6.25 3.5V12.25ZM6.25 12.25H7.41667V13.4167H6.25V12.25Z"/></svg>
+        教育经历
+      </div>
+      {{#each education}}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <div class="entry-company">{{institution}}</div>
+            <div class="entry-role">{{degree}}{{#if field}} {{field}}{{/if}}</div>
+          </div>
+          <div class="entry-meta">{{date_range.start}}{{#if date_range.ongoing}} — 至今{{else}}{{#if date_range.end}} — {{date_range.end}}{{/if}}{{/if}}{{#if location}} · {{location}}{{/if}}</div>
+        </div>
+        {{#if description}}
+        <div class="entry-sub">{{description}}</div>
+        {{/if}}
+        {{#if gpa}}
+        <div class="entry-sub">GPA: {{gpa}}</div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- 项目经历 -->
+    {{#if projects}}
+    <div class="cv-section">
+      <div class="cv-section-title">
+        <svg width="18" height="18" viewBox="0 0 14 14" fill="currentColor"><path d="M12.6667 4.66667V11.6667C12.6667 11.8214 12.6052 11.9697 12.4958 12.0791C12.3864 12.1885 12.238 12.25 12.0833 12.25H1.58333C1.42862 12.25 1.28025 12.1885 1.17085 12.0791C1.06146 11.9697 1 11.8214 1 11.6667V4.08333H12.0833C12.238 4.08333 12.3864 4.14479 12.4958 4.25419C12.6052 4.36358 12.6667 4.51196 12.6667 4.66667ZM7.07483 2.91667H1V2.33333C1 2.17862 1.06146 2.03025 1.17085 1.92085C1.28025 1.81146 1.42862 1.75 1.58333 1.75H5.90817L7.07483 2.91667Z"/></svg>
+        项目经历
+      </div>
+      {{#each projects}}
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <div class="entry-company">{{name}}</div>
+            {{#if description}}
+            <div class="entry-role">{{description}}</div>
+            {{/if}}
+          </div>
+        </div>
+        {{#if highlights}}
+        <ul class="entry-bullets">
+          {{#each highlights}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+  </div><!-- /main -->
+
+</div><!-- /resume-page -->
+
+</body>
+</html>

@@ -126,7 +126,7 @@ export function createMcpServer(): McpServer {
     {
       description: "Render a resume variant to HTML using a template",
       inputSchema: {
-        template: z.enum(["ats_minimal", "modern_clean"]),
+        template: z.enum(["ats_minimal", "modern_clean", "chinese_sidebar"]),
         variant: z.string().optional(),
       },
     },

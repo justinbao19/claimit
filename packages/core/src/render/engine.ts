@@ -111,6 +111,7 @@ export async function renderToPdf(html: string, outputPath: string): Promise<voi
     await page.pdf({
       path: outputPath,
       format: "Letter",
+      preferCSSPageSize: true, // templates with @page { size: A4 } override format
       margin: {
         top: "0.5in",
         right: "0.5in",
