@@ -85,9 +85,19 @@ function isBullet(line: string): boolean {
   return /^[-*•]/.test(line.trim());
 }
 
-/** Returns true when a line contains a year-month pattern — reliable indicator of an entry header */
+/**
+ * Returns true when a line looks like an entry header based on date patterns.
+ *
+ * Supports:
+ *   - Chinese/ISO year-month:  2022-01, 2022.01, 2022/01
+ *   - Year range:              2020 - 2023, 2020 – Present, 2020—至今
+ *   - Month + Year (English):  Jan 2020, January 2020
+ */
 function isEntryHeader(line: string): boolean {
-  return /\d{4}[-./]\d{2}/.test(line);
+  if (/\d{4}[-./]\d{2}/.test(line)) return true;
+  if (/\d{4}\s*[-–—]\s*(\d{4}|[Pp]resent|[Cc]urrent|至今|现在)/.test(line)) return true;
+  if (/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}\b/i.test(line)) return true;
+  return false;
 }
 
 function guessSection(line: string): SectionName | null {
@@ -112,18 +122,26 @@ function splitLines(text: string): string[] {
 
 /**
  * Split an entry header into the label (left of first date) and the rest (date + location).
- * Example: "上海焜耀·海外运营主管 2022-01 - 2024-05 · 上海"
- *       → { label: "上海焜耀·海外运营主管", rest: "2022-01 - 2024-05 · 上海" }
+ *
+ * Handles:
+ *   - Chinese/ISO year-month:  "公司·职位 2022-01 - 2024-05 · 上海"
+ *   - Year range:              "Company | Title | 2020 - 2023"
+ *   - Month + Year (English):  "Company | Title | Jan 2020 - Present"
  */
 function splitHeaderLine(line: string): { label: string; rest: string } {
-  const dateMatch = line.match(/\d{4}[-./]\d{2}/);
-  if (!dateMatch || dateMatch.index === undefined) {
-    return { label: line.trim(), rest: "" };
+  // Try in order of specificity: year-month first, then year-range, then month-year
+  const patterns = [
+    /\d{4}[-./]\d{2}/,
+    /\d{4}\s*[-–—]\s*(\d{4}|[Pp]resent|[Cc]urrent|至今|现在)/,
+    /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}\b/i,
+  ];
+  for (const pattern of patterns) {
+    const m = line.match(pattern);
+    if (m && m.index !== undefined) {
+      return { label: line.slice(0, m.index).trim(), rest: line.slice(m.index).trim() };
+    }
   }
-  return {
-    label: line.slice(0, dateMatch.index).trim(),
-    rest: line.slice(dateMatch.index).trim(),
-  };
+  return { label: line.trim(), rest: "" };
 }
 
 /**
@@ -191,9 +209,15 @@ function parseExperienceSection(lines: string[]): Experience[] {
         company = label.slice(0, dotIdx).trim();
         title = label.slice(dotIdx + 1).trim();
       } else {
-        // English fallback: "Title, Company" or "Title at Company"
-        const segs = label.split(/,| at /i).map((s) => s.trim()).filter(Boolean);
-        if (segs.length >= 2) { title = segs[0]!; company = segs[1]!; }
+        // English fallback: pipe-separated "Company | Title" or "Title, Company" or "Title at Company"
+        const pipeParts = label.split("|").map((s) => s.trim()).filter(Boolean);
+        if (pipeParts.length >= 2) {
+          company = pipeParts[0]!;
+          title = pipeParts[1]!;
+        } else {
+          const segs = label.split(/,| at /i).map((s) => s.trim()).filter(Boolean);
+          if (segs.length >= 2) { title = segs[0]!; company = segs[1]!; }
+        }
       }
 
       current = {
@@ -213,6 +237,37 @@ function parseExperienceSection(lines: string[]): Experience[] {
   }
 
   flush();
+
+  // Fallback for English resumes where no date pattern was found:
+  // treat non-bullet lines as entry headers (original behaviour)
+  if (entries.length === 0 && lines.some((l) => !isBullet(l))) {
+    let fallbackCurrent: Experience | null = null;
+    const flush2 = () => {
+      if (fallbackCurrent) { entries.push(fallbackCurrent); fallbackCurrent = null; }
+    };
+    for (const line of lines) {
+      if (isBullet(line)) {
+        if (fallbackCurrent) fallbackCurrent.highlights.push(line.replace(/^[-*•]\s*/, "").trim());
+      } else {
+        flush2();
+        // Try to extract a date range from the line itself (e.g. "Engineer at Google, 2020")
+        const dateRange = parseDateRange(line);
+        // Strip any date-like text for the label
+        const label = line.replace(/\d{4}[\s\S]*$/, "").replace(/[|\-,]+$/, "").trim() || line;
+        const segs = label.split(/,| at /i).map((s: string) => s.trim()).filter(Boolean);
+        fallbackCurrent = {
+          id: uuid(),
+          title: segs[0] ?? label,
+          company: segs[1] ?? "Unknown Company",
+          date_range: dateRange,
+          highlights: [],
+          achievement_ids: [],
+        };
+      }
+    }
+    flush2();
+  }
+
   return entries;
 }
 
