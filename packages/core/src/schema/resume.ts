@@ -107,13 +107,15 @@ export const SkillCategorySchema = z.object({
 
 export const BasicsSchema = z.object({
   name: z.string().default("Your Name"),
+  name_en: z.string().optional(),
   email: z.string().email().optional(),
   phone: z.string().optional(),
   location: z.string().optional(),
-  linkedin: z.string().url().optional(),
-  github: z.string().url().optional(),
-  website: z.string().url().optional(),
+  linkedin: z.string().optional(),
+  github: z.string().optional(),
+  website: z.string().optional(),
   summary: z.string().optional(),
+  highlights: z.array(z.string()).optional(),
   photo: z.string().optional(),
 });
 
