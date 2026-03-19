@@ -328,6 +328,8 @@
       "modernDescription": "适合更平和、更有质感一点的文档表面。",
       "creativeTitle": "创意动感版",
       "creativeDescription": "适合设计、品牌、创意岗位，强调视觉节奏与更鲜明的个人表达。",
+      "chineseSidebarTitle": "中文双栏版",
+      "chineseSidebarDescription": "左侧莫兰迪蓝侧栏 + 右侧正文，适合中文简历，版式源自 Figma 定稿设计。",
       "updateButton": "更新预览",
       "updatingButton": "更新中",
       "exportButton": "导出 PDF",

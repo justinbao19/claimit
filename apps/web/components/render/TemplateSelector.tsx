@@ -10,7 +10,7 @@ import { useTranslations } from "../layout/locale-provider";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 
 interface TemplateSelectorProps {
   initialTemplate?: string;
@@ -18,7 +18,7 @@ interface TemplateSelectorProps {
   onHtmlChange: (html: string) => void;
 }
 
-const templates = ["ats_minimal", "modern_clean", "creative_dynamic"] as const;
+const templates = ["ats_minimal", "modern_clean", "creative_dynamic", "chinese_sidebar"] as const;
 type TemplateId = (typeof templates)[number];
 
 const templateMeta: Record<
@@ -43,6 +43,11 @@ const templateMeta: Record<
     titleKey: "render.templateSelector.creativeTitle",
     descriptionKey: "render.templateSelector.creativeDescription",
     accentClassName: "bg-[#ff7f7f]",
+  },
+  chinese_sidebar: {
+    titleKey: "render.templateSelector.chineseSidebarTitle",
+    descriptionKey: "render.templateSelector.chineseSidebarDescription",
+    accentClassName: "bg-[#406495]",
   },
 };
 
@@ -146,16 +151,6 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
               </TabsTrigger>
             ))}
           </TabsList>
-          {templates.map((template) => (
-            <TabsContent key={template} value={template}>
-              <div className="rounded-[24px] border border-[color:var(--field-border)] bg-[color:var(--surface-elevated)] p-4 shadow-[0_16px_32px_-24px_var(--shadow-color)]">
-                <p className="text-sm font-medium text-[color:var(--text-primary)]">{t(templateMeta[template].titleKey)}</p>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
-                  {t(templateMeta[template].descriptionKey)}
-                </p>
-              </div>
-            </TabsContent>
-          ))}
         </Tabs>
 
         <div className="grid gap-3">

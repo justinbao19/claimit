@@ -328,6 +328,8 @@
       "modernDescription": "Best for a calmer document surface with slightly more warmth.",
       "creativeTitle": "Creative Dynamic",
       "creativeDescription": "Best for design, brand, and creative roles that benefit from stronger visual rhythm and personality.",
+      "chineseSidebarTitle": "Chinese Sidebar",
+      "chineseSidebarDescription": "Two-column layout with a Morandi blue sidebar. Designed for Chinese-language resumes.",
       "updateButton": "Update preview",
       "updatingButton": "Updating preview",
       "exportButton": "Export PDF",
