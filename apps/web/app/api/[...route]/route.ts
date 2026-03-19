@@ -196,6 +196,34 @@ async function handleVariantsDelete(name: string) {
   return json({ success: true });
 }
 
+async function handlePhotoUpload(request: NextRequest) {
+  const formData = await request.formData();
+  const file = formData.get("photo");
+  if (!(file instanceof File)) {
+    throw new Error("Missing photo file.");
+  }
+
+  const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+  if (!allowedTypes.includes(file.type)) {
+    throw new Error("Unsupported image type. Use JPEG, PNG, WebP, or GIF.");
+  }
+
+  const vaultPaths = getVaultPaths();
+  await mkdir(vaultPaths.uploadsDir, { recursive: true });
+
+  const ext = file.type.split("/")[1]?.replace("jpeg", "jpg") ?? "jpg";
+  const fileName = `photo-${Date.now()}.${ext}`;
+  const uploadPath = join(vaultPaths.uploadsDir, fileName);
+  const buffer = Buffer.from(await file.arrayBuffer());
+  await writeFile(uploadPath, buffer);
+
+  const resume = await loadBaseResume();
+  resume.basics.photo = uploadPath;
+  await saveBaseResume(resume);
+
+  return json({ path: uploadPath, photo: uploadPath });
+}
+
 async function handleRender(request: NextRequest) {
   const payload = (await request.json()) as { template: string; variant?: string };
   const resume = await loadPreviewResume(payload.variant);
@@ -254,6 +282,9 @@ export async function POST(request: NextRequest, context: RouteContext) {
     }
     if (route[0] === "variants") {
       return await handleVariantsPost(request);
+    }
+    if (route[0] === "photo") {
+      return await handlePhotoUpload(request);
     }
     if (route[0] === "render") {
       return await handleRender(request);

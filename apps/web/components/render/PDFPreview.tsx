@@ -67,7 +67,7 @@ export function PDFPreview({ html }: { html: string }) {
   const measure = (idx: 0 | 1) => {
     try {
       const h =
-        iframeRefs[idx].current?.contentDocument?.documentElement?.scrollHeight ??
+        iframeRefs[idx]!.current?.contentDocument?.documentElement?.scrollHeight ??
         LETTER_HEIGHT_PX;
       setDocHeight(Math.max(h, LETTER_HEIGHT_PX));
     } catch {

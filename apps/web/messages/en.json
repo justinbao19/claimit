@@ -318,6 +318,13 @@
       "previewCanvasTitle": "Preview canvas",
       "previewCanvasDescription": "Inspect the current document surface before exporting."
     },
+    "photo": {
+      "title": "Resume Photo",
+      "description": "Uploaded photo will be embedded in templates that support it.",
+      "prompt": "Click or drop an image (JPG / PNG / WebP)",
+      "uploading": "Uploading…",
+      "uploaded": "Saved to local vault"
+    },
     "templateSelector": {
       "badge": "Template controls",
       "title": "Switch the document presentation",

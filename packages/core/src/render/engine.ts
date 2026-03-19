@@ -86,11 +86,40 @@ export async function listTemplates(): Promise<string[]> {
   return [];
 }
 
+/**
+ * Resolve basics.photo to a data URL if it points to a local file path.
+ * This allows CLI users to specify absolute/relative paths, and web users
+ * to upload a file to vault — both transparently work in Playwright rendering.
+ */
+async function resolvePhotoToDataUrl(photo: string): Promise<string> {
+  if (photo.startsWith("http") || photo.startsWith("data:")) {
+    return photo;
+  }
+  try {
+    const absolutePath = path.isAbsolute(photo)
+      ? photo
+      : path.resolve(process.cwd(), photo);
+    const buffer = await readFile(absolutePath);
+    const ext = path.extname(absolutePath).toLowerCase().replace(".", "");
+    const mime = ext === "jpg" ? "jpeg" : ext || "jpeg";
+    return `data:image/${mime};base64,${buffer.toString("base64")}`;
+  } catch {
+    return photo;
+  }
+}
+
 export async function renderToHtml(resume: Resume, templateId: string): Promise<string> {
+  let data = resume;
+  if (data.basics?.photo) {
+    data = {
+      ...data,
+      basics: { ...data.basics, photo: await resolvePhotoToDataUrl(data.basics.photo) },
+    };
+  }
   const templatePath = await resolveTemplatePath(templateId);
   const source = await readFile(templatePath, "utf8");
   const template = Handlebars.compile(source);
-  return template(resume);
+  return template(data);
 }
 
 export async function renderToPdf(html: string, outputPath: string): Promise<void> {

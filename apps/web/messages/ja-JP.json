@@ -318,6 +318,13 @@
       "previewCanvasTitle": "プレビュー面",
       "previewCanvasDescription": "書き出す前に、現在の文書表面を確認します。"
     },
+    "photo": {
+      "title": "履歴書の写真",
+      "description": "アップロードした写真は、対応テンプレートに埋め込まれます。",
+      "prompt": "クリックまたはドロップ（JPG / PNG / WebP）",
+      "uploading": "アップロード中…",
+      "uploaded": "ローカル vault に保存済み"
+    },
     "templateSelector": {
       "badge": "テンプレート設定",
       "title": "文書の見せ方を切り替える",

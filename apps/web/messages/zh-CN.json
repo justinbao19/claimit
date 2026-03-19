@@ -318,6 +318,13 @@
       "previewCanvasTitle": "预览画布",
       "previewCanvasDescription": "导出前先检查当前文档表面效果。"
     },
+    "photo": {
+      "title": "简历照片",
+      "description": "上传后会嵌入支持照片的模板。",
+      "prompt": "点击或拖入图片（JPG / PNG / WebP）",
+      "uploading": "上传中…",
+      "uploaded": "已保存到本地 vault"
+    },
     "templateSelector": {
       "badge": "模板控制",
       "title": "切换文档呈现方式",
