@@ -11,13 +11,14 @@ import { TemplateSelector } from "./TemplateSelector";
 
 export function RenderWorkspace({ initialHtml }: { initialHtml: string }) {
   const [html, setHtml] = useState(initialHtml);
+  const [refreshSignal, setRefreshSignal] = useState(0);
   const t = useTranslations();
 
   return (
     <div className="grid gap-6 xl:grid-cols-[380px_1fr]">
       <div className="space-y-6">
-        <TemplateSelector onHtmlChange={setHtml} />
-        <PhotoUploadCard />
+        <TemplateSelector onHtmlChange={setHtml} refreshSignal={refreshSignal} />
+        <PhotoUploadCard onUpload={() => setRefreshSignal((s) => s + 1)} />
         <Card variant="panel" padding="default">
           <div className="flex items-center gap-3">
             <div className="flex size-10 items-center justify-center rounded-2xl bg-[color:var(--surface)] text-[color:var(--text-primary)]">

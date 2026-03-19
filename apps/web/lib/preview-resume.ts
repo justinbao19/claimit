@@ -59,5 +59,12 @@ export async function loadPreviewResume(variant?: string): Promise<Resume | Vari
     return resume;
   }
 
-  return loadBaseResume(sampleVaultPath);
+  const sample = await loadBaseResume(sampleVaultPath);
+
+  // Carry over user-uploaded photo even when falling back to sample data
+  if (resume.basics.photo) {
+    sample.basics.photo = resume.basics.photo;
+  }
+
+  return sample;
 }

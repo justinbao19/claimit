@@ -5,8 +5,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Card } from "../ui/card";
 import { useTranslations } from "../layout/locale-provider";
 
-const LETTER_WIDTH_PX = 816;
-const LETTER_HEIGHT_PX = 1056;
+// A4 at 96 dpi ≈ 794 × 1123 px; Letter ≈ 816 × 1056 px.
+// Use A4 as the default reference because most templates target A4.
+const DEFAULT_DOC_WIDTH = 794;
+const DEFAULT_DOC_HEIGHT = 1123;
 
 /**
  * True double-buffer: two iframes sit on top of each other.
@@ -30,8 +32,9 @@ export function PDFPreview({ html }: { html: string }) {
     useRef<HTMLIFrameElement | null>(null),
   ];
 
-  const [availableWidth, setAvailableWidth] = useState(LETTER_WIDTH_PX);
-  const [docHeight, setDocHeight] = useState(LETTER_HEIGHT_PX);
+  const [availableWidth, setAvailableWidth] = useState(DEFAULT_DOC_WIDTH);
+  const [docWidth, setDocWidth] = useState(DEFAULT_DOC_WIDTH);
+  const [docHeight, setDocHeight] = useState(DEFAULT_DOC_HEIGHT);
 
   // srcDoc for each slot
   const [slotHtml, setSlotHtml] = useState<[string, string]>([html, html]);
@@ -45,7 +48,7 @@ export function PDFPreview({ html }: { html: string }) {
   useEffect(() => {
     const el = viewportRef.current;
     if (!el) return;
-    const update = () => setAvailableWidth(el.clientWidth || LETTER_WIDTH_PX);
+    const update = () => setAvailableWidth(el.clientWidth || DEFAULT_DOC_WIDTH);
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
@@ -66,12 +69,13 @@ export function PDFPreview({ html }: { html: string }) {
 
   const measure = (idx: 0 | 1) => {
     try {
-      const h =
-        iframeRefs[idx]!.current?.contentDocument?.documentElement?.scrollHeight ??
-        LETTER_HEIGHT_PX;
-      setDocHeight(Math.max(h, LETTER_HEIGHT_PX));
+      const doc = iframeRefs[idx]!.current?.contentDocument?.documentElement;
+      const h = doc?.scrollHeight ?? DEFAULT_DOC_HEIGHT;
+      const w = doc?.scrollWidth ?? DEFAULT_DOC_WIDTH;
+      setDocHeight(Math.max(h, DEFAULT_DOC_HEIGHT));
+      setDocWidth(Math.max(w, DEFAULT_DOC_WIDTH));
     } catch {
-      // sandboxed / cross-origin — leave height unchanged
+      // sandboxed / cross-origin — leave dimensions unchanged
     }
   };
 
@@ -92,8 +96,8 @@ export function PDFPreview({ html }: { html: string }) {
   };
 
   const scale = useMemo(
-    () => Math.min(availableWidth / LETTER_WIDTH_PX, 1),
-    [availableWidth],
+    () => Math.min(availableWidth / docWidth, 1),
+    [availableWidth, docWidth],
   );
   const scaledHeight = docHeight * scale;
 
@@ -101,7 +105,7 @@ export function PDFPreview({ html }: { html: string }) {
     position: "absolute" as const,
     left: 0,
     top: 0,
-    width: `${LETTER_WIDTH_PX}px`,
+    width: `${docWidth}px`,
     height: `${docHeight}px`,
     transformOrigin: "top left",
     transform: `scale(${scale})`,
@@ -122,8 +126,8 @@ export function PDFPreview({ html }: { html: string }) {
       <div className="bg-[linear-gradient(180deg,rgba(247,241,232,0.96),rgba(255,255,255,0.98))] p-5 dark:bg-[linear-gradient(180deg,rgba(23,27,31,0.92),rgba(17,20,23,0.96))]">
         <div
           ref={viewportRef}
-          className="mx-auto w-full max-w-[816px] overflow-y-auto"
-          style={{ maxHeight: "80vh" }}
+          className="mx-auto w-full overflow-y-auto"
+          style={{ maxWidth: `${docWidth}px`, maxHeight: "80vh" }}
         >
           <div
             className="relative mx-auto bg-white"

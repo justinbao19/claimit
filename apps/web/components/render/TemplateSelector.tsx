@@ -2,7 +2,7 @@
 
 import { useMutation } from "@tanstack/react-query";
 import { CheckCircle2, Download, Eye, LayoutTemplate, WandSparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
 import { apiFetch } from "../../lib/utils";
@@ -16,6 +16,8 @@ interface TemplateSelectorProps {
   initialTemplate?: string;
   variant?: string;
   onHtmlChange: (html: string) => void;
+  /** Increment to force a preview re-render with the current template (e.g. after photo upload) */
+  refreshSignal?: number;
 }
 
 const templates = ["ats_minimal", "modern_clean", "creative_dynamic", "chinese_sidebar"] as const;
@@ -51,7 +53,7 @@ const templateMeta: Record<
   },
 };
 
-export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onHtmlChange }: TemplateSelectorProps) {
+export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onHtmlChange, refreshSignal }: TemplateSelectorProps) {
   const [selectedTemplate, setSelectedTemplate] = useState(initialTemplate);
   const [message, setMessage] = useState<string | null>(null);
   const t = useTranslations();
@@ -78,6 +80,17 @@ export function TemplateSelector({ initialTemplate = "ats_minimal", variant, onH
       toast.error(t("render.templateSelector.previewFailedToastTitle"), { description: nextMessage });
     },
   });
+
+  // Re-render preview when refreshSignal increments (e.g. after photo upload)
+  const prevSignalRef = useRef(refreshSignal ?? 0);
+  useEffect(() => {
+    const cur = refreshSignal ?? 0;
+    if (cur !== prevSignalRef.current) {
+      prevSignalRef.current = cur;
+      previewMutation.mutate(selectedTemplate);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refreshSignal]);
 
   const exportMutation = useMutation({
     mutationFn: async () =>

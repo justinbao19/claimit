@@ -94,6 +94,7 @@ export const EducationSchema = z.object({
   institution: z.string(),
   degree: z.string(),
   field: z.string().optional(),
+  location: z.string().optional(),
   date_range: DateRangeSchema,
   gpa: z.string().optional(),
   highlights: z.array(z.string()).default([]),
