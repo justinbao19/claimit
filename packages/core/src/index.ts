@@ -3,6 +3,7 @@ export * from "./llm/client";
 export * from "./llm/prompts";
 export * from "./parser/index";
 export * from "./render/engine";
+export * from "./render/themes";
 export * from "./schema/assistant";
 export * from "./schema/resume";
 export * from "./variant/index";

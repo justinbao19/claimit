@@ -5,6 +5,7 @@ import Handlebars from "handlebars";
 import { chromium } from "playwright";
 
 import type { Resume } from "../schema/resume";
+import { getTheme, getThemeCSS, DEFAULT_THEME, type SidebarTheme } from "./themes";
 
 const moduleDir = path.dirname(fileURLToPath(import.meta.url));
 
@@ -108,7 +109,11 @@ async function resolvePhotoToDataUrl(photo: string): Promise<string> {
   }
 }
 
-export async function renderToHtml(resume: Resume, templateId: string): Promise<string> {
+export interface RenderOptions {
+  theme?: string;
+}
+
+export async function renderToHtml(resume: Resume, templateId: string, options: RenderOptions = {}): Promise<string> {
   let data = resume;
   if (data.basics?.photo) {
     data = {
@@ -119,10 +124,30 @@ export async function renderToHtml(resume: Resume, templateId: string): Promise<
   const templatePath = await resolveTemplatePath(templateId);
   const source = await readFile(templatePath, "utf8");
   const template = Handlebars.compile(source);
-  return template(data);
+  let html = template(data);
+  
+  // Apply theme if specified
+  if (options.theme) {
+    const theme = getTheme(options.theme);
+    if (theme) {
+      const themeCSS = getThemeCSS(theme);
+      // Inject theme CSS variables into the sidebar
+      html = html.replace(
+        /(<div class="sidebar"[^>]*style="[^"]*")/g,
+        `$1; ${themeCSS.replace(/\n/g, ' ')}`
+      );
+      // Also update the fallback in case style attribute doesn't exist
+      html = html.replace(
+        /(<div class="sidebar"(?![^>]*style=)[^>]*>)/g,
+        `<div class="sidebar" style="${themeCSS.replace(/\n/g, ' ')}">`
+      );
+    }
+  }
+  
+  return html;
 }
 
-export async function renderToPdf(html: string, outputPath: string): Promise<void> {
+export async function renderToPdf(html: string, outputPath: string, options: RenderOptions = {}): Promise<void> {
   let browser;
   try {
     browser = await chromium.launch();
@@ -138,11 +163,17 @@ export async function renderToPdf(html: string, outputPath: string): Promise<voi
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "networkidle" });
     
+    // 获取主题色
+    const theme = options.theme ? getTheme(options.theme) : getTheme(DEFAULT_THEME);
+    const sidebarColor = theme?.hex ?? '#e6edf8';
+    const isDarkTheme = theme?.dark ?? false;
+    
     // 预处理：把内容分割成多页，每页有独立的侧边栏背景
-    await page.evaluate(() => {
+    await page.evaluate(({ themeColor, isDark }: { themeColor: string; isDark: boolean }) => {
       const A4_HEIGHT = 1123;
       const SIDEBAR_WIDTH = 292;
-      const SIDEBAR_COLOR = '#e6edf8';
+      const SIDEBAR_COLOR = themeColor;
+      const TEXT_COLOR = isDark ? 'rgba(255,255,255,0.9)' : 'rgba(20,35,75,0.82)';
       const CONTENT_PADDING_TOP = 48;
       const CONTENT_PADDING_BOTTOM = 72;
       const USABLE_HEIGHT = A4_HEIGHT - CONTENT_PADDING_TOP - CONTENT_PADDING_BOTTOM;
@@ -195,7 +226,7 @@ export async function renderToPdf(html: string, outputPath: string): Promise<voi
           width: ${SIDEBAR_WIDTH}px; min-width: ${SIDEBAR_WIDTH}px; height: 100%;
           background: ${SIDEBAR_COLOR}; print-color-adjust: exact;
           -webkit-print-color-adjust: exact; padding: 48px 40px 40px;
-          color: rgba(20,35,75,0.82); font-family: 'Noto Sans SC', 'Inter', sans-serif;
+          color: ${TEXT_COLOR}; font-family: 'Noto Sans SC', 'Inter', sans-serif;
           overflow: hidden;
         `;
         
@@ -218,7 +249,7 @@ export async function renderToPdf(html: string, outputPath: string): Promise<voi
         pageContainer.appendChild(contentArea);
         document.body.appendChild(pageContainer);
       });
-    });
+    }, { themeColor: sidebarColor, isDark: isDarkTheme });
     
     await page.pdf({
       path: outputPath,

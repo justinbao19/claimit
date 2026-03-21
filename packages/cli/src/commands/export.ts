@@ -1,7 +1,7 @@
 import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import { Command } from "commander";
-import { getVaultPaths, loadBaseResume, renderToHtml, renderToPdf } from "@claimit/core";
+import { getVaultPaths, loadBaseResume, renderToHtml, renderToPdf, listThemes } from "@claimit/core";
 
 import { output, readStdin, writeTextFile } from "../utils/io.js";
 import { loadResumeByVariant } from "../utils/resume.js";
@@ -25,6 +25,7 @@ export function createExportCommand(): Command {
     .option("--vault <path>", "Path to the vault directory")
     .option("--variant <name>", "Variant name")
     .option("--template <name>", "Template id for html/pdf export", "ats_minimal")
+    .option("--theme <name>", `Sidebar color theme (${listThemes().slice(0, 4).join(', ')}...)`)
     .option("--stdin", "Read render output or raw HTML from stdin")
     .option("-o, --output <file>", "Output file path")
     .option("--json", "Output JSON")
@@ -46,12 +47,14 @@ export function createExportCommand(): Command {
         return;
       }
 
+      const renderOptions = { theme: options.theme };
+      
       let html: string;
       if (options.stdin) {
         html = parseHtmlInput(await readStdin());
       } else {
         const resume = await loadResumeByVariant(options.vault, options.variant);
-        html = await renderToHtml(resume, options.template);
+        html = await renderToHtml(resume, options.template, renderOptions);
       }
 
       if (extension === "html") {
@@ -61,7 +64,7 @@ export function createExportCommand(): Command {
       }
 
       if (extension === "pdf") {
-        await renderToPdf(html, outputFile);
+        await renderToPdf(html, outputFile, renderOptions);
         output(options.human ? outputFile : { path: outputFile }, options);
         return;
       }
