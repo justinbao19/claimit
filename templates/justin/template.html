@@ -321,11 +321,26 @@ html, body {
   }
   .resume-page {
     width: 210mm;
+    min-height: 297mm;
     margin: 0;
+    display: flex;
   }
   .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    flex-shrink: 0;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+  }
+  .main {
+    flex: 1;
+    padding: 48px 38px 72px 40px;
+  }
+  .entry {
+    break-inside: avoid;
+  }
+  .cv-section-title {
+    break-after: avoid;
   }
   /* color overrides for print */
   .sb-name-zh        { color: var(--sb-text-bright) !important; }

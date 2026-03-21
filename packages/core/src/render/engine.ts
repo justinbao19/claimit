@@ -137,15 +137,98 @@ export async function renderToPdf(html: string, outputPath: string): Promise<voi
   try {
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "networkidle" });
+    
+    // 预处理：把内容分割成多页，每页有独立的侧边栏背景
+    await page.evaluate(() => {
+      const A4_HEIGHT = 1123;
+      const SIDEBAR_WIDTH = 292;
+      const SIDEBAR_COLOR = '#e6edf8';
+      const CONTENT_PADDING_TOP = 48;
+      const CONTENT_PADDING_BOTTOM = 72;
+      const USABLE_HEIGHT = A4_HEIGHT - CONTENT_PADDING_TOP - CONTENT_PADDING_BOTTOM;
+      
+      const resumePage = document.querySelector('.resume-page') as HTMLElement;
+      const mainEl = document.querySelector('.main') as HTMLElement;
+      const sidebarEl = document.querySelector('.sidebar') as HTMLElement;
+      if (!resumePage || !mainEl) return;
+      
+      const sections = Array.from(mainEl.children) as HTMLElement[];
+      const blocks = sections.map(el => ({
+        el,
+        top: el.offsetTop,
+        height: el.offsetHeight
+      }));
+      
+      interface PageContent { startIndex: number; endIndex: number; }
+      const pages: PageContent[] = [];
+      let currentPageStart = 0;
+      let currentPageHeight = 0;
+      
+      for (let i = 0; i < blocks.length; i++) {
+        const block = blocks[i];
+        if (currentPageHeight + block.height > USABLE_HEIGHT && currentPageHeight > 0) {
+          pages.push({ startIndex: currentPageStart, endIndex: i - 1 });
+          currentPageStart = i;
+          currentPageHeight = block.height;
+        } else {
+          currentPageHeight += block.height;
+        }
+      }
+      if (currentPageStart < blocks.length) {
+        pages.push({ startIndex: currentPageStart, endIndex: blocks.length - 1 });
+      }
+      
+      if (pages.length <= 1) return;
+      
+      resumePage.style.display = 'none';
+      
+      pages.forEach((pageContent, pageIndex) => {
+        const pageContainer = document.createElement('div');
+        pageContainer.className = 'resume-page-generated';
+        pageContainer.style.cssText = `
+          width: 210mm; height: 297mm; display: flex; margin: 0 auto;
+          background: white; page-break-after: always; overflow: hidden;
+        `;
+        
+        const sidebarBg = document.createElement('div');
+        sidebarBg.style.cssText = `
+          width: ${SIDEBAR_WIDTH}px; min-width: ${SIDEBAR_WIDTH}px; height: 100%;
+          background: ${SIDEBAR_COLOR}; print-color-adjust: exact;
+          -webkit-print-color-adjust: exact; padding: 48px 40px 40px;
+          color: rgba(20,35,75,0.82); font-family: 'Noto Sans SC', 'Inter', sans-serif;
+          overflow: hidden;
+        `;
+        
+        if (pageIndex === 0 && sidebarEl) {
+          sidebarBg.innerHTML = sidebarEl.innerHTML;
+        }
+        
+        pageContainer.appendChild(sidebarBg);
+        
+        const contentArea = document.createElement('div');
+        contentArea.style.cssText = `
+          flex: 1; padding: ${CONTENT_PADDING_TOP}px 38px ${CONTENT_PADDING_BOTTOM}px 40px;
+          overflow: hidden;
+        `;
+        
+        for (let i = pageContent.startIndex; i <= pageContent.endIndex; i++) {
+          contentArea.appendChild(blocks[i].el.cloneNode(true));
+        }
+        
+        pageContainer.appendChild(contentArea);
+        document.body.appendChild(pageContainer);
+      });
+    });
+    
     await page.pdf({
       path: outputPath,
-      format: "Letter",
-      preferCSSPageSize: true, // templates with @page { size: A4 } override format
+      format: "A4",
+      preferCSSPageSize: true,
       margin: {
-        top: "0.5in",
-        right: "0.5in",
-        bottom: "0.5in",
-        left: "0.5in",
+        top: "0",
+        right: "0",
+        bottom: "0",
+        left: "0",
       },
       printBackground: true,
     });
