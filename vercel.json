@@ -3,5 +3,5 @@
   "buildCommand": "pnpm --filter @claimit/core build && pnpm --filter @claimit/web build",
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "outputDirectory": "apps/web/.next"
+  "outputDirectory": ".next"
 }
