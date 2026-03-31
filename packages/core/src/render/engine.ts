@@ -196,7 +196,7 @@ export async function renderToPdf(html: string, outputPath: string, options: Ren
       let currentPageHeight = 0;
       
       for (let i = 0; i < blocks.length; i++) {
-        const block = blocks[i];
+        const block = blocks[i]!;
         if (currentPageHeight + block.height > USABLE_HEIGHT && currentPageHeight > 0) {
           pages.push({ startIndex: currentPageStart, endIndex: i - 1 });
           currentPageStart = i;
@@ -243,7 +243,7 @@ export async function renderToPdf(html: string, outputPath: string, options: Ren
         `;
         
         for (let i = pageContent.startIndex; i <= pageContent.endIndex; i++) {
-          contentArea.appendChild(blocks[i].el.cloneNode(true));
+          contentArea.appendChild(blocks[i]!.el.cloneNode(true));
         }
         
         pageContainer.appendChild(contentArea);
